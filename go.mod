@@ -1,4 +1,4 @@
-module code.nurture.farm/Core/Contracts
+module github.com/nurture-farm/Contracts
 
 go 1.14
 
