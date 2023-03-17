@@ -26,6 +26,7 @@ message ExecuteUserJourneyCampaignRequest {
   int64 engagementVertexId = 3;
   string referenceId = 4;
   google.protobuf.Duration waitDuration = 5;
+  int64 unused = 6;
 }
 
 message ExecuteUserJourneyCampaignResponse {

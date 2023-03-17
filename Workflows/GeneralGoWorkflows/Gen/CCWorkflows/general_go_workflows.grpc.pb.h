@@ -40,82 +40,12 @@ class GeneralGoWorkflows final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>> AsyncOfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>>(AsyncOfferRewardRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>> PrepareAsyncOfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>>(PrepareAsyncOfferRewardRaw(context, request, cq));
-    }
-    virtual ::grpc::Status OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>> AsyncOfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>>(AsyncOfferDiscountedSprayServiceRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>> PrepareAsyncOfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>>(PrepareAsyncOfferDiscountedSprayServiceRaw(context, request, cq));
-    }
-    virtual ::grpc::Status HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>> AsyncHandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>>(AsyncHandoverOtpRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>> PrepareAsyncHandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>>(PrepareAsyncHandoverOtpRaw(context, request, cq));
-    }
-    virtual ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>> AsyncRescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>>(AsyncRescheduleMachinePreventiveMaintenanceRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>> PrepareAsyncRescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>>(PrepareAsyncRescheduleMachinePreventiveMaintenanceRaw(context, request, cq));
-    }
-    virtual ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>> AsyncUpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>>(AsyncUpdateActorsMachinePreventiveMaintenanceRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>> PrepareAsyncUpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>>(PrepareAsyncUpdateActorsMachinePreventiveMaintenanceRaw(context, request, cq));
-    }
-    virtual ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>> AsyncPreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>>(AsyncPreventiveMaintenanceTriggerRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>> PrepareAsyncPreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>>(PrepareAsyncPreventiveMaintenanceTriggerRaw(context, request, cq));
-    }
-    virtual ::grpc::Status RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>> AsyncRefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>>(AsyncRefreshUserContentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>> PrepareAsyncRefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>>(PrepareAsyncRefreshUserContentRaw(context, request, cq));
-    }
     virtual ::grpc::Status ExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>> AsyncExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>>(AsyncExecuteCampaignRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>> PrepareAsyncExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>>(PrepareAsyncExecuteCampaignRaw(context, request, cq));
-    }
-    virtual ::grpc::Status PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>> AsyncPostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>>(AsyncPostServiceFeedbackPNRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>> PrepareAsyncPostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>>(PrepareAsyncPostServiceFeedbackPNRaw(context, request, cq));
-    }
-    virtual ::grpc::Status PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>> AsyncPostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>>(AsyncPostPusaSprayPopUpRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>> PrepareAsyncPostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>>(PrepareAsyncPostPusaSprayPopUpRaw(context, request, cq));
-    }
-    virtual ::grpc::Status IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>> AsyncIotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>>(AsyncIotComputationRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>> PrepareAsyncIotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>>(PrepareAsyncIotComputationRaw(context, request, cq));
     }
     virtual ::grpc::Status ExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>> AsyncExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) {
@@ -124,13 +54,6 @@ class GeneralGoWorkflows final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>> PrepareAsyncExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>>(PrepareAsyncExecuteUserJourneyCampaignRaw(context, request, cq));
     }
-    virtual ::grpc::Status OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>> AsyncOfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>>(AsyncOfferInsuranceRewardsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>> PrepareAsyncOfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>>(PrepareAsyncOfferInsuranceRewardsRaw(context, request, cq));
-    }
     virtual ::grpc::Status CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>> AsyncCreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>>(AsyncCreatePartitionsRaw(context, request, cq));
@@ -138,183 +61,36 @@ class GeneralGoWorkflows final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>> PrepareAsyncCreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>>(PrepareAsyncCreatePartitionsRaw(context, request, cq));
     }
-    virtual ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>> AsyncTriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>>(AsyncTriggerF2FPointExpiryCronRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>> PrepareAsyncTriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>>(PrepareAsyncTriggerF2FPointExpiryCronRaw(context, request, cq));
-    }
-    virtual ::grpc::Status SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>> AsyncSendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>>(AsyncSendInsurancePurchaseEventRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>> PrepareAsyncSendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>>(PrepareAsyncSendInsurancePurchaseEventRaw(context, request, cq));
-    }
-    virtual ::grpc::Status ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>> AsyncExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>>(AsyncExecuteScoreComputationRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>> PrepareAsyncExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>>(PrepareAsyncExecuteScoreComputationRaw(context, request, cq));
-    }
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void ExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void ExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* AsyncOfferRewardRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* PrepareAsyncOfferRewardRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* AsyncOfferDiscountedSprayServiceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* PrepareAsyncOfferDiscountedSprayServiceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* AsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* PrepareAsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* AsyncRescheduleMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* PrepareAsyncRescheduleMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* AsyncUpdateActorsMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* PrepareAsyncUpdateActorsMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* AsyncPreventiveMaintenanceTriggerRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* PrepareAsyncPreventiveMaintenanceTriggerRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* AsyncRefreshUserContentRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* PrepareAsyncRefreshUserContentRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>* AsyncExecuteCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>* PrepareAsyncExecuteCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* AsyncPostServiceFeedbackPNRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* PrepareAsyncPostServiceFeedbackPNRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* AsyncPostPusaSprayPopUpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* PrepareAsyncPostPusaSprayPopUpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* AsyncIotComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* PrepareAsyncIotComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* AsyncExecuteUserJourneyCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* PrepareAsyncExecuteUserJourneyCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* AsyncOfferInsuranceRewardsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* PrepareAsyncOfferInsuranceRewardsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* AsyncCreatePartitionsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* PrepareAsyncCreatePartitionsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* AsyncTriggerF2FPointExpiryCronRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* PrepareAsyncTriggerF2FPointExpiryCronRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* AsyncSendInsurancePurchaseEventRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* PrepareAsyncSendInsurancePurchaseEventRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* AsyncExecuteScoreComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* PrepareAsyncExecuteScoreComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>> AsyncOfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>>(AsyncOfferRewardRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>> PrepareAsyncOfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>>(PrepareAsyncOfferRewardRaw(context, request, cq));
-    }
-    ::grpc::Status OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>> AsyncOfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>>(AsyncOfferDiscountedSprayServiceRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>> PrepareAsyncOfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>>(PrepareAsyncOfferDiscountedSprayServiceRaw(context, request, cq));
-    }
-    ::grpc::Status HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>> AsyncHandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>>(AsyncHandoverOtpRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>> PrepareAsyncHandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>>(PrepareAsyncHandoverOtpRaw(context, request, cq));
-    }
-    ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>> AsyncRescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>>(AsyncRescheduleMachinePreventiveMaintenanceRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>> PrepareAsyncRescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>>(PrepareAsyncRescheduleMachinePreventiveMaintenanceRaw(context, request, cq));
-    }
-    ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>> AsyncUpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>>(AsyncUpdateActorsMachinePreventiveMaintenanceRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>> PrepareAsyncUpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>>(PrepareAsyncUpdateActorsMachinePreventiveMaintenanceRaw(context, request, cq));
-    }
-    ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>> AsyncPreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>>(AsyncPreventiveMaintenanceTriggerRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>> PrepareAsyncPreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>>(PrepareAsyncPreventiveMaintenanceTriggerRaw(context, request, cq));
-    }
-    ::grpc::Status RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>> AsyncRefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>>(AsyncRefreshUserContentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>> PrepareAsyncRefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>>(PrepareAsyncRefreshUserContentRaw(context, request, cq));
-    }
     ::grpc::Status ExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>> AsyncExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>>(AsyncExecuteCampaignRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>> PrepareAsyncExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>>(PrepareAsyncExecuteCampaignRaw(context, request, cq));
-    }
-    ::grpc::Status PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>> AsyncPostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>>(AsyncPostServiceFeedbackPNRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>> PrepareAsyncPostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>>(PrepareAsyncPostServiceFeedbackPNRaw(context, request, cq));
-    }
-    ::grpc::Status PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>> AsyncPostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>>(AsyncPostPusaSprayPopUpRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>> PrepareAsyncPostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>>(PrepareAsyncPostPusaSprayPopUpRaw(context, request, cq));
-    }
-    ::grpc::Status IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>> AsyncIotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>>(AsyncIotComputationRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>> PrepareAsyncIotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>>(PrepareAsyncIotComputationRaw(context, request, cq));
     }
     ::grpc::Status ExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>> AsyncExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) {
@@ -323,13 +99,6 @@ class GeneralGoWorkflows final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>> PrepareAsyncExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>>(PrepareAsyncExecuteUserJourneyCampaignRaw(context, request, cq));
     }
-    ::grpc::Status OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>> AsyncOfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>>(AsyncOfferInsuranceRewardsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>> PrepareAsyncOfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>>(PrepareAsyncOfferInsuranceRewardsRaw(context, request, cq));
-    }
     ::grpc::Status CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>> AsyncCreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>>(AsyncCreatePartitionsRaw(context, request, cq));
@@ -337,64 +106,15 @@ class GeneralGoWorkflows final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>> PrepareAsyncCreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>>(PrepareAsyncCreatePartitionsRaw(context, request, cq));
     }
-    ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>> AsyncTriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>>(AsyncTriggerF2FPointExpiryCronRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>> PrepareAsyncTriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>>(PrepareAsyncTriggerF2FPointExpiryCronRaw(context, request, cq));
-    }
-    ::grpc::Status SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>> AsyncSendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>>(AsyncSendInsurancePurchaseEventRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>> PrepareAsyncSendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>>(PrepareAsyncSendInsurancePurchaseEventRaw(context, request, cq));
-    }
-    ::grpc::Status ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>> AsyncExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>>(AsyncExecuteScoreComputationRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>> PrepareAsyncExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>>(PrepareAsyncExecuteScoreComputationRaw(context, request, cq));
-    }
     class async final :
       public StubInterface::async_interface {
      public:
-      void OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, std::function<void(::grpc::Status)>) override;
-      void OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, std::function<void(::grpc::Status)>) override;
-      void OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, std::function<void(::grpc::Status)>) override;
-      void HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response, std::function<void(::grpc::Status)>) override;
-      void RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response, std::function<void(::grpc::Status)>) override;
-      void PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response, std::function<void(::grpc::Status)>) override;
-      void RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void ExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response, std::function<void(::grpc::Status)>) override;
       void ExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response, std::function<void(::grpc::Status)>) override;
-      void PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response, std::function<void(::grpc::Status)>) override;
-      void PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response, std::function<void(::grpc::Status)>) override;
-      void IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void ExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response, std::function<void(::grpc::Status)>) override;
       void ExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response, std::function<void(::grpc::Status)>) override;
-      void OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response, std::function<void(::grpc::Status)>) override;
       void CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response, std::function<void(::grpc::Status)>) override;
-      void TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response, std::function<void(::grpc::Status)>) override;
-      void SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response, std::function<void(::grpc::Status)>) override;
-      void ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -406,57 +126,15 @@ class GeneralGoWorkflows final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* AsyncOfferRewardRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* PrepareAsyncOfferRewardRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* AsyncOfferDiscountedSprayServiceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* PrepareAsyncOfferDiscountedSprayServiceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* AsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* PrepareAsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* AsyncRescheduleMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* PrepareAsyncRescheduleMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* AsyncUpdateActorsMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* PrepareAsyncUpdateActorsMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* AsyncPreventiveMaintenanceTriggerRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* PrepareAsyncPreventiveMaintenanceTriggerRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* AsyncRefreshUserContentRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* PrepareAsyncRefreshUserContentRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>* AsyncExecuteCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>* PrepareAsyncExecuteCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* AsyncPostServiceFeedbackPNRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* PrepareAsyncPostServiceFeedbackPNRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* AsyncPostPusaSprayPopUpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* PrepareAsyncPostPusaSprayPopUpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* AsyncIotComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* PrepareAsyncIotComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* AsyncExecuteUserJourneyCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* PrepareAsyncExecuteUserJourneyCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* AsyncOfferInsuranceRewardsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* PrepareAsyncOfferInsuranceRewardsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* AsyncCreatePartitionsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* PrepareAsyncCreatePartitionsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* AsyncTriggerF2FPointExpiryCronRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* PrepareAsyncTriggerF2FPointExpiryCronRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* AsyncSendInsurancePurchaseEventRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* PrepareAsyncSendInsurancePurchaseEventRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* AsyncExecuteScoreComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* PrepareAsyncExecuteScoreComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_OfferReward_;
-    const ::grpc::internal::RpcMethod rpcmethod_OfferDiscountedSprayService_;
-    const ::grpc::internal::RpcMethod rpcmethod_HandoverOtp_;
-    const ::grpc::internal::RpcMethod rpcmethod_RescheduleMachinePreventiveMaintenance_;
-    const ::grpc::internal::RpcMethod rpcmethod_UpdateActorsMachinePreventiveMaintenance_;
-    const ::grpc::internal::RpcMethod rpcmethod_PreventiveMaintenanceTrigger_;
-    const ::grpc::internal::RpcMethod rpcmethod_RefreshUserContent_;
     const ::grpc::internal::RpcMethod rpcmethod_ExecuteCampaign_;
-    const ::grpc::internal::RpcMethod rpcmethod_PostServiceFeedbackPN_;
-    const ::grpc::internal::RpcMethod rpcmethod_PostPusaSprayPopUp_;
-    const ::grpc::internal::RpcMethod rpcmethod_IotComputation_;
     const ::grpc::internal::RpcMethod rpcmethod_ExecuteUserJourneyCampaign_;
-    const ::grpc::internal::RpcMethod rpcmethod_OfferInsuranceRewards_;
     const ::grpc::internal::RpcMethod rpcmethod_CreatePartitions_;
-    const ::grpc::internal::RpcMethod rpcmethod_TriggerF2FPointExpiryCron_;
-    const ::grpc::internal::RpcMethod rpcmethod_SendInsurancePurchaseEvent_;
-    const ::grpc::internal::RpcMethod rpcmethod_ExecuteScoreComputation_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -464,163 +142,9 @@ class GeneralGoWorkflows final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status OfferReward(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response);
-    virtual ::grpc::Status OfferDiscountedSprayService(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response);
-    virtual ::grpc::Status HandoverOtp(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response);
-    virtual ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response);
-    virtual ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response);
-    virtual ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response);
-    virtual ::grpc::Status RefreshUserContent(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response);
     virtual ::grpc::Status ExecuteCampaign(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response);
-    virtual ::grpc::Status PostServiceFeedbackPN(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response);
-    virtual ::grpc::Status PostPusaSprayPopUp(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response);
-    virtual ::grpc::Status IotComputation(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response);
     virtual ::grpc::Status ExecuteUserJourneyCampaign(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response);
-    virtual ::grpc::Status OfferInsuranceRewards(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response);
     virtual ::grpc::Status CreatePartitions(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response);
-    virtual ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response);
-    virtual ::grpc::Status SendInsurancePurchaseEvent(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response);
-    virtual ::grpc::Status ExecuteScoreComputation(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response);
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_OfferReward : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_OfferReward() {
-      ::grpc::Service::MarkMethodAsync(0);
-    }
-    ~WithAsyncMethod_OfferReward() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferReward(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestOfferReward(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_OfferDiscountedSprayService : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_OfferDiscountedSprayService() {
-      ::grpc::Service::MarkMethodAsync(1);
-    }
-    ~WithAsyncMethod_OfferDiscountedSprayService() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferDiscountedSprayService(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestOfferDiscountedSprayService(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_HandoverOtp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_HandoverOtp() {
-      ::grpc::Service::MarkMethodAsync(2);
-    }
-    ~WithAsyncMethod_HandoverOtp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestHandoverOtp(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_RescheduleMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_RescheduleMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodAsync(3);
-    }
-    ~WithAsyncMethod_RescheduleMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRescheduleMachinePreventiveMaintenance(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_UpdateActorsMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_UpdateActorsMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodAsync(4);
-    }
-    ~WithAsyncMethod_UpdateActorsMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestUpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_PreventiveMaintenanceTrigger : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_PreventiveMaintenanceTrigger() {
-      ::grpc::Service::MarkMethodAsync(5);
-    }
-    ~WithAsyncMethod_PreventiveMaintenanceTrigger() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestPreventiveMaintenanceTrigger(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_RefreshUserContent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_RefreshUserContent() {
-      ::grpc::Service::MarkMethodAsync(6);
-    }
-    ~WithAsyncMethod_RefreshUserContent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RefreshUserContent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRefreshUserContent(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
-    }
   };
   template <class BaseClass>
   class WithAsyncMethod_ExecuteCampaign : public BaseClass {
@@ -628,7 +152,7 @@ class GeneralGoWorkflows final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ExecuteCampaign() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(0);
     }
     ~WithAsyncMethod_ExecuteCampaign() override {
       BaseClassMustBeDerivedFromService(this);
@@ -639,67 +163,7 @@ class GeneralGoWorkflows final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestExecuteCampaign(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_PostServiceFeedbackPN : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_PostServiceFeedbackPN() {
-      ::grpc::Service::MarkMethodAsync(8);
-    }
-    ~WithAsyncMethod_PostServiceFeedbackPN() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostServiceFeedbackPN(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestPostServiceFeedbackPN(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_PostPusaSprayPopUp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_PostPusaSprayPopUp() {
-      ::grpc::Service::MarkMethodAsync(9);
-    }
-    ~WithAsyncMethod_PostPusaSprayPopUp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostPusaSprayPopUp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestPostPusaSprayPopUp(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_IotComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_IotComputation() {
-      ::grpc::Service::MarkMethodAsync(10);
-    }
-    ~WithAsyncMethod_IotComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status IotComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestIotComputation(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -708,7 +172,7 @@ class GeneralGoWorkflows final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ExecuteUserJourneyCampaign() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(1);
     }
     ~WithAsyncMethod_ExecuteUserJourneyCampaign() override {
       BaseClassMustBeDerivedFromService(this);
@@ -719,27 +183,7 @@ class GeneralGoWorkflows final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestExecuteUserJourneyCampaign(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_OfferInsuranceRewards : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_OfferInsuranceRewards() {
-      ::grpc::Service::MarkMethodAsync(12);
-    }
-    ~WithAsyncMethod_OfferInsuranceRewards() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferInsuranceRewards(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestOfferInsuranceRewards(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -748,7 +192,7 @@ class GeneralGoWorkflows final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CreatePartitions() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_CreatePartitions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -759,272 +203,23 @@ class GeneralGoWorkflows final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreatePartitions(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  template <class BaseClass>
-  class WithAsyncMethod_TriggerF2FPointExpiryCron : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_TriggerF2FPointExpiryCron() {
-      ::grpc::Service::MarkMethodAsync(14);
-    }
-    ~WithAsyncMethod_TriggerF2FPointExpiryCron() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestTriggerF2FPointExpiryCron(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_SendInsurancePurchaseEvent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_SendInsurancePurchaseEvent() {
-      ::grpc::Service::MarkMethodAsync(15);
-    }
-    ~WithAsyncMethod_SendInsurancePurchaseEvent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SendInsurancePurchaseEvent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestSendInsurancePurchaseEvent(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_ExecuteScoreComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_ExecuteScoreComputation() {
-      ::grpc::Service::MarkMethodAsync(16);
-    }
-    ~WithAsyncMethod_ExecuteScoreComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ExecuteScoreComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestExecuteScoreComputation(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  typedef WithAsyncMethod_OfferReward<WithAsyncMethod_OfferDiscountedSprayService<WithAsyncMethod_HandoverOtp<WithAsyncMethod_RescheduleMachinePreventiveMaintenance<WithAsyncMethod_UpdateActorsMachinePreventiveMaintenance<WithAsyncMethod_PreventiveMaintenanceTrigger<WithAsyncMethod_RefreshUserContent<WithAsyncMethod_ExecuteCampaign<WithAsyncMethod_PostServiceFeedbackPN<WithAsyncMethod_PostPusaSprayPopUp<WithAsyncMethod_IotComputation<WithAsyncMethod_ExecuteUserJourneyCampaign<WithAsyncMethod_OfferInsuranceRewards<WithAsyncMethod_CreatePartitions<WithAsyncMethod_TriggerF2FPointExpiryCron<WithAsyncMethod_SendInsurancePurchaseEvent<WithAsyncMethod_ExecuteScoreComputation<Service > > > > > > > > > > > > > > > > > AsyncService;
-  template <class BaseClass>
-  class WithCallbackMethod_OfferReward : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_OfferReward() {
-      ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) { return this->OfferReward(context, request, response); }));}
-    void SetMessageAllocatorFor_OfferReward(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_OfferReward() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferReward(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* OfferReward(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_OfferDiscountedSprayService : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_OfferDiscountedSprayService() {
-      ::grpc::Service::MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) { return this->OfferDiscountedSprayService(context, request, response); }));}
-    void SetMessageAllocatorFor_OfferDiscountedSprayService(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_OfferDiscountedSprayService() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferDiscountedSprayService(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* OfferDiscountedSprayService(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_HandoverOtp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_HandoverOtp() {
-      ::grpc::Service::MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) { return this->HandoverOtp(context, request, response); }));}
-    void SetMessageAllocatorFor_HandoverOtp(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_HandoverOtp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* HandoverOtp(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_RescheduleMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_RescheduleMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response) { return this->RescheduleMachinePreventiveMaintenance(context, request, response); }));}
-    void SetMessageAllocatorFor_RescheduleMachinePreventiveMaintenance(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_RescheduleMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* RescheduleMachinePreventiveMaintenance(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_UpdateActorsMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_UpdateActorsMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response) { return this->UpdateActorsMachinePreventiveMaintenance(context, request, response); }));}
-    void SetMessageAllocatorFor_UpdateActorsMachinePreventiveMaintenance(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_UpdateActorsMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* UpdateActorsMachinePreventiveMaintenance(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_PreventiveMaintenanceTrigger : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_PreventiveMaintenanceTrigger() {
-      ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response) { return this->PreventiveMaintenanceTrigger(context, request, response); }));}
-    void SetMessageAllocatorFor_PreventiveMaintenanceTrigger(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_PreventiveMaintenanceTrigger() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* PreventiveMaintenanceTrigger(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_RefreshUserContent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_RefreshUserContent() {
-      ::grpc::Service::MarkMethodCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response) { return this->RefreshUserContent(context, request, response); }));}
-    void SetMessageAllocatorFor_RefreshUserContent(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_RefreshUserContent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RefreshUserContent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* RefreshUserContent(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* /*response*/)  { return nullptr; }
-  };
+  typedef WithAsyncMethod_ExecuteCampaign<WithAsyncMethod_ExecuteUserJourneyCampaign<WithAsyncMethod_CreatePartitions<Service > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_ExecuteCampaign : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ExecuteCampaign() {
-      ::grpc::Service::MarkMethodCallback(7,
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response) { return this->ExecuteCampaign(context, request, response); }));}
     void SetMessageAllocatorFor_ExecuteCampaign(
         ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1040,99 +235,18 @@ class GeneralGoWorkflows final {
       ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_PostServiceFeedbackPN : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_PostServiceFeedbackPN() {
-      ::grpc::Service::MarkMethodCallback(8,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response) { return this->PostServiceFeedbackPN(context, request, response); }));}
-    void SetMessageAllocatorFor_PostServiceFeedbackPN(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_PostServiceFeedbackPN() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostServiceFeedbackPN(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* PostServiceFeedbackPN(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_PostPusaSprayPopUp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_PostPusaSprayPopUp() {
-      ::grpc::Service::MarkMethodCallback(9,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response) { return this->PostPusaSprayPopUp(context, request, response); }));}
-    void SetMessageAllocatorFor_PostPusaSprayPopUp(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_PostPusaSprayPopUp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostPusaSprayPopUp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* PostPusaSprayPopUp(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_IotComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_IotComputation() {
-      ::grpc::Service::MarkMethodCallback(10,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response) { return this->IotComputation(context, request, response); }));}
-    void SetMessageAllocatorFor_IotComputation(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_IotComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status IotComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* IotComputation(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithCallbackMethod_ExecuteUserJourneyCampaign : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ExecuteUserJourneyCampaign() {
-      ::grpc::Service::MarkMethodCallback(11,
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response) { return this->ExecuteUserJourneyCampaign(context, request, response); }));}
     void SetMessageAllocatorFor_ExecuteUserJourneyCampaign(
         ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1148,45 +262,18 @@ class GeneralGoWorkflows final {
       ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_OfferInsuranceRewards : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_OfferInsuranceRewards() {
-      ::grpc::Service::MarkMethodCallback(12,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response) { return this->OfferInsuranceRewards(context, request, response); }));}
-    void SetMessageAllocatorFor_OfferInsuranceRewards(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_OfferInsuranceRewards() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferInsuranceRewards(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* OfferInsuranceRewards(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithCallbackMethod_CreatePartitions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CreatePartitions() {
-      ::grpc::Service::MarkMethodCallback(13,
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response) { return this->CreatePartitions(context, request, response); }));}
     void SetMessageAllocatorFor_CreatePartitions(
         ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1201,215 +288,15 @@ class GeneralGoWorkflows final {
     virtual ::grpc::ServerUnaryReactor* CreatePartitions(
       ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* /*response*/)  { return nullptr; }
   };
-  template <class BaseClass>
-  class WithCallbackMethod_TriggerF2FPointExpiryCron : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_TriggerF2FPointExpiryCron() {
-      ::grpc::Service::MarkMethodCallback(14,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response) { return this->TriggerF2FPointExpiryCron(context, request, response); }));}
-    void SetMessageAllocatorFor_TriggerF2FPointExpiryCron(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_TriggerF2FPointExpiryCron() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* TriggerF2FPointExpiryCron(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_SendInsurancePurchaseEvent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_SendInsurancePurchaseEvent() {
-      ::grpc::Service::MarkMethodCallback(15,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response) { return this->SendInsurancePurchaseEvent(context, request, response); }));}
-    void SetMessageAllocatorFor_SendInsurancePurchaseEvent(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_SendInsurancePurchaseEvent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SendInsurancePurchaseEvent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* SendInsurancePurchaseEvent(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_ExecuteScoreComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_ExecuteScoreComputation() {
-      ::grpc::Service::MarkMethodCallback(16,
-          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response) { return this->ExecuteScoreComputation(context, request, response); }));}
-    void SetMessageAllocatorFor_ExecuteScoreComputation(
-        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_ExecuteScoreComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ExecuteScoreComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* ExecuteScoreComputation(
-      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* /*response*/)  { return nullptr; }
-  };
-  typedef WithCallbackMethod_OfferReward<WithCallbackMethod_OfferDiscountedSprayService<WithCallbackMethod_HandoverOtp<WithCallbackMethod_RescheduleMachinePreventiveMaintenance<WithCallbackMethod_UpdateActorsMachinePreventiveMaintenance<WithCallbackMethod_PreventiveMaintenanceTrigger<WithCallbackMethod_RefreshUserContent<WithCallbackMethod_ExecuteCampaign<WithCallbackMethod_PostServiceFeedbackPN<WithCallbackMethod_PostPusaSprayPopUp<WithCallbackMethod_IotComputation<WithCallbackMethod_ExecuteUserJourneyCampaign<WithCallbackMethod_OfferInsuranceRewards<WithCallbackMethod_CreatePartitions<WithCallbackMethod_TriggerF2FPointExpiryCron<WithCallbackMethod_SendInsurancePurchaseEvent<WithCallbackMethod_ExecuteScoreComputation<Service > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_ExecuteCampaign<WithCallbackMethod_ExecuteUserJourneyCampaign<WithCallbackMethod_CreatePartitions<Service > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
-  template <class BaseClass>
-  class WithGenericMethod_OfferReward : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_OfferReward() {
-      ::grpc::Service::MarkMethodGeneric(0);
-    }
-    ~WithGenericMethod_OfferReward() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferReward(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_OfferDiscountedSprayService : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_OfferDiscountedSprayService() {
-      ::grpc::Service::MarkMethodGeneric(1);
-    }
-    ~WithGenericMethod_OfferDiscountedSprayService() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferDiscountedSprayService(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_HandoverOtp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_HandoverOtp() {
-      ::grpc::Service::MarkMethodGeneric(2);
-    }
-    ~WithGenericMethod_HandoverOtp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_RescheduleMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_RescheduleMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodGeneric(3);
-    }
-    ~WithGenericMethod_RescheduleMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_UpdateActorsMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_UpdateActorsMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodGeneric(4);
-    }
-    ~WithGenericMethod_UpdateActorsMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_PreventiveMaintenanceTrigger : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_PreventiveMaintenanceTrigger() {
-      ::grpc::Service::MarkMethodGeneric(5);
-    }
-    ~WithGenericMethod_PreventiveMaintenanceTrigger() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_RefreshUserContent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_RefreshUserContent() {
-      ::grpc::Service::MarkMethodGeneric(6);
-    }
-    ~WithGenericMethod_RefreshUserContent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RefreshUserContent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
   template <class BaseClass>
   class WithGenericMethod_ExecuteCampaign : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ExecuteCampaign() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(0);
     }
     ~WithGenericMethod_ExecuteCampaign() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1421,63 +308,12 @@ class GeneralGoWorkflows final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_PostServiceFeedbackPN : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_PostServiceFeedbackPN() {
-      ::grpc::Service::MarkMethodGeneric(8);
-    }
-    ~WithGenericMethod_PostServiceFeedbackPN() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostServiceFeedbackPN(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_PostPusaSprayPopUp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_PostPusaSprayPopUp() {
-      ::grpc::Service::MarkMethodGeneric(9);
-    }
-    ~WithGenericMethod_PostPusaSprayPopUp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostPusaSprayPopUp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_IotComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_IotComputation() {
-      ::grpc::Service::MarkMethodGeneric(10);
-    }
-    ~WithGenericMethod_IotComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status IotComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_ExecuteUserJourneyCampaign : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ExecuteUserJourneyCampaign() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(1);
     }
     ~WithGenericMethod_ExecuteUserJourneyCampaign() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1489,29 +325,12 @@ class GeneralGoWorkflows final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_OfferInsuranceRewards : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_OfferInsuranceRewards() {
-      ::grpc::Service::MarkMethodGeneric(12);
-    }
-    ~WithGenericMethod_OfferInsuranceRewards() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferInsuranceRewards(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_CreatePartitions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CreatePartitions() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_CreatePartitions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1523,203 +342,12 @@ class GeneralGoWorkflows final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_TriggerF2FPointExpiryCron : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_TriggerF2FPointExpiryCron() {
-      ::grpc::Service::MarkMethodGeneric(14);
-    }
-    ~WithGenericMethod_TriggerF2FPointExpiryCron() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_SendInsurancePurchaseEvent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_SendInsurancePurchaseEvent() {
-      ::grpc::Service::MarkMethodGeneric(15);
-    }
-    ~WithGenericMethod_SendInsurancePurchaseEvent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SendInsurancePurchaseEvent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_ExecuteScoreComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_ExecuteScoreComputation() {
-      ::grpc::Service::MarkMethodGeneric(16);
-    }
-    ~WithGenericMethod_ExecuteScoreComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ExecuteScoreComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_OfferReward : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_OfferReward() {
-      ::grpc::Service::MarkMethodRaw(0);
-    }
-    ~WithRawMethod_OfferReward() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferReward(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestOfferReward(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_OfferDiscountedSprayService : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_OfferDiscountedSprayService() {
-      ::grpc::Service::MarkMethodRaw(1);
-    }
-    ~WithRawMethod_OfferDiscountedSprayService() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferDiscountedSprayService(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestOfferDiscountedSprayService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_HandoverOtp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_HandoverOtp() {
-      ::grpc::Service::MarkMethodRaw(2);
-    }
-    ~WithRawMethod_HandoverOtp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestHandoverOtp(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_RescheduleMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_RescheduleMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodRaw(3);
-    }
-    ~WithRawMethod_RescheduleMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRescheduleMachinePreventiveMaintenance(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_UpdateActorsMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_UpdateActorsMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodRaw(4);
-    }
-    ~WithRawMethod_UpdateActorsMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestUpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_PreventiveMaintenanceTrigger : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_PreventiveMaintenanceTrigger() {
-      ::grpc::Service::MarkMethodRaw(5);
-    }
-    ~WithRawMethod_PreventiveMaintenanceTrigger() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestPreventiveMaintenanceTrigger(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_RefreshUserContent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_RefreshUserContent() {
-      ::grpc::Service::MarkMethodRaw(6);
-    }
-    ~WithRawMethod_RefreshUserContent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RefreshUserContent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRefreshUserContent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_ExecuteCampaign : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ExecuteCampaign() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(0);
     }
     ~WithRawMethod_ExecuteCampaign() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1730,67 +358,7 @@ class GeneralGoWorkflows final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestExecuteCampaign(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_PostServiceFeedbackPN : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_PostServiceFeedbackPN() {
-      ::grpc::Service::MarkMethodRaw(8);
-    }
-    ~WithRawMethod_PostServiceFeedbackPN() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostServiceFeedbackPN(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestPostServiceFeedbackPN(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_PostPusaSprayPopUp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_PostPusaSprayPopUp() {
-      ::grpc::Service::MarkMethodRaw(9);
-    }
-    ~WithRawMethod_PostPusaSprayPopUp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostPusaSprayPopUp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestPostPusaSprayPopUp(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_IotComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_IotComputation() {
-      ::grpc::Service::MarkMethodRaw(10);
-    }
-    ~WithRawMethod_IotComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status IotComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestIotComputation(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1799,7 +367,7 @@ class GeneralGoWorkflows final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ExecuteUserJourneyCampaign() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(1);
     }
     ~WithRawMethod_ExecuteUserJourneyCampaign() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1810,27 +378,7 @@ class GeneralGoWorkflows final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestExecuteUserJourneyCampaign(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_OfferInsuranceRewards : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_OfferInsuranceRewards() {
-      ::grpc::Service::MarkMethodRaw(12);
-    }
-    ~WithRawMethod_OfferInsuranceRewards() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferInsuranceRewards(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestOfferInsuranceRewards(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1839,7 +387,7 @@ class GeneralGoWorkflows final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CreatePartitions() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_CreatePartitions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1850,222 +398,8 @@ class GeneralGoWorkflows final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreatePartitions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
-  };
-  template <class BaseClass>
-  class WithRawMethod_TriggerF2FPointExpiryCron : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_TriggerF2FPointExpiryCron() {
-      ::grpc::Service::MarkMethodRaw(14);
-    }
-    ~WithRawMethod_TriggerF2FPointExpiryCron() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestTriggerF2FPointExpiryCron(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_SendInsurancePurchaseEvent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_SendInsurancePurchaseEvent() {
-      ::grpc::Service::MarkMethodRaw(15);
-    }
-    ~WithRawMethod_SendInsurancePurchaseEvent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SendInsurancePurchaseEvent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestSendInsurancePurchaseEvent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_ExecuteScoreComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_ExecuteScoreComputation() {
-      ::grpc::Service::MarkMethodRaw(16);
-    }
-    ~WithRawMethod_ExecuteScoreComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ExecuteScoreComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestExecuteScoreComputation(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_OfferReward : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_OfferReward() {
-      ::grpc::Service::MarkMethodRawCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->OfferReward(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_OfferReward() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferReward(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* OfferReward(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_OfferDiscountedSprayService : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_OfferDiscountedSprayService() {
-      ::grpc::Service::MarkMethodRawCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->OfferDiscountedSprayService(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_OfferDiscountedSprayService() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferDiscountedSprayService(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* OfferDiscountedSprayService(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_HandoverOtp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_HandoverOtp() {
-      ::grpc::Service::MarkMethodRawCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->HandoverOtp(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_HandoverOtp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* HandoverOtp(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_RescheduleMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_RescheduleMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodRawCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RescheduleMachinePreventiveMaintenance(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_RescheduleMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* RescheduleMachinePreventiveMaintenance(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_UpdateActorsMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_UpdateActorsMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodRawCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateActorsMachinePreventiveMaintenance(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_UpdateActorsMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* UpdateActorsMachinePreventiveMaintenance(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_PreventiveMaintenanceTrigger : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_PreventiveMaintenanceTrigger() {
-      ::grpc::Service::MarkMethodRawCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PreventiveMaintenanceTrigger(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_PreventiveMaintenanceTrigger() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* PreventiveMaintenanceTrigger(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_RefreshUserContent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_RefreshUserContent() {
-      ::grpc::Service::MarkMethodRawCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RefreshUserContent(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_RefreshUserContent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RefreshUserContent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* RefreshUserContent(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithRawCallbackMethod_ExecuteCampaign : public BaseClass {
@@ -2073,7 +407,7 @@ class GeneralGoWorkflows final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ExecuteCampaign() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ExecuteCampaign(context, request, response); }));
@@ -2090,78 +424,12 @@ class GeneralGoWorkflows final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_PostServiceFeedbackPN : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_PostServiceFeedbackPN() {
-      ::grpc::Service::MarkMethodRawCallback(8,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostServiceFeedbackPN(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_PostServiceFeedbackPN() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostServiceFeedbackPN(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* PostServiceFeedbackPN(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_PostPusaSprayPopUp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_PostPusaSprayPopUp() {
-      ::grpc::Service::MarkMethodRawCallback(9,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PostPusaSprayPopUp(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_PostPusaSprayPopUp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status PostPusaSprayPopUp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* PostPusaSprayPopUp(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_IotComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_IotComputation() {
-      ::grpc::Service::MarkMethodRawCallback(10,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->IotComputation(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_IotComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status IotComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* IotComputation(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithRawCallbackMethod_ExecuteUserJourneyCampaign : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ExecuteUserJourneyCampaign() {
-      ::grpc::Service::MarkMethodRawCallback(11,
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ExecuteUserJourneyCampaign(context, request, response); }));
@@ -2178,34 +446,12 @@ class GeneralGoWorkflows final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_OfferInsuranceRewards : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_OfferInsuranceRewards() {
-      ::grpc::Service::MarkMethodRawCallback(12,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->OfferInsuranceRewards(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_OfferInsuranceRewards() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status OfferInsuranceRewards(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* OfferInsuranceRewards(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithRawCallbackMethod_CreatePartitions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CreatePartitions() {
-      ::grpc::Service::MarkMethodRawCallback(13,
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreatePartitions(context, request, response); }));
@@ -2222,267 +468,12 @@ class GeneralGoWorkflows final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_TriggerF2FPointExpiryCron : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_TriggerF2FPointExpiryCron() {
-      ::grpc::Service::MarkMethodRawCallback(14,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->TriggerF2FPointExpiryCron(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_TriggerF2FPointExpiryCron() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* TriggerF2FPointExpiryCron(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_SendInsurancePurchaseEvent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_SendInsurancePurchaseEvent() {
-      ::grpc::Service::MarkMethodRawCallback(15,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SendInsurancePurchaseEvent(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_SendInsurancePurchaseEvent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SendInsurancePurchaseEvent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* SendInsurancePurchaseEvent(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_ExecuteScoreComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_ExecuteScoreComputation() {
-      ::grpc::Service::MarkMethodRawCallback(16,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ExecuteScoreComputation(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_ExecuteScoreComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ExecuteScoreComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* ExecuteScoreComputation(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_OfferReward : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_OfferReward() {
-      ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* streamer) {
-                       return this->StreamedOfferReward(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_OfferReward() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status OfferReward(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedOfferReward(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest,::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_OfferDiscountedSprayService : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_OfferDiscountedSprayService() {
-      ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* streamer) {
-                       return this->StreamedOfferDiscountedSprayService(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_OfferDiscountedSprayService() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status OfferDiscountedSprayService(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedOfferDiscountedSprayService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest,::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_HandoverOtp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_HandoverOtp() {
-      ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* streamer) {
-                       return this->StreamedHandoverOtp(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_HandoverOtp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedHandoverOtp(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest,::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_RescheduleMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_RescheduleMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* streamer) {
-                       return this->StreamedRescheduleMachinePreventiveMaintenance(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_RescheduleMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status RescheduleMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRescheduleMachinePreventiveMaintenance(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest,::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_UpdateActorsMachinePreventiveMaintenance : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_UpdateActorsMachinePreventiveMaintenance() {
-      ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* streamer) {
-                       return this->StreamedUpdateActorsMachinePreventiveMaintenance(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_UpdateActorsMachinePreventiveMaintenance() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status UpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest,::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_PreventiveMaintenanceTrigger : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_PreventiveMaintenanceTrigger() {
-      ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* streamer) {
-                       return this->StreamedPreventiveMaintenanceTrigger(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_PreventiveMaintenanceTrigger() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status PreventiveMaintenanceTrigger(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedPreventiveMaintenanceTrigger(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest,::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_RefreshUserContent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_RefreshUserContent() {
-      ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* streamer) {
-                       return this->StreamedRefreshUserContent(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_RefreshUserContent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status RefreshUserContent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRefreshUserContent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest,::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_ExecuteCampaign : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ExecuteCampaign() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>(
             [this](::grpc::ServerContext* context,
@@ -2504,93 +495,12 @@ class GeneralGoWorkflows final {
     virtual ::grpc::Status StreamedExecuteCampaign(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest,::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_PostServiceFeedbackPN : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_PostServiceFeedbackPN() {
-      ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* streamer) {
-                       return this->StreamedPostServiceFeedbackPN(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_PostServiceFeedbackPN() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status PostServiceFeedbackPN(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedPostServiceFeedbackPN(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest,::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_PostPusaSprayPopUp : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_PostPusaSprayPopUp() {
-      ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* streamer) {
-                       return this->StreamedPostPusaSprayPopUp(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_PostPusaSprayPopUp() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status PostPusaSprayPopUp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedPostPusaSprayPopUp(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest,::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_IotComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_IotComputation() {
-      ::grpc::Service::MarkMethodStreamed(10,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* streamer) {
-                       return this->StreamedIotComputation(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_IotComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status IotComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedIotComputation(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest,::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_ExecuteUserJourneyCampaign : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ExecuteUserJourneyCampaign() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>(
             [this](::grpc::ServerContext* context,
@@ -2612,39 +522,12 @@ class GeneralGoWorkflows final {
     virtual ::grpc::Status StreamedExecuteUserJourneyCampaign(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest,::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_OfferInsuranceRewards : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_OfferInsuranceRewards() {
-      ::grpc::Service::MarkMethodStreamed(12,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* streamer) {
-                       return this->StreamedOfferInsuranceRewards(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_OfferInsuranceRewards() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status OfferInsuranceRewards(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedOfferInsuranceRewards(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest,::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_CreatePartitions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CreatePartitions() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>(
             [this](::grpc::ServerContext* context,
@@ -2665,90 +548,9 @@ class GeneralGoWorkflows final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCreatePartitions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest,::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* server_unary_streamer) = 0;
   };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_TriggerF2FPointExpiryCron : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_TriggerF2FPointExpiryCron() {
-      ::grpc::Service::MarkMethodStreamed(14,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* streamer) {
-                       return this->StreamedTriggerF2FPointExpiryCron(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_TriggerF2FPointExpiryCron() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status TriggerF2FPointExpiryCron(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedTriggerF2FPointExpiryCron(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest,::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_SendInsurancePurchaseEvent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_SendInsurancePurchaseEvent() {
-      ::grpc::Service::MarkMethodStreamed(15,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* streamer) {
-                       return this->StreamedSendInsurancePurchaseEvent(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_SendInsurancePurchaseEvent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status SendInsurancePurchaseEvent(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedSendInsurancePurchaseEvent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest,::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_ExecuteScoreComputation : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_ExecuteScoreComputation() {
-      ::grpc::Service::MarkMethodStreamed(16,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* streamer) {
-                       return this->StreamedExecuteScoreComputation(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_ExecuteScoreComputation() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status ExecuteScoreComputation(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedExecuteScoreComputation(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest,::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* server_unary_streamer) = 0;
-  };
-  typedef WithStreamedUnaryMethod_OfferReward<WithStreamedUnaryMethod_OfferDiscountedSprayService<WithStreamedUnaryMethod_HandoverOtp<WithStreamedUnaryMethod_RescheduleMachinePreventiveMaintenance<WithStreamedUnaryMethod_UpdateActorsMachinePreventiveMaintenance<WithStreamedUnaryMethod_PreventiveMaintenanceTrigger<WithStreamedUnaryMethod_RefreshUserContent<WithStreamedUnaryMethod_ExecuteCampaign<WithStreamedUnaryMethod_PostServiceFeedbackPN<WithStreamedUnaryMethod_PostPusaSprayPopUp<WithStreamedUnaryMethod_IotComputation<WithStreamedUnaryMethod_ExecuteUserJourneyCampaign<WithStreamedUnaryMethod_OfferInsuranceRewards<WithStreamedUnaryMethod_CreatePartitions<WithStreamedUnaryMethod_TriggerF2FPointExpiryCron<WithStreamedUnaryMethod_SendInsurancePurchaseEvent<WithStreamedUnaryMethod_ExecuteScoreComputation<Service > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_ExecuteCampaign<WithStreamedUnaryMethod_ExecuteUserJourneyCampaign<WithStreamedUnaryMethod_CreatePartitions<Service > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_OfferReward<WithStreamedUnaryMethod_OfferDiscountedSprayService<WithStreamedUnaryMethod_HandoverOtp<WithStreamedUnaryMethod_RescheduleMachinePreventiveMaintenance<WithStreamedUnaryMethod_UpdateActorsMachinePreventiveMaintenance<WithStreamedUnaryMethod_PreventiveMaintenanceTrigger<WithStreamedUnaryMethod_RefreshUserContent<WithStreamedUnaryMethod_ExecuteCampaign<WithStreamedUnaryMethod_PostServiceFeedbackPN<WithStreamedUnaryMethod_PostPusaSprayPopUp<WithStreamedUnaryMethod_IotComputation<WithStreamedUnaryMethod_ExecuteUserJourneyCampaign<WithStreamedUnaryMethod_OfferInsuranceRewards<WithStreamedUnaryMethod_CreatePartitions<WithStreamedUnaryMethod_TriggerF2FPointExpiryCron<WithStreamedUnaryMethod_SendInsurancePurchaseEvent<WithStreamedUnaryMethod_ExecuteScoreComputation<Service > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_ExecuteCampaign<WithStreamedUnaryMethod_ExecuteUserJourneyCampaign<WithStreamedUnaryMethod_CreatePartitions<Service > > > StreamedService;
 };
 
 }  // namespace generalgo

@@ -559,9 +559,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_CommunicationEngine_2fcommunic
   PROTOBUF_FIELD_OFFSET(::farm::nurture::core::contracts::ce::ActorDetails, app_id_),
   PROTOBUF_FIELD_OFFSET(::farm::nurture::core::contracts::ce::ActorDetails, app_type_),
   PROTOBUF_FIELD_OFFSET(::farm::nurture::core::contracts::ce::ActorDetails, secondarylanguage_code_),
-  PROTOBUF_FIELD_OFFSET(::farm::nurture::core::contracts::ce::ActorDetails, to_recipients_),
-  PROTOBUF_FIELD_OFFSET(::farm::nurture::core::contracts::ce::ActorDetails, cc_recipients_),
-  PROTOBUF_FIELD_OFFSET(::farm::nurture::core::contracts::ce::ActorDetails, bcc_recipients_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::farm::nurture::core::contracts::ce::OptInRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -765,22 +762,22 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 52, -1, sizeof(::farm::nurture::core::contracts::ce::BulkCommunicationResponse)},
   { 58, -1, sizeof(::farm::nurture::core::contracts::ce::CommunicationResponse)},
   { 64, -1, sizeof(::farm::nurture::core::contracts::ce::ActorDetails)},
-  { 79, -1, sizeof(::farm::nurture::core::contracts::ce::OptInRequest)},
-  { 90, -1, sizeof(::farm::nurture::core::contracts::ce::OptInRespone)},
-  { 99, -1, sizeof(::farm::nurture::core::contracts::ce::OptOutRequest)},
-  { 108, -1, sizeof(::farm::nurture::core::contracts::ce::OptOutResponse)},
-  { 115, -1, sizeof(::farm::nurture::core::contracts::ce::MessageAcknowledgementRequest)},
-  { 130, -1, sizeof(::farm::nurture::core::contracts::ce::MessageAcknowledgementResponse)},
-  { 139, -1, sizeof(::farm::nurture::core::contracts::ce::MessageAcknowledgement)},
-  { 167, -1, sizeof(::farm::nurture::core::contracts::ce::Template)},
-  { 186, -1, sizeof(::farm::nurture::core::contracts::ce::AddTemplateRequest)},
-  { 201, -1, sizeof(::farm::nurture::core::contracts::ce::AddTemplateResponse)},
-  { 211, -1, sizeof(::farm::nurture::core::contracts::ce::TemplateUpdateRequest)},
-  { 224, -1, sizeof(::farm::nurture::core::contracts::ce::GetAllTemplateResponse)},
-  { 232, -1, sizeof(::farm::nurture::core::contracts::ce::GetAllTemplateRequest)},
-  { 244, -1, sizeof(::farm::nurture::core::contracts::ce::VendorResponse)},
-  { 253, -1, sizeof(::farm::nurture::core::contracts::ce::ActivationResponse)},
-  { 260, -1, sizeof(::farm::nurture::core::contracts::ce::ActivationRequest)},
+  { 76, -1, sizeof(::farm::nurture::core::contracts::ce::OptInRequest)},
+  { 87, -1, sizeof(::farm::nurture::core::contracts::ce::OptInRespone)},
+  { 96, -1, sizeof(::farm::nurture::core::contracts::ce::OptOutRequest)},
+  { 105, -1, sizeof(::farm::nurture::core::contracts::ce::OptOutResponse)},
+  { 112, -1, sizeof(::farm::nurture::core::contracts::ce::MessageAcknowledgementRequest)},
+  { 127, -1, sizeof(::farm::nurture::core::contracts::ce::MessageAcknowledgementResponse)},
+  { 136, -1, sizeof(::farm::nurture::core::contracts::ce::MessageAcknowledgement)},
+  { 164, -1, sizeof(::farm::nurture::core::contracts::ce::Template)},
+  { 183, -1, sizeof(::farm::nurture::core::contracts::ce::AddTemplateRequest)},
+  { 198, -1, sizeof(::farm::nurture::core::contracts::ce::AddTemplateResponse)},
+  { 208, -1, sizeof(::farm::nurture::core::contracts::ce::TemplateUpdateRequest)},
+  { 221, -1, sizeof(::farm::nurture::core::contracts::ce::GetAllTemplateResponse)},
+  { 229, -1, sizeof(::farm::nurture::core::contracts::ce::GetAllTemplateRequest)},
+  { 241, -1, sizeof(::farm::nurture::core::contracts::ce::VendorResponse)},
+  { 250, -1, sizeof(::farm::nurture::core::contracts::ce::ActivationResponse)},
+  { 257, -1, sizeof(::farm::nurture::core::contracts::ce::ActivationRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -855,7 +852,7 @@ const char descriptor_table_protodef_CommunicationEngine_2fcommunication_5fengin
   "\n\027communication_responses\030\001 \003(\01325.farm.n"
   "urture.core.contracts.ce.CommunicationRe"
   "sponse\"-\n\025CommunicationResponse\022\024\n\014refer"
-  "ence_id\030\001 \001(\t\"\245\003\n\014ActorDetails\022\020\n\010email_"
+  "ence_id\030\001 \001(\t\"\337\002\n\014ActorDetails\022\020\n\010email_"
   "id\030\001 \001(\t\022\025\n\rmobile_number\030\002 \001(\t\022G\n\rlangu"
   "age_code\030\003 \001(\01620.farm.nurture.core.contr"
   "acts.common.LanguageCode\022\021\n\tfcm_token\030\004 "
@@ -864,182 +861,181 @@ const char descriptor_table_protodef_CommunicationEngine_2fcommunication_5fengin
   "2+.farm.nurture.core.contracts.common.Ap"
   "pType\022P\n\026secondaryLanguage_code\030\007 \001(\01620."
   "farm.nurture.core.contracts.common.Langu"
-  "ageCode\022\025\n\rto_recipients\030\010 \003(\t\022\025\n\rcc_rec"
-  "ipients\030\t \003(\t\022\026\n\016bcc_recipients\030\n \003(\t\"\315\002"
-  "\n\014OptInRequest\022K\n\017request_headers\030\001 \001(\0132"
-  "2.farm.nurture.core.contracts.common.Req"
-  "uestHeaders\022:\n\005actor\030\002 \001(\0132+.farm.nurtur"
-  "e.core.contracts.common.ActorID\022\025\n\rmobil"
-  "e_number\030\003 \001(\t\022\023\n\013farmer_name\030\004 \001(\t\022F\n\014s"
-  "ourceSystem\030\005 \001(\01620.farm.nurture.core.co"
-  "ntracts.common.SourceSystem\022@\n\tnameSpace"
-  "\030\006 \001(\0162-.farm.nurture.core.contracts.com"
-  "mon.NameSpace\"\351\001\n\014OptInRespone\022B\n\006status"
-  "\030\001 \001(\01622.farm.nurture.core.contracts.com"
-  "mon.ResponseStatus\022K\n\013status_code\030\002 \001(\0162"
-  "6.farm.nurture.core.contracts.common.Res"
-  "ponseStatusCode\022<\n\007attribs\030\003 \003(\0132+.farm."
-  "nurture.core.contracts.common.Attribs\022\n\n"
-  "\002id\030\004 \001(\003\"\361\001\n\rOptOutRequest\022K\n\017request_h"
-  "eaders\030\001 \001(\01322.farm.nurture.core.contrac"
-  "ts.common.RequestHeaders\022:\n\005actor\030\002 \001(\0132"
-  "+.farm.nurture.core.contracts.common.Act"
-  "orID\022\025\n\rmobile_number\030\003 \001(\t\022@\n\tnameSpace"
-  "\030\004 \001(\0162-.farm.nurture.core.contracts.com"
-  "mon.NameSpace\"\241\001\n\016OptOutResponse\022B\n\006stat"
-  "us\030\001 \001(\01622.farm.nurture.core.contracts.c"
-  "ommon.ResponseStatus\022K\n\013status_code\030\002 \001("
-  "\01626.farm.nurture.core.contracts.common.R"
-  "esponseStatusCode\"\320\003\n\035MessageAcknowledge"
-  "mentRequest\022K\n\017request_headers\030\001 \001(\01322.f"
-  "arm.nurture.core.contracts.common.Reques"
-  "tHeaders\022.\n\nstart_time\030\002 \001(\0132\032.google.pr"
-  "otobuf.Timestamp\022,\n\010end_time\030\003 \001(\0132\032.goo"
-  "gle.protobuf.Timestamp\022J\n\010channels\030\004 \003(\016"
-  "28.farm.nurture.core.contracts.common.Co"
-  "mmunicationChannel\022\032\n\022template_name_like"
-  "\030\005 \001(\t\022\025\n\rmobile_number\030\006 \001(\t\022\024\n\014referen"
-  "ce_id\030\007 \001(\t\022\r\n\005limit\030\010 \001(\005\022\016\n\006offset\030\t \001"
-  "(\005\022P\n\021responseOrderType\030\n \001(\01625.farm.nur"
-  "ture.core.contracts.common.ResponseOrder"
-  "Type\"\311\002\n\036MessageAcknowledgementResponse\022"
-  "B\n\006status\030\001 \001(\01622.farm.nurture.core.cont"
-  "racts.common.ResponseStatus\022K\n\013status_co"
-  "de\030\002 \001(\01626.farm.nurture.core.contracts.c"
-  "ommon.ResponseStatusCode\022<\n\007attribs\030\003 \003("
-  "\0132+.farm.nurture.core.contracts.common.A"
-  "ttribs\022X\n\030message_acknowledgements\030\004 \003(\013"
-  "26.farm.nurture.core.contracts.ce.Messag"
-  "eAcknowledgement\"\324\007\n\026MessageAcknowledgem"
-  "ent\022\n\n\002id\030\001 \001(\003\022:\n\005actor\030\002 \001(\0132+.farm.nu"
-  "rture.core.contracts.common.ActorID\022\025\n\rm"
-  "obile_number\030\003 \001(\t\022I\n\007channel\030\004 \001(\01628.fa"
-  "rm.nurture.core.contracts.common.Communi"
-  "cationChannel\022\024\n\014reference_id\030\005 \001(\t\022\025\n\rt"
-  "emplate_name\030\006 \001(\t\022>\n\010language\030\007 \001(\0162,.f"
-  "arm.nurture.core.contracts.common.Langua"
-  "ge\022\027\n\017message_content\030\010 \001(\t\022\022\n\nis_unicod"
-  "e\030\t \001(\010\022\023\n\013vendor_name\030\n \001(\t\022\031\n\021vendor_m"
-  "essage_id\030\013 \001(\t\022E\n\005state\030\014 \001(\01626.farm.nu"
-  "rture.core.contracts.common.Communicatio"
-  "nState\022\023\n\013retry_count\030\r \001(\005\022A\n\014placehold"
-  "ers\030\016 \003(\0132+.farm.nurture.core.contracts."
-  "ce.Placeholder\022\?\n\nattributes\030\017 \003(\0132+.far"
-  "m.nurture.core.contracts.common.Attribs\022"
-  "8\n\024vendor_delivery_time\030\020 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\0227\n\023actor_delivery_time"
-  "\030\021 \001(\0132\032.google.protobuf.Timestamp\022E\n\014co"
-  "ntact_type\030\022 \001(\0162/.farm.nurture.core.con"
-  "tracts.common.ContactType\022\030\n\020actor_conta"
-  "ct_id\030\023 \001(\t\022\033\n\023parent_reference_id\030\024 \001(\t"
-  "\022\025\n\rcampaign_name\030\025 \001(\t\022.\n\ncreated_at\030\026 "
-  "\001(\0132\032.google.protobuf.Timestamp\022.\n\nupdat"
-  "ed_at\030\027 \001(\0132\032.google.protobuf.Timestamp\""
-  "\233\004\n\010Template\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022>"
-  "\n\010language\030\003 \001(\0162,.farm.nurture.core.con"
-  "tracts.common.Language\022M\n\014content_type\030\004"
-  " \001(\01627.farm.nurture.core.contracts.commo"
-  "n.TemplateContentType\022\017\n\007content\030\005 \001(\t\022\r"
-  "\n\005title\030\006 \001(\t\022\016\n\006active\030\007 \001(\010\022.\n\ncreated"
-  "_at\030\010 \001(\0132\032.google.protobuf.Timestamp\022.\n"
-  "\nupdated_at\030\t \001(\0132\032.google.protobuf.Time"
-  "stamp\022.\n\ndeleted_at\030\n \001(\0132\032.google.proto"
-  "buf.Timestamp\022\?\n\nattributes\030\013 \003(\0132+.farm"
-  ".nurture.core.contracts.common.Attribs\022\023"
-  "\n\013owner_email\030\014 \001(\t\022\020\n\010vertical\030\r \001(\t\022>\n"
-  "\tmeta_data\030\016 \003(\0132+.farm.nurture.core.con"
-  "tracts.common.Attribs\"\313\003\n\022AddTemplateReq"
-  "uest\022\014\n\004name\030\001 \001(\t\022G\n\rlanguage_code\030\002 \001("
-  "\01620.farm.nurture.core.contracts.common.L"
-  "anguageCode\022I\n\007channel\030\003 \001(\01628.farm.nurt"
-  "ure.core.contracts.common.CommunicationC"
-  "hannel\022T\n\023templateContentType\030\004 \001(\01627.fa"
-  "rm.nurture.core.contracts.common.Templat"
-  "eContentType\022\017\n\007content\030\005 \001(\t\022<\n\007attribs"
-  "\030\006 \003(\0132+.farm.nurture.core.contracts.com"
-  "mon.Attribs\022\r\n\005owner\030\007 \001(\t\022\020\n\010vertical\030\010"
-  " \001(\t\022\r\n\005title\030\t \001(\t\022>\n\tmeta_data\030\n \003(\0132+"
-  ".farm.nurture.core.contracts.common.Attr"
-  "ibs\"\272\002\n\023AddTemplateResponse\022B\n\006status\030\001 "
-  "\001(\01622.farm.nurture.core.contracts.common"
-  ".ResponseStatus\022K\n\013status_code\030\002 \001(\01626.f"
-  "arm.nurture.core.contracts.common.Respon"
-  "seStatusCode\022<\n\007attribs\030\003 \003(\0132+.farm.nur"
-  "ture.core.contracts.common.Attribs\022\n\n\002id"
-  "\030\004 \001(\003\022H\n\020vendors_response\030\005 \003(\0132..farm."
-  "nurture.core.contracts.ce.VendorResponse"
-  "\"\255\002\n\025TemplateUpdateRequest\022\017\n\007content\030\001 "
-  "\001(\t\022<\n\007attribs\030\002 \003(\0132+.farm.nurture.core"
-  ".contracts.common.Attribs\022\r\n\005title\030\003 \001(\t"
-  "\022\r\n\005owner\030\004 \001(\t\022\020\n\010vertical\030\005 \001(\t\022\014\n\004nam"
-  "e\030\006 \001(\t\022G\n\rlanguage_code\030\007 \001(\01620.farm.nu"
-  "rture.core.contracts.common.LanguageCode"
-  "\022>\n\tmeta_data\030\010 \003(\0132+.farm.nurture.core."
-  "contracts.common.Attribs\"\346\001\n\026GetAllTempl"
-  "ateResponse\022B\n\006status\030\001 \001(\01622.farm.nurtu"
+  "ageCode\"\315\002\n\014OptInRequest\022K\n\017request_head"
+  "ers\030\001 \001(\01322.farm.nurture.core.contracts."
+  "common.RequestHeaders\022:\n\005actor\030\002 \001(\0132+.f"
+  "arm.nurture.core.contracts.common.ActorI"
+  "D\022\025\n\rmobile_number\030\003 \001(\t\022\023\n\013farmer_name\030"
+  "\004 \001(\t\022F\n\014sourceSystem\030\005 \001(\01620.farm.nurtu"
+  "re.core.contracts.common.SourceSystem\022@\n"
+  "\tnameSpace\030\006 \001(\0162-.farm.nurture.core.con"
+  "tracts.common.NameSpace\"\351\001\n\014OptInRespone"
+  "\022B\n\006status\030\001 \001(\01622.farm.nurture.core.con"
+  "tracts.common.ResponseStatus\022K\n\013status_c"
+  "ode\030\002 \001(\01626.farm.nurture.core.contracts."
+  "common.ResponseStatusCode\022<\n\007attribs\030\003 \003"
+  "(\0132+.farm.nurture.core.contracts.common."
+  "Attribs\022\n\n\002id\030\004 \001(\003\"\361\001\n\rOptOutRequest\022K\n"
+  "\017request_headers\030\001 \001(\01322.farm.nurture.co"
+  "re.contracts.common.RequestHeaders\022:\n\005ac"
+  "tor\030\002 \001(\0132+.farm.nurture.core.contracts."
+  "common.ActorID\022\025\n\rmobile_number\030\003 \001(\t\022@\n"
+  "\tnameSpace\030\004 \001(\0162-.farm.nurture.core.con"
+  "tracts.common.NameSpace\"\241\001\n\016OptOutRespon"
+  "se\022B\n\006status\030\001 \001(\01622.farm.nurture.core.c"
+  "ontracts.common.ResponseStatus\022K\n\013status"
+  "_code\030\002 \001(\01626.farm.nurture.core.contract"
+  "s.common.ResponseStatusCode\"\320\003\n\035MessageA"
+  "cknowledgementRequest\022K\n\017request_headers"
+  "\030\001 \001(\01322.farm.nurture.core.contracts.com"
+  "mon.RequestHeaders\022.\n\nstart_time\030\002 \001(\0132\032"
+  ".google.protobuf.Timestamp\022,\n\010end_time\030\003"
+  " \001(\0132\032.google.protobuf.Timestamp\022J\n\010chan"
+  "nels\030\004 \003(\01628.farm.nurture.core.contracts"
+  ".common.CommunicationChannel\022\032\n\022template"
+  "_name_like\030\005 \001(\t\022\025\n\rmobile_number\030\006 \001(\t\022"
+  "\024\n\014reference_id\030\007 \001(\t\022\r\n\005limit\030\010 \001(\005\022\016\n\006"
+  "offset\030\t \001(\005\022P\n\021responseOrderType\030\n \001(\0162"
+  "5.farm.nurture.core.contracts.common.Res"
+  "ponseOrderType\"\311\002\n\036MessageAcknowledgemen"
+  "tResponse\022B\n\006status\030\001 \001(\01622.farm.nurture"
+  ".core.contracts.common.ResponseStatus\022K\n"
+  "\013status_code\030\002 \001(\01626.farm.nurture.core.c"
+  "ontracts.common.ResponseStatusCode\022<\n\007at"
+  "tribs\030\003 \003(\0132+.farm.nurture.core.contract"
+  "s.common.Attribs\022X\n\030message_acknowledgem"
+  "ents\030\004 \003(\01326.farm.nurture.core.contracts"
+  ".ce.MessageAcknowledgement\"\324\007\n\026MessageAc"
+  "knowledgement\022\n\n\002id\030\001 \001(\003\022:\n\005actor\030\002 \001(\013"
+  "2+.farm.nurture.core.contracts.common.Ac"
+  "torID\022\025\n\rmobile_number\030\003 \001(\t\022I\n\007channel\030"
+  "\004 \001(\01628.farm.nurture.core.contracts.comm"
+  "on.CommunicationChannel\022\024\n\014reference_id\030"
+  "\005 \001(\t\022\025\n\rtemplate_name\030\006 \001(\t\022>\n\010language"
+  "\030\007 \001(\0162,.farm.nurture.core.contracts.com"
+  "mon.Language\022\027\n\017message_content\030\010 \001(\t\022\022\n"
+  "\nis_unicode\030\t \001(\010\022\023\n\013vendor_name\030\n \001(\t\022\031"
+  "\n\021vendor_message_id\030\013 \001(\t\022E\n\005state\030\014 \001(\016"
+  "26.farm.nurture.core.contracts.common.Co"
+  "mmunicationState\022\023\n\013retry_count\030\r \001(\005\022A\n"
+  "\014placeholders\030\016 \003(\0132+.farm.nurture.core."
+  "contracts.ce.Placeholder\022\?\n\nattributes\030\017"
+  " \003(\0132+.farm.nurture.core.contracts.commo"
+  "n.Attribs\0228\n\024vendor_delivery_time\030\020 \001(\0132"
+  "\032.google.protobuf.Timestamp\0227\n\023actor_del"
+  "ivery_time\030\021 \001(\0132\032.google.protobuf.Times"
+  "tamp\022E\n\014contact_type\030\022 \001(\0162/.farm.nurtur"
+  "e.core.contracts.common.ContactType\022\030\n\020a"
+  "ctor_contact_id\030\023 \001(\t\022\033\n\023parent_referenc"
+  "e_id\030\024 \001(\t\022\025\n\rcampaign_name\030\025 \001(\t\022.\n\ncre"
+  "ated_at\030\026 \001(\0132\032.google.protobuf.Timestam"
+  "p\022.\n\nupdated_at\030\027 \001(\0132\032.google.protobuf."
+  "Timestamp\"\233\004\n\010Template\022\n\n\002id\030\001 \001(\003\022\014\n\004na"
+  "me\030\002 \001(\t\022>\n\010language\030\003 \001(\0162,.farm.nurtur"
+  "e.core.contracts.common.Language\022M\n\014cont"
+  "ent_type\030\004 \001(\01627.farm.nurture.core.contr"
+  "acts.common.TemplateContentType\022\017\n\007conte"
+  "nt\030\005 \001(\t\022\r\n\005title\030\006 \001(\t\022\016\n\006active\030\007 \001(\010\022"
+  ".\n\ncreated_at\030\010 \001(\0132\032.google.protobuf.Ti"
+  "mestamp\022.\n\nupdated_at\030\t \001(\0132\032.google.pro"
+  "tobuf.Timestamp\022.\n\ndeleted_at\030\n \001(\0132\032.go"
+  "ogle.protobuf.Timestamp\022\?\n\nattributes\030\013 "
+  "\003(\0132+.farm.nurture.core.contracts.common"
+  ".Attribs\022\023\n\013owner_email\030\014 \001(\t\022\020\n\010vertica"
+  "l\030\r \001(\t\022>\n\tmeta_data\030\016 \003(\0132+.farm.nurtur"
+  "e.core.contracts.common.Attribs\"\313\003\n\022AddT"
+  "emplateRequest\022\014\n\004name\030\001 \001(\t\022G\n\rlanguage"
+  "_code\030\002 \001(\01620.farm.nurture.core.contract"
+  "s.common.LanguageCode\022I\n\007channel\030\003 \001(\01628"
+  ".farm.nurture.core.contracts.common.Comm"
+  "unicationChannel\022T\n\023templateContentType\030"
+  "\004 \001(\01627.farm.nurture.core.contracts.comm"
+  "on.TemplateContentType\022\017\n\007content\030\005 \001(\t\022"
+  "<\n\007attribs\030\006 \003(\0132+.farm.nurture.core.con"
+  "tracts.common.Attribs\022\r\n\005owner\030\007 \001(\t\022\020\n\010"
+  "vertical\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022>\n\tmeta_da"
+  "ta\030\n \003(\0132+.farm.nurture.core.contracts.c"
+  "ommon.Attribs\"\272\002\n\023AddTemplateResponse\022B\n"
+  "\006status\030\001 \001(\01622.farm.nurture.core.contra"
+  "cts.common.ResponseStatus\022K\n\013status_code"
+  "\030\002 \001(\01626.farm.nurture.core.contracts.com"
+  "mon.ResponseStatusCode\022<\n\007attribs\030\003 \003(\0132"
+  "+.farm.nurture.core.contracts.common.Att"
+  "ribs\022\n\n\002id\030\004 \001(\003\022H\n\020vendors_response\030\005 \003"
+  "(\0132..farm.nurture.core.contracts.ce.Vend"
+  "orResponse\"\255\002\n\025TemplateUpdateRequest\022\017\n\007"
+  "content\030\001 \001(\t\022<\n\007attribs\030\002 \003(\0132+.farm.nu"
+  "rture.core.contracts.common.Attribs\022\r\n\005t"
+  "itle\030\003 \001(\t\022\r\n\005owner\030\004 \001(\t\022\020\n\010vertical\030\005 "
+  "\001(\t\022\014\n\004name\030\006 \001(\t\022G\n\rlanguage_code\030\007 \001(\016"
+  "20.farm.nurture.core.contracts.common.La"
+  "nguageCode\022>\n\tmeta_data\030\010 \003(\0132+.farm.nur"
+  "ture.core.contracts.common.Attribs\"\346\001\n\026G"
+  "etAllTemplateResponse\022B\n\006status\030\001 \001(\01622."
+  "farm.nurture.core.contracts.common.Respo"
+  "nseStatus\022K\n\013status_code\030\002 \001(\01626.farm.nu"
+  "rture.core.contracts.common.ResponseStat"
+  "usCode\022;\n\ttemplates\030\003 \003(\0132(.farm.nurture"
+  ".core.contracts.ce.Template\"\255\002\n\025GetAllTe"
+  "mplateRequest\022\r\n\005limit\030\001 \001(\003\022\016\n\006offset\030\002"
+  " \001(\003\022K\n\017request_headers\030\003 \001(\01322.farm.nur"
+  "ture.core.contracts.common.RequestHeader"
+  "s\022\023\n\013searchQuery\030\004 \001(\t\022@\n\tnamespace\030\005 \001("
+  "\0162-.farm.nurture.core.contracts.common.N"
+  "ameSpace\022:\n\006status\030\006 \001(\0162*.farm.nurture."
+  "core.contracts.common.Status\022\025\n\rtemplate"
+  "Names\030\007 \003(\t\"\311\001\n\016VendorResponse\022\023\n\013vendor"
+  "_name\030\001 \001(\t\022B\n\006status\030\002 \001(\01622.farm.nurtu"
   "re.core.contracts.common.ResponseStatus\022"
-  "K\n\013status_code\030\002 \001(\01626.farm.nurture.core"
-  ".contracts.common.ResponseStatusCode\022;\n\t"
-  "templates\030\003 \003(\0132(.farm.nurture.core.cont"
-  "racts.ce.Template\"\255\002\n\025GetAllTemplateRequ"
-  "est\022\r\n\005limit\030\001 \001(\003\022\016\n\006offset\030\002 \001(\003\022K\n\017re"
-  "quest_headers\030\003 \001(\01322.farm.nurture.core."
-  "contracts.common.RequestHeaders\022\023\n\013searc"
-  "hQuery\030\004 \001(\t\022@\n\tnamespace\030\005 \001(\0162-.farm.n"
-  "urture.core.contracts.common.NameSpace\022:"
-  "\n\006status\030\006 \001(\0162*.farm.nurture.core.contr"
-  "acts.common.Status\022\025\n\rtemplateNames\030\007 \003("
-  "\t\"\311\001\n\016VendorResponse\022\023\n\013vendor_name\030\001 \001("
-  "\t\022B\n\006status\030\002 \001(\01622.farm.nurture.core.co"
-  "ntracts.common.ResponseStatus\022K\n\013status_"
-  "code\030\003 \001(\01626.farm.nurture.core.contracts"
-  ".common.ResponseStatusCode\022\021\n\terror_msg\030"
-  "\004 \001(\t\"w\n\022ActivationResponse\022H\n\020vendors_r"
-  "esponse\030\001 \003(\0132..farm.nurture.core.contra"
-  "cts.ce.VendorResponse\022\027\n\017active_template"
-  "\030\002 \001(\010\"\212\003\n\021ActivationRequest\022\025\n\rtemplate"
-  "_name\030\001 \001(\t\022I\n\007channel\030\002 \001(\01628.farm.nurt"
-  "ure.core.contracts.common.CommunicationC"
-  "hannel\0224\n\005media\030\003 \001(\0132%.farm.nurture.cor"
-  "e.contracts.ce.Media\022A\n\014placeholders\030\004 \003"
-  "(\0132+.farm.nurture.core.contracts.ce.Plac"
-  "eholder\022:\n\005actor\030\005 \001(\0132+.farm.nurture.co"
-  "re.contracts.common.ActorID\022\025\n\rmobile_nu"
-  "mber\030\006 \001(\t\022G\n\rlanguage_code\030\007 \001(\01620.farm"
-  ".nurture.core.contracts.common.LanguageC"
-  "ode2\242\002\n\023CommunicationEngine\022~\n\021sendCommu"
-  "nication\0222.farm.nurture.core.contracts.c"
-  "e.CommunicationEvent\0325.farm.nurture.core"
-  ".contracts.ce.CommunicationResponse\022\212\001\n\025"
-  "sendBulkCommunication\0226.farm.nurture.cor"
-  "e.contracts.ce.BulkCommunicationEvent\0329."
-  "farm.nurture.core.contracts.ce.BulkCommu"
-  "nicationResponse2\206\007\n\033CommunicationEngine"
-  "Platform\022g\n\toptInUser\022,.farm.nurture.cor"
-  "e.contracts.ce.OptInRequest\032,.farm.nurtu"
-  "re.core.contracts.ce.OptInRespone\022\236\001\n\035se"
-  "archMessageAcknowledgements\022=.farm.nurtu"
-  "re.core.contracts.ce.MessageAcknowledgem"
-  "entRequest\032>.farm.nurture.core.contracts"
-  ".ce.MessageAcknowledgementResponse\022v\n\013ad"
-  "dTemplate\0222.farm.nurture.core.contracts."
-  "ce.AddTemplateRequest\0323.farm.nurture.cor"
-  "e.contracts.ce.AddTemplateResponse\022k\n\nop"
-  "tOutUser\022-.farm.nurture.core.contracts.c"
-  "e.OptOutRequest\032..farm.nurture.core.cont"
-  "racts.ce.OptOutResponse\022\177\n\016getAllTemplat"
-  "e\0225.farm.nurture.core.contracts.ce.GetAl"
-  "lTemplateRequest\0326.farm.nurture.core.con"
-  "tracts.ce.GetAllTemplateResponse\022|\n\016upda"
-  "teTemplate\0225.farm.nurture.core.contracts"
-  ".ce.TemplateUpdateRequest\0323.farm.nurture"
-  ".core.contracts.ce.AddTemplateResponse\022y"
-  "\n\020activateTemplate\0221.farm.nurture.core.c"
-  "ontracts.ce.ActivationRequest\0322.farm.nur"
-  "ture.core.contracts.ce.ActivationRespons"
-  "eBj\n0farm.nurture.core.contracts.communi"
-  "cation.engineP\001Z4code.nurture.farm/Core/"
-  "Contracts/CommunicationEngineb\006proto3"
+  "K\n\013status_code\030\003 \001(\01626.farm.nurture.core"
+  ".contracts.common.ResponseStatusCode\022\021\n\t"
+  "error_msg\030\004 \001(\t\"w\n\022ActivationResponse\022H\n"
+  "\020vendors_response\030\001 \003(\0132..farm.nurture.c"
+  "ore.contracts.ce.VendorResponse\022\027\n\017activ"
+  "e_template\030\002 \001(\010\"\212\003\n\021ActivationRequest\022\025"
+  "\n\rtemplate_name\030\001 \001(\t\022I\n\007channel\030\002 \001(\01628"
+  ".farm.nurture.core.contracts.common.Comm"
+  "unicationChannel\0224\n\005media\030\003 \001(\0132%.farm.n"
+  "urture.core.contracts.ce.Media\022A\n\014placeh"
+  "olders\030\004 \003(\0132+.farm.nurture.core.contrac"
+  "ts.ce.Placeholder\022:\n\005actor\030\005 \001(\0132+.farm."
+  "nurture.core.contracts.common.ActorID\022\025\n"
+  "\rmobile_number\030\006 \001(\t\022G\n\rlanguage_code\030\007 "
+  "\001(\01620.farm.nurture.core.contracts.common"
+  ".LanguageCode2\242\002\n\023CommunicationEngine\022~\n"
+  "\021sendCommunication\0222.farm.nurture.core.c"
+  "ontracts.ce.CommunicationEvent\0325.farm.nu"
+  "rture.core.contracts.ce.CommunicationRes"
+  "ponse\022\212\001\n\025sendBulkCommunication\0226.farm.n"
+  "urture.core.contracts.ce.BulkCommunicati"
+  "onEvent\0329.farm.nurture.core.contracts.ce"
+  ".BulkCommunicationResponse2\206\007\n\033Communica"
+  "tionEnginePlatform\022g\n\toptInUser\022,.farm.n"
+  "urture.core.contracts.ce.OptInRequest\032,."
+  "farm.nurture.core.contracts.ce.OptInResp"
+  "one\022\236\001\n\035searchMessageAcknowledgements\022=."
+  "farm.nurture.core.contracts.ce.MessageAc"
+  "knowledgementRequest\032>.farm.nurture.core"
+  ".contracts.ce.MessageAcknowledgementResp"
+  "onse\022v\n\013addTemplate\0222.farm.nurture.core."
+  "contracts.ce.AddTemplateRequest\0323.farm.n"
+  "urture.core.contracts.ce.AddTemplateResp"
+  "onse\022k\n\noptOutUser\022-.farm.nurture.core.c"
+  "ontracts.ce.OptOutRequest\032..farm.nurture"
+  ".core.contracts.ce.OptOutResponse\022\177\n\016get"
+  "AllTemplate\0225.farm.nurture.core.contract"
+  "s.ce.GetAllTemplateRequest\0326.farm.nurtur"
+  "e.core.contracts.ce.GetAllTemplateRespon"
+  "se\022|\n\016updateTemplate\0225.farm.nurture.core"
+  ".contracts.ce.TemplateUpdateRequest\0323.fa"
+  "rm.nurture.core.contracts.ce.AddTemplate"
+  "Response\022y\n\020activateTemplate\0221.farm.nurt"
+  "ure.core.contracts.ce.ActivationRequest\032"
+  "2.farm.nurture.core.contracts.ce.Activat"
+  "ionResponseBj\n0farm.nurture.core.contrac"
+  "ts.communication.engineP\001Z4code.nurture."
+  "farm/Core/Contracts/CommunicationEngineb"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_CommunicationEngine_2fcommunication_5fengine_2eproto_deps[5] = {
   &::descriptor_table_Common_2fentities_2eproto,
@@ -1076,7 +1072,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_CommunicationEngine_2fcommunication_5fengine_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_CommunicationEngine_2fcommunication_5fengine_2eproto = {
-  false, false, descriptor_table_protodef_CommunicationEngine_2fcommunication_5fengine_2eproto, "CommunicationEngine/communication_engine.proto", 9157,
+  false, false, descriptor_table_protodef_CommunicationEngine_2fcommunication_5fengine_2eproto, "CommunicationEngine/communication_engine.proto", 9087,
   &descriptor_table_CommunicationEngine_2fcommunication_5fengine_2eproto_once, descriptor_table_CommunicationEngine_2fcommunication_5fengine_2eproto_sccs, descriptor_table_CommunicationEngine_2fcommunication_5fengine_2eproto_deps, 24, 5,
   schemas, file_default_instances, TableStruct_CommunicationEngine_2fcommunication_5fengine_2eproto::offsets,
   file_level_metadata_CommunicationEngine_2fcommunication_5fengine_2eproto, 24, file_level_enum_descriptors_CommunicationEngine_2fcommunication_5fengine_2eproto, file_level_service_descriptors_CommunicationEngine_2fcommunication_5fengine_2eproto,
@@ -3351,19 +3347,13 @@ class ActorDetails::_Internal {
 };
 
 ActorDetails::ActorDetails(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  to_recipients_(arena),
-  cc_recipients_(arena),
-  bcc_recipients_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:farm.nurture.core.contracts.ce.ActorDetails)
 }
 ActorDetails::ActorDetails(const ActorDetails& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      to_recipients_(from.to_recipients_),
-      cc_recipients_(from.cc_recipients_),
-      bcc_recipients_(from.bcc_recipients_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   email_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_email_id().empty()) {
@@ -3431,9 +3421,6 @@ void ActorDetails::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  to_recipients_.Clear();
-  cc_recipients_.Clear();
-  bcc_recipients_.Clear();
   email_id_.ClearToEmpty();
   mobile_number_.ClearToEmpty();
   fcm_token_.ClearToEmpty();
@@ -3507,48 +3494,6 @@ const char* ActorDetails::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_secondarylanguage_code(static_cast<::farm::nurture::core::contracts::common::LanguageCode>(val));
-        } else goto handle_unusual;
-        continue;
-      // repeated string to_recipients = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_to_recipients();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "farm.nurture.core.contracts.ce.ActorDetails.to_recipients"));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated string cc_recipients = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_cc_recipients();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "farm.nurture.core.contracts.ce.ActorDetails.cc_recipients"));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated string bcc_recipients = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_bcc_recipients();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "farm.nurture.core.contracts.ce.ActorDetails.bcc_recipients"));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -3637,36 +3582,6 @@ failure:
       7, this->_internal_secondarylanguage_code(), target);
   }
 
-  // repeated string to_recipients = 8;
-  for (int i = 0, n = this->_internal_to_recipients_size(); i < n; i++) {
-    const auto& s = this->_internal_to_recipients(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "farm.nurture.core.contracts.ce.ActorDetails.to_recipients");
-    target = stream->WriteString(8, s, target);
-  }
-
-  // repeated string cc_recipients = 9;
-  for (int i = 0, n = this->_internal_cc_recipients_size(); i < n; i++) {
-    const auto& s = this->_internal_cc_recipients(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "farm.nurture.core.contracts.ce.ActorDetails.cc_recipients");
-    target = stream->WriteString(9, s, target);
-  }
-
-  // repeated string bcc_recipients = 10;
-  for (int i = 0, n = this->_internal_bcc_recipients_size(); i < n; i++) {
-    const auto& s = this->_internal_bcc_recipients(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "farm.nurture.core.contracts.ce.ActorDetails.bcc_recipients");
-    target = stream->WriteString(10, s, target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3682,30 +3597,6 @@ size_t ActorDetails::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // repeated string to_recipients = 8;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(to_recipients_.size());
-  for (int i = 0, n = to_recipients_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      to_recipients_.Get(i));
-  }
-
-  // repeated string cc_recipients = 9;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(cc_recipients_.size());
-  for (int i = 0, n = cc_recipients_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      cc_recipients_.Get(i));
-  }
-
-  // repeated string bcc_recipients = 10;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(bcc_recipients_.size());
-  for (int i = 0, n = bcc_recipients_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      bcc_recipients_.Get(i));
-  }
 
   // string email_id = 1;
   if (this->email_id().size() > 0) {
@@ -3783,9 +3674,6 @@ void ActorDetails::MergeFrom(const ActorDetails& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  to_recipients_.MergeFrom(from.to_recipients_);
-  cc_recipients_.MergeFrom(from.cc_recipients_);
-  bcc_recipients_.MergeFrom(from.bcc_recipients_);
   if (from.email_id().size() > 0) {
     _internal_set_email_id(from._internal_email_id());
   }
@@ -3830,9 +3718,6 @@ bool ActorDetails::IsInitialized() const {
 void ActorDetails::InternalSwap(ActorDetails* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  to_recipients_.InternalSwap(&other->to_recipients_);
-  cc_recipients_.InternalSwap(&other->cc_recipients_);
-  bcc_recipients_.InternalSwap(&other->bcc_recipients_);
   email_id_.Swap(&other->email_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   mobile_number_.Swap(&other->mobile_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   fcm_token_.Swap(&other->fcm_token_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());

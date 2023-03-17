@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(farm.nurture.core.contracts.common.enumsP\001Z\'code.nurture.farm/Core/Contracts/Common\240\001\001',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x43ommon/geo_enums.proto\x12\"farm.nurture.core.contracts.common*y\n\x0eProjectionType\x12\x10\n\x0cWEB_MERCATOR\x10\x00\x12\x0c\n\x08ROBINSON\x10\x01\x12\x11\n\rSTEREOGRAPHIC\x10\x02\x12\x1b\n\x17LAMBERT_CONFORMAL_CONIC\x10\x03\x12\x17\n\x13TRANSVERSE_MERCATOR\x10\x04*\x90\x01\n\x0ePlaceNamespace\x12\x17\n\x13POLITICAL_NAMESPACE\x10\x00\x12\x15\n\x11MACHINE_NAMESPACE\x10\x01\x12\x10\n\x0cHIERARCHICAL\x10\x02\x12\t\n\x05\x46\x41RMS\x10\x03\x12\x11\n\rPIPE_LOCATION\x10\x04\x12\r\n\tIOT_PINGS\x10\x05\x12\x0f\n\x0bSENTINEL_VH\x10\x06*2\n\tPlaceType\x12\x16\n\x12INVALID_PLACE_TYPE\x10\x00\x12\r\n\tFARM_TYPE\x10\x01*k\n\x16TemporalResolutionType\x12\x1f\n\x1bNO_TEMPORAL_RESOLUTION_TYPE\x10\x00\x12\x16\n\x12GREGORIAN_CALENDAR\x10\x01\x12\x18\n\x14INDIAN_CROP_CALENDAR\x10\x02*I\n\x08\x44\x61taType\x12\x0b\n\x07NO_DATA\x10\x00\x12\x08\n\x04\x43ROP\x10\x64\x12\x12\n\rBURNING_EVENT\x10\xc8\x01\x12\x12\n\rTILLING_EVENT\x10\xac\x02*a\n\x0cGeometryType\x12\x19\n\x15INVALID_GEOMETRY_TYPE\x10\x00\x12\x10\n\x0cMULTIPOLYGON\x10\x01\x12\x0c\n\x08POLYLINE\x10\x02\x12\t\n\x05POINT\x10\x03\x12\x0b\n\x07POLYGON\x10\x04*M\n\x10\x44\x61taPropertyType\x12\x0b\n\x07NO_TYPE\x10\x00\x12\x0e\n\nCROP_YIELD\x10\x64\x12\r\n\tCROP_NAME\x10\x65\x12\r\n\tCROP_TYPE\x10\x66*7\n\x17TemporalResolutionLevel\x12\x1c\n\x18NO_TEMP_RESOLUTION_LEVEL\x10\x00*6\n\x14\x44\x61taPropCategoryType\x12\x1e\n\x1aNO_DATA_PROP_CATEGORY_TYPE\x10\x00*S\n\x0fGeoStatusResult\x12\x16\n\x12GEO_STATUS_SUCCESS\x10\x00\x12\x15\n\x11NO_GEOMETRY_FOUND\x10\x01\x12\x11\n\rNO_PIPE_FOUND\x10\x02*\xa4\x01\n\tUI_CLIENT\x12\x10\n\x0cNO_UI_CLIENT\x10\x00\x12\x19\n\x15\x44\x45SKTOP_WEB_UI_CLIENT\x10\x01\x12\x1d\n\x19\x41NDROID_TAB_WEB_UI_CLIENT\x10\x02\x12\x19\n\x15\x41NDROID_WEB_UI_CLIENT\x10\x03\x12\x15\n\x11IOS_WEB_UI_CLIENT\x10\x04\x12\x19\n\x15IOS_TAB_WEB_UI_CLIENT\x10\x05*\x95\x03\n\x0fPlaceSourceType\x12\x12\n\x0eNO_SOURCE_TYPE\x10\x00\x12\x12\n\x0eSATELLITE_FARM\x10\x01\x12\x0c\n\x08IOT_FARM\x10\x02\x12\x12\n\x0ePOLITICAL_FARM\x10\x03\x12\r\n\tUSER_FARM\x10\x04\x12\x12\n\x0e\x41WD_SOUTH_2021\x10\x05\x12\x19\n\x15PIPE_INSTALLATION_SRC\x10\x06\x12\x13\n\x0fINSIDE_BUND_SRC\x10\x07\x12\x18\n\x14\x41\x45RATION_EVENT_1_SRC\x10\x08\x12\x18\n\x14\x41\x45RATION_EVENT_2_SRC\x10\t\x12\x18\n\x14\x41\x45RATION_EVENT_3_SRC\x10\n\x12\x11\n\rUSER_FARM_AWD\x10\x0b\x12\x11\n\rUSER_FARM_SBB\x10\x0c\x12\x14\n\x10IOT_GATEWAY_TYPE\x10\r\x12\x0e\n\nAERATION_1\x10\x0e\x12\x0e\n\nAERATION_2\x10\x0f\x12\x0e\n\nAERATION_3\x10\x10\x12\x12\n\x0eSENTINEL_1_L2A\x10\x11\x12\x17\n\x13MACHINE_BATCH_SPRAY\x10\x12*\x82\x03\n\x10PlaceVisibleType\x12\x13\n\x0fNO_VISIBLE_TYPE\x10\x00\x12\x10\n\x0cVILLAGE_FARM\x10\x01\x12\x11\n\rDISTRICT_FARM\x10\x02\x12\x08\n\x04PIPE\x10\x03\x12\x1b\n\x17PUSA_SPRAY_PROGRAM_TYPE\x10\x04\x12\x14\n\x10\x41WD_PROGRAM_TYPE\x10\x05\x12\x14\n\x10\x44SR_PROGRAM_TYPE\x10\x06\x12\x1a\n\x16GROUNDNUT_PROGRAM_TYPE\x10\x07\x12\x14\n\x10\x43RM_PROGRAM_TYPE\x10\x08\x12\x16\n\x12TRADE_PROGRAM_TYPE\x10\t\x12\x1e\n\x1a\x41WD_22_KHARIF_PROGRAM_TYPE\x10\n\x12\x1e\n\x1a\x43RM_22_KHARIF_PROGRAM_TYPE\x10\x0b\x12\x1e\n\x1a\x44SR_22_KHARIF_PROGRAM_TYPE\x10\x0c\x12\x0e\n\nPOINT_TYPE\x10\r\x12\x15\n\x11PRUNED_POINT_TYPE\x10\x0e\x12\x10\n\x0cPOLYGON_TYPE\x10\x0f*\x97\x05\n\x10PlaceTagProperty\x12\x19\n\x15NO_PLACE_TAG_PROPERTY\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\t\n\x05TITLE\x10\x02\x12\t\n\x05\x43OLOR\x10\x03\x12\t\n\x05\x43OUNT\x10\x04\x12\t\n\x05\x41\x43RES\x10\x05\x12\x0c\n\x08\x45VENT_ID\x10\x06\x12\x0f\n\x0b\x46\x41RMER_NAME\x10\x07\x12\x11\n\rFARMER_MOBILE\x10\x08\x12\x0f\n\x0bREGION_NAME\x10\t\x12\x0f\n\x0bTEHSIL_NAME\x10\x0b\x12\x10\n\x0cVILLAGE_NAME\x10\x0c\x12\x0f\n\x0bSOWING_DATE\x10\r\x12\x0b\n\x07VARIETY\x10\x0e\x12\r\n\tS3_MOBILE\x10\x0f\x12\x0b\n\x07S3_NAME\x10\x10\x12\x13\n\x0f\x41PPROVAL_STATUS\x10\x11\x12\n\n\x06STATUS\x10\x12\x12\x0b\n\x07\x46\x41RM_ID\x10\x13\x12\r\n\tFARMER_ID\x10\x14\x12\x0c\n\x08PLACE_ID\x10\x15\x12\x0e\n\nCONTENT_ID\x10\x16\x12\x08\n\x04UGDN\x10\x17\x12\x13\n\x0fGEOFENCE_SOURCE\x10\x18\x12\x12\n\x0eSPRAYER_STATUS\x10\x19\x12\x11\n\rENGINE_STATUS\x10\x1a\x12\x16\n\x12KHARIF_2022_STATUS\x10\x1b\x12\x14\n\x10RABI_2022_STATUS\x10\x1c\x12\x16\n\x12RABI_2022_PLACE_ID\x10\x1d\x12\x16\n\x12RABI_2022_PLACE_NS\x10\x1e\x12\x17\n\x13RABI_2022_PLACE_SRC\x10\x1f\x12\x17\n\x13RABI_2022_PLACE_VIS\x10 \x12\x0f\n\x0bPORTAL_EDIT\x10!\x12\x19\n\x15KHARIF_22_PORTAL_EDIT\x10\"\x12\x17\n\x13RABI_22_PORTAL_EDIT\x10#\x12\x1c\n\x18\x41WD_RABI_22_NSV_PLACE_ID\x10$*\xaf\x02\n\x0cPlaceTagName\x12\x10\n\x0cNO_PLACE_TAG\x10\x00\x12\r\n\tFARM_NAME\x10\x01\x12\x0e\n\nPOPULATION\x10\x02\x12\x11\n\rDISTRICT_NAME\x10\x04\x12\x0c\n\x08\x41WD_PIPE\x10\x05\x12\x10\n\x0c\x41WD_AERATION\x10\x06\x12\x0c\n\x08\x41WD_BUND\x10\x07\x12\t\n\x05\x41\x63tor\x10\x08\x12\x12\n\x0eTagName_FARMER\x10\t\x12\x0b\n\x07PROGRAM\x10\n\x12\x10\n\x0cTagName_FARM\x10\x0b\x12\n\n\x06PARENT\x10\x0c\x12\x1b\n\x17TagName_APPROVAL_STATUS\x10\r\x12\x14\n\x10\x43ONTENT_METADATA\x10\x0e\x12\x0c\n\x08REFERRAL\x10\x0f\x12\x0c\n\x08GEOFENCE\x10\x10\x12\t\n\x05PINGS\x10\x11\x12\t\n\x05LOCKS\x10\x12*<\n\x1aGeometryRepresentationType\x12\x07\n\x03WKB\x10\x00\x12\x07\n\x03WKT\x10\x01\x12\x0c\n\x08GEO_JSON\x10\x02*\xc8\x03\n\x16ValidationResponseCode\x12\x0b\n\x07NO_CODE\x10\x00\x12+\n&TOO_CLOSE_TO_ANOTHER_PIPE_PICTURE_CODE\x10\xa1\x1f\x12+\n&TOO_CLOSE_TO_ANOTHER_BUND_PICTURE_CODE\x10\xa2\x1f\x12/\n*TOO_CLOSE_TO_ANOTHER_AERATION_PICTURE_CODE\x10\xa3\x1f\x12\x34\n/PICTURE_LOCATION_LIES_INSIDE_ANOTHER_FENCE_CODE\x10\xa4\x1f\x12\x34\n/PICTURE_LOCATION_NOT_LIES_INSIDE_ANY_FENCE_CODE\x10\xa5\x1f\x12\'\n\"PICTURE_TOO_FAR_FROM_GEOFENCE_CODE\x10\xa6\x1f\x12\x1b\n\x16NO_PIPE_INSTALLED_CODE\x10\xa7\x1f\x12\x1f\n\x1aPOINT_OUTSIDE_POLYGON_CODE\x10\xa8\x1f\x12#\n\x1eMORE_POINT_INSIDE_POLYGON_CODE\x10\xa9\x1f\x12\x1e\n\x19POINT_INSIDE_POLYGON_CODE\x10\xaa\x1f*\xb3\x03\n\x15ValidationResponseMsg\x12\x0e\n\nNO_MESSAGE\x10\x00\x12)\n%TOO_CLOSE_TO_ANOTHER_PIPE_PICTURE_MSG\x10\x01\x12)\n%TOO_CLOSE_TO_ANOTHER_BUND_PICTURE_MSG\x10\x02\x12-\n)TOO_CLOSE_TO_ANOTHER_AERATION_PICTURE_MSG\x10\x03\x12\x32\n.PICTURE_LOCATION_LIES_INSIDE_ANOTHER_FENCE_MSG\x10\x04\x12\x32\n.PICTURE_LOCATION_NOT_LIES_INSIDE_ANY_FENCE_MSG\x10\x05\x12\"\n\x1ePICTURE_TOO_FAR_FROM_FENCE_MSG\x10\x06\x12\x19\n\x15NO_PIPE_INSTALLED_MSG\x10\x07\x12\x1d\n\x19POINT_OUTSIDE_POLYGON_MSG\x10\x08\x12!\n\x1dMORE_POINT_INSIDE_POLYGON_MSG\x10\t\x12\x1c\n\x18POINT_INSIDE_POLYGON_MSG\x10\n*R\n\x11GeoResponseStatus\x12\x0f\n\x0bNO_RESPONSE\x10\x00\x12\x16\n\x12\x46\x41ILED_TO_VALIDATE\x10\x01\x12\x14\n\x10\x46\x41ILED_TO_INSERT\x10\x02*\xbc\x01\n\x11GeoValidationType\x12\x1a\n\x16NO_GEO_VALIDATION_TYPE\x10\x00\x12\x1e\n\x1aPOINT_PROXIMITY_VALIDATION\x10\x01\x12\'\n#GEOMETRY_INSIDE_GEOMETRY_VALIDATION\x10\x02\x12\x1f\n\x1bGEOMETRY_OVERLAP_VALIDATION\x10\x03\x12!\n\x1dGEOMETRY_EXISTENCE_VALIDATION\x10\x04*\x89\x04\n\x11GeoValidationName\x12\x1a\n\x16NO_GEO_VALIDATION_NAME\x10\x00\x12(\n$POINT_X_WITHIN_K_METRES_FROM_POINT_Y\x10\x01\x12\'\n#POINT_X_LEAST_K_METRES_FROM_POINT_Y\x10\x02\x12*\n&POINT_X_WITHIN_K_METRES_FROM_POLYGON_Y\x10\x03\x12)\n%POINT_X_LEAST_K_METRES_FROM_POLYGON_Y\x10\x04\x12\'\n#POINT_X_ALONE_LIES_INSIDE_POLYGON_Y\x10\x05\x12\x1e\n\x1aPOLYGON_X_INSIDE_POLYGON_Y\x10\x06\x12-\n)POINT_X_INSIDE_ANY_TARGET_SET_OF_POLYGONS\x10\x07\x12/\n+POLYGON_X_INSIDE_ANY_TARGET_SET_OF_POLYGONS\x10\x08\x12\"\n\x1eGEOMETRY_X_OVERLAPS_GEOMETRY_Y\x10\t\x12\x34\n0GEOMETRY_X_OVERLAPS_ANY_TARGET_SET_OF_GEOMETRIES\x10\n\x12+\n\'GEOMETRY_X_EXISTS_IN_RESPECTIVE_DATASET\x10\x0b*a\n\rAssertionType\x12\x1a\n\x16\x44\x45\x46\x41ULT_ASSERTION_TYPE\x10\x00\x12\x0f\n\x0b\x41SSERT_TRUE\x10\x01\x12\x10\n\x0c\x41SSERT_FALSE\x10\x02\x12\x11\n\rASSERT_EQUALS\x10\x03*J\n\rGeoDataSource\x12\x10\n\x0cNO_FARM_TYPE\x10\x00\x12\x12\n\x0eUSER_FARM_DATA\x10\x01\x12\x13\n\x0fUSER_POINT_DATA\x10\x02*\x9f\x01\n\tFilterKey\x12\n\n\x06NO_KEY\x10\x00\x12\n\n\x06TAG_ID\x10\x01\x12\x0c\n\x08PLACE_Id\x10\x02\x12\x0c\n\x08TAG_NAME\x10\x03\x12\x0b\n\x07TAG_KEY\x10\x04\x12\r\n\tTAG_VALUE\x10\x05\x12\x0c\n\x08TILE_KEY\x10\x06\x12\x12\n\x0eREFERENCE_TYPE\x10\x07\x12\r\n\tATTRIBUTE\x10\x08\x12\x11\n\rATTRIBUTE_KEY\x10\t*\x97\x01\n\rReferenceType\x12\x12\n\x0eNO_ENTITY_TYPE\x10\x00\x12\x13\n\x0f\x44\x45VICE_REF_TYPE\x10\x01\x12\x14\n\x10MACHINE_REF_TYPE\x10\x02\x12\x08\n\x04USER\x10\x03\x12\x11\n\rFARM_REF_TYPE\x10\x04\x12\x15\n\x11OPERATOR_REF_TYPE\x10\x05\x12\x13\n\x0fPARENT_REF_TYPE\x10\x06*\x9d\x02\n\x0c\x41ttributeKey\x12\x14\n\x10NO_ATTRIBUTE_KEY\x10\x00\x12\x06\n\x02ID\x10\x01\x12\x0c\n\x08\x41TT_NAME\x10\x02\x12\r\n\tSERIAL_NO\x10\x03\x12\x0e\n\nMACHINE_ID\x10\x04\x12\r\n\tDEVICE_ID\x10\x05\x12\x10\n\x0c\x41\x43RE_SPRAYED\x10\x06\x12\x0b\n\x07\x41\x44\x44RESS\x10\x07\x12\x19\n\x15\x46\x41RM_ID_ATTRIBUTE_KEY\x10\x08\x12\r\n\tFUEL_TYPE\x10\t\x12\x0e\n\nLAND_ACRES\x10\n\x12\x12\n\x0eMACHINE_NUMBER\x10\x0b\x12\x0c\n\x08PHONE_NO\x10\x0c\x12\x1a\n\x16RABI_22_CONTENT_ID_ATT\x10\r\x12\x1c\n\x18KHARIF_22_CONTENT_ID_ATT\x10\x0e*g\n\x0bServiceName\x12\x13\n\x0fNO_SERVICE_NAME\x10\x00\x12\x15\n\x11MAPS_VECTOR_STORE\x10\x01\x12\x15\n\x11MAPS_PLACES_STORE\x10\x02\x12\x15\n\x11MAPS_RASTER_INDEX\x10\x03*\xad\x01\n\tValueType\x12\x11\n\rNO_VALUE_TYPE\x10\x00\x12\x15\n\x11VALUE_TYPE_DOUBLE\x10\x01\x12\x15\n\x11VALUE_TYPE_STRING\x10\x02\x12\x16\n\x12VALUE_TYPE_BOOLEAN\x10\x03\x12\x14\n\x10VALUE_TYPE_INT64\x10\x04\x12\x14\n\x10VALUE_TYPE_INT32\x10\x05\x12\x1b\n\x17VALUE_TYPE_NSV_PLACE_ID\x10\x06*\xa0\x01\n\x0eValidationName\x12\x11\n\rNO_VALIDATION\x10\x00\x12\x1d\n\x19\x41\x45RATION_EVENT_VALIDATION\x10\x01\x12 \n\x1cPIPE_INSTALLATION_VALIDATION\x10\x02\x12\x1a\n\x16INSIDE_BUND_VALIDATION\x10\x03\x12\x1e\n\x1aINSIDE_GEOFENCE_VALIDATION\x10\x04*Z\n\x0eValidationType\x12\x16\n\x12NO_VALIDATION_TYPE\x10\x00\x12\x17\n\x13VALIDATION_TYPE_DSR\x10\x01\x12\x17\n\x13VALIDATION_TYPE_AWD\x10\x02*[\n\x10HealthParameters\x12\x11\n\rSYSTEM_HEALTH\x10\x00\x12\r\n\tDB_HEALTH\x10\x01\x12\x10\n\x0c\x43\x41\x43HE_HEALTH\x10\x02\x12\x13\n\x0fUPSTREAM_HEALTH\x10\x03*Q\n\nCloudStore\x12\x12\n\x0eNO_Cloud_Store\x10\x00\x12\x12\n\x0eS3_Cloud_Store\x10\x01\x12\x1b\n\x17\x43loud_Front_Cloud_Store\x10\x02*3\n\nUrlBuilder\x12\x12\n\x0eNO_URL_BUILDER\x10\x00\x12\x11\n\rURL_BUILDER_1\x10\x01*/\n\tSatellite\x12\x10\n\x0cNO_SATELLITE\x10\x00\x12\x10\n\x0cSATELLITE_S1\x10\x01*-\n\x04\x42\x61nd\x12\x0b\n\x07NO_BAND\x10\x00\x12\x0b\n\x07\x42\x41ND_VH\x10\x01\x12\x0b\n\x07\x42\x41ND_VV\x10\x02*P\n\x07\x41ppName\x12\x0f\n\x0bNO_APP_NAME\x10\x00\x12\x10\n\x0c\x41PP_NAME_AWD\x10\x01\x12\x10\n\x0c\x41PP_NAME_CRM\x10\x02\x12\x10\n\x0c\x41PP_NAME_DSR\x10\x03\x42X\n(farm.nurture.core.contracts.common.enumsP\x01Z\'code.nurture.farm/Core/Contracts/Common\xa0\x01\x01\x62\x06proto3'
+  serialized_pb=b'\n\x16\x43ommon/geo_enums.proto\x12\"farm.nurture.core.contracts.common*y\n\x0eProjectionType\x12\x10\n\x0cWEB_MERCATOR\x10\x00\x12\x0c\n\x08ROBINSON\x10\x01\x12\x11\n\rSTEREOGRAPHIC\x10\x02\x12\x1b\n\x17LAMBERT_CONFORMAL_CONIC\x10\x03\x12\x17\n\x13TRANSVERSE_MERCATOR\x10\x04*\x90\x01\n\x0ePlaceNamespace\x12\x17\n\x13POLITICAL_NAMESPACE\x10\x00\x12\x15\n\x11MACHINE_NAMESPACE\x10\x01\x12\x10\n\x0cHIERARCHICAL\x10\x02\x12\t\n\x05\x46\x41RMS\x10\x03\x12\x11\n\rPIPE_LOCATION\x10\x04\x12\r\n\tIOT_PINGS\x10\x05\x12\x0f\n\x0bSENTINEL_VH\x10\x06*2\n\tPlaceType\x12\x16\n\x12INVALID_PLACE_TYPE\x10\x00\x12\r\n\tFARM_TYPE\x10\x01*k\n\x16TemporalResolutionType\x12\x1f\n\x1bNO_TEMPORAL_RESOLUTION_TYPE\x10\x00\x12\x16\n\x12GREGORIAN_CALENDAR\x10\x01\x12\x18\n\x14INDIAN_CROP_CALENDAR\x10\x02*I\n\x08\x44\x61taType\x12\x0b\n\x07NO_DATA\x10\x00\x12\x08\n\x04\x43ROP\x10\x64\x12\x12\n\rBURNING_EVENT\x10\xc8\x01\x12\x12\n\rTILLING_EVENT\x10\xac\x02*a\n\x0cGeometryType\x12\x19\n\x15INVALID_GEOMETRY_TYPE\x10\x00\x12\x10\n\x0cMULTIPOLYGON\x10\x01\x12\x0c\n\x08POLYLINE\x10\x02\x12\t\n\x05POINT\x10\x03\x12\x0b\n\x07POLYGON\x10\x04*M\n\x10\x44\x61taPropertyType\x12\x0b\n\x07NO_TYPE\x10\x00\x12\x0e\n\nCROP_YIELD\x10\x64\x12\r\n\tCROP_NAME\x10\x65\x12\r\n\tCROP_TYPE\x10\x66*7\n\x17TemporalResolutionLevel\x12\x1c\n\x18NO_TEMP_RESOLUTION_LEVEL\x10\x00*6\n\x14\x44\x61taPropCategoryType\x12\x1e\n\x1aNO_DATA_PROP_CATEGORY_TYPE\x10\x00*S\n\x0fGeoStatusResult\x12\x16\n\x12GEO_STATUS_SUCCESS\x10\x00\x12\x15\n\x11NO_GEOMETRY_FOUND\x10\x01\x12\x11\n\rNO_PIPE_FOUND\x10\x02*\xa4\x01\n\tUI_CLIENT\x12\x10\n\x0cNO_UI_CLIENT\x10\x00\x12\x19\n\x15\x44\x45SKTOP_WEB_UI_CLIENT\x10\x01\x12\x1d\n\x19\x41NDROID_TAB_WEB_UI_CLIENT\x10\x02\x12\x19\n\x15\x41NDROID_WEB_UI_CLIENT\x10\x03\x12\x15\n\x11IOS_WEB_UI_CLIENT\x10\x04\x12\x19\n\x15IOS_TAB_WEB_UI_CLIENT\x10\x05*\xfc\x02\n\x0fPlaceSourceType\x12\x12\n\x0eNO_SOURCE_TYPE\x10\x00\x12\x12\n\x0eSATELLITE_FARM\x10\x01\x12\x0c\n\x08IOT_FARM\x10\x02\x12\x12\n\x0ePOLITICAL_FARM\x10\x03\x12\r\n\tUSER_FARM\x10\x04\x12\x12\n\x0e\x41WD_SOUTH_2021\x10\x05\x12\x19\n\x15PIPE_INSTALLATION_SRC\x10\x06\x12\x13\n\x0fINSIDE_BUND_SRC\x10\x07\x12\x18\n\x14\x41\x45RATION_EVENT_1_SRC\x10\x08\x12\x18\n\x14\x41\x45RATION_EVENT_2_SRC\x10\t\x12\x18\n\x14\x41\x45RATION_EVENT_3_SRC\x10\n\x12\x11\n\rUSER_FARM_AWD\x10\x0b\x12\x11\n\rUSER_FARM_SBB\x10\x0c\x12\x14\n\x10IOT_GATEWAY_TYPE\x10\r\x12\x0e\n\nAERATION_1\x10\x0e\x12\x0e\n\nAERATION_2\x10\x0f\x12\x0e\n\nAERATION_3\x10\x10\x12\x12\n\x0eSENTINEL_1_L2A\x10\x11*\x82\x03\n\x10PlaceVisibleType\x12\x13\n\x0fNO_VISIBLE_TYPE\x10\x00\x12\x10\n\x0cVILLAGE_FARM\x10\x01\x12\x11\n\rDISTRICT_FARM\x10\x02\x12\x08\n\x04PIPE\x10\x03\x12\x1b\n\x17PUSA_SPRAY_PROGRAM_TYPE\x10\x04\x12\x14\n\x10\x41WD_PROGRAM_TYPE\x10\x05\x12\x14\n\x10\x44SR_PROGRAM_TYPE\x10\x06\x12\x1a\n\x16GROUNDNUT_PROGRAM_TYPE\x10\x07\x12\x14\n\x10\x43RM_PROGRAM_TYPE\x10\x08\x12\x16\n\x12TRADE_PROGRAM_TYPE\x10\t\x12\x1e\n\x1a\x41WD_22_KHARIF_PROGRAM_TYPE\x10\n\x12\x1e\n\x1a\x43RM_22_KHARIF_PROGRAM_TYPE\x10\x0b\x12\x1e\n\x1a\x44SR_22_KHARIF_PROGRAM_TYPE\x10\x0c\x12\x0e\n\nPOINT_TYPE\x10\r\x12\x15\n\x11PRUNED_POINT_TYPE\x10\x0e\x12\x10\n\x0cPOLYGON_TYPE\x10\x0f*\x97\x05\n\x10PlaceTagProperty\x12\x19\n\x15NO_PLACE_TAG_PROPERTY\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\t\n\x05TITLE\x10\x02\x12\t\n\x05\x43OLOR\x10\x03\x12\t\n\x05\x43OUNT\x10\x04\x12\t\n\x05\x41\x43RES\x10\x05\x12\x0c\n\x08\x45VENT_ID\x10\x06\x12\x0f\n\x0b\x46\x41RMER_NAME\x10\x07\x12\x11\n\rFARMER_MOBILE\x10\x08\x12\x0f\n\x0bREGION_NAME\x10\t\x12\x0f\n\x0bTEHSIL_NAME\x10\x0b\x12\x10\n\x0cVILLAGE_NAME\x10\x0c\x12\x0f\n\x0bSOWING_DATE\x10\r\x12\x0b\n\x07VARIETY\x10\x0e\x12\r\n\tS3_MOBILE\x10\x0f\x12\x0b\n\x07S3_NAME\x10\x10\x12\x13\n\x0f\x41PPROVAL_STATUS\x10\x11\x12\n\n\x06STATUS\x10\x12\x12\x0b\n\x07\x46\x41RM_ID\x10\x13\x12\r\n\tFARMER_ID\x10\x14\x12\x0c\n\x08PLACE_ID\x10\x15\x12\x0e\n\nCONTENT_ID\x10\x16\x12\x08\n\x04UGDN\x10\x17\x12\x13\n\x0fGEOFENCE_SOURCE\x10\x18\x12\x12\n\x0eSPRAYER_STATUS\x10\x19\x12\x11\n\rENGINE_STATUS\x10\x1a\x12\x16\n\x12KHARIF_2022_STATUS\x10\x1b\x12\x14\n\x10RABI_2022_STATUS\x10\x1c\x12\x16\n\x12RABI_2022_PLACE_ID\x10\x1d\x12\x16\n\x12RABI_2022_PLACE_NS\x10\x1e\x12\x17\n\x13RABI_2022_PLACE_SRC\x10\x1f\x12\x17\n\x13RABI_2022_PLACE_VIS\x10 \x12\x0f\n\x0bPORTAL_EDIT\x10!\x12\x19\n\x15KHARIF_22_PORTAL_EDIT\x10\"\x12\x17\n\x13RABI_22_PORTAL_EDIT\x10#\x12\x1c\n\x18\x41WD_RABI_22_NSV_PLACE_ID\x10$*\xaf\x02\n\x0cPlaceTagName\x12\x10\n\x0cNO_PLACE_TAG\x10\x00\x12\r\n\tFARM_NAME\x10\x01\x12\x0e\n\nPOPULATION\x10\x02\x12\x11\n\rDISTRICT_NAME\x10\x04\x12\x0c\n\x08\x41WD_PIPE\x10\x05\x12\x10\n\x0c\x41WD_AERATION\x10\x06\x12\x0c\n\x08\x41WD_BUND\x10\x07\x12\t\n\x05\x41\x63tor\x10\x08\x12\x12\n\x0eTagName_FARMER\x10\t\x12\x0b\n\x07PROGRAM\x10\n\x12\x10\n\x0cTagName_FARM\x10\x0b\x12\n\n\x06PARENT\x10\x0c\x12\x1b\n\x17TagName_APPROVAL_STATUS\x10\r\x12\x14\n\x10\x43ONTENT_METADATA\x10\x0e\x12\x0c\n\x08REFERRAL\x10\x0f\x12\x0c\n\x08GEOFENCE\x10\x10\x12\t\n\x05PINGS\x10\x11\x12\t\n\x05LOCKS\x10\x12*<\n\x1aGeometryRepresentationType\x12\x07\n\x03WKB\x10\x00\x12\x07\n\x03WKT\x10\x01\x12\x0c\n\x08GEO_JSON\x10\x02*\xc8\x03\n\x16ValidationResponseCode\x12\x0b\n\x07NO_CODE\x10\x00\x12+\n&TOO_CLOSE_TO_ANOTHER_PIPE_PICTURE_CODE\x10\xa1\x1f\x12+\n&TOO_CLOSE_TO_ANOTHER_BUND_PICTURE_CODE\x10\xa2\x1f\x12/\n*TOO_CLOSE_TO_ANOTHER_AERATION_PICTURE_CODE\x10\xa3\x1f\x12\x34\n/PICTURE_LOCATION_LIES_INSIDE_ANOTHER_FENCE_CODE\x10\xa4\x1f\x12\x34\n/PICTURE_LOCATION_NOT_LIES_INSIDE_ANY_FENCE_CODE\x10\xa5\x1f\x12\'\n\"PICTURE_TOO_FAR_FROM_GEOFENCE_CODE\x10\xa6\x1f\x12\x1b\n\x16NO_PIPE_INSTALLED_CODE\x10\xa7\x1f\x12\x1f\n\x1aPOINT_OUTSIDE_POLYGON_CODE\x10\xa8\x1f\x12#\n\x1eMORE_POINT_INSIDE_POLYGON_CODE\x10\xa9\x1f\x12\x1e\n\x19POINT_INSIDE_POLYGON_CODE\x10\xaa\x1f*\xb3\x03\n\x15ValidationResponseMsg\x12\x0e\n\nNO_MESSAGE\x10\x00\x12)\n%TOO_CLOSE_TO_ANOTHER_PIPE_PICTURE_MSG\x10\x01\x12)\n%TOO_CLOSE_TO_ANOTHER_BUND_PICTURE_MSG\x10\x02\x12-\n)TOO_CLOSE_TO_ANOTHER_AERATION_PICTURE_MSG\x10\x03\x12\x32\n.PICTURE_LOCATION_LIES_INSIDE_ANOTHER_FENCE_MSG\x10\x04\x12\x32\n.PICTURE_LOCATION_NOT_LIES_INSIDE_ANY_FENCE_MSG\x10\x05\x12\"\n\x1ePICTURE_TOO_FAR_FROM_FENCE_MSG\x10\x06\x12\x19\n\x15NO_PIPE_INSTALLED_MSG\x10\x07\x12\x1d\n\x19POINT_OUTSIDE_POLYGON_MSG\x10\x08\x12!\n\x1dMORE_POINT_INSIDE_POLYGON_MSG\x10\t\x12\x1c\n\x18POINT_INSIDE_POLYGON_MSG\x10\n*R\n\x11GeoResponseStatus\x12\x0f\n\x0bNO_RESPONSE\x10\x00\x12\x16\n\x12\x46\x41ILED_TO_VALIDATE\x10\x01\x12\x14\n\x10\x46\x41ILED_TO_INSERT\x10\x02*\xbc\x01\n\x11GeoValidationType\x12\x1a\n\x16NO_GEO_VALIDATION_TYPE\x10\x00\x12\x1e\n\x1aPOINT_PROXIMITY_VALIDATION\x10\x01\x12\'\n#GEOMETRY_INSIDE_GEOMETRY_VALIDATION\x10\x02\x12\x1f\n\x1bGEOMETRY_OVERLAP_VALIDATION\x10\x03\x12!\n\x1dGEOMETRY_EXISTENCE_VALIDATION\x10\x04*\x89\x04\n\x11GeoValidationName\x12\x1a\n\x16NO_GEO_VALIDATION_NAME\x10\x00\x12(\n$POINT_X_WITHIN_K_METRES_FROM_POINT_Y\x10\x01\x12\'\n#POINT_X_LEAST_K_METRES_FROM_POINT_Y\x10\x02\x12*\n&POINT_X_WITHIN_K_METRES_FROM_POLYGON_Y\x10\x03\x12)\n%POINT_X_LEAST_K_METRES_FROM_POLYGON_Y\x10\x04\x12\'\n#POINT_X_ALONE_LIES_INSIDE_POLYGON_Y\x10\x05\x12\x1e\n\x1aPOLYGON_X_INSIDE_POLYGON_Y\x10\x06\x12-\n)POINT_X_INSIDE_ANY_TARGET_SET_OF_POLYGONS\x10\x07\x12/\n+POLYGON_X_INSIDE_ANY_TARGET_SET_OF_POLYGONS\x10\x08\x12\"\n\x1eGEOMETRY_X_OVERLAPS_GEOMETRY_Y\x10\t\x12\x34\n0GEOMETRY_X_OVERLAPS_ANY_TARGET_SET_OF_GEOMETRIES\x10\n\x12+\n\'GEOMETRY_X_EXISTS_IN_RESPECTIVE_DATASET\x10\x0b*a\n\rAssertionType\x12\x1a\n\x16\x44\x45\x46\x41ULT_ASSERTION_TYPE\x10\x00\x12\x0f\n\x0b\x41SSERT_TRUE\x10\x01\x12\x10\n\x0c\x41SSERT_FALSE\x10\x02\x12\x11\n\rASSERT_EQUALS\x10\x03*J\n\rGeoDataSource\x12\x10\n\x0cNO_FARM_TYPE\x10\x00\x12\x12\n\x0eUSER_FARM_DATA\x10\x01\x12\x13\n\x0fUSER_POINT_DATA\x10\x02*\x9f\x01\n\tFilterKey\x12\n\n\x06NO_KEY\x10\x00\x12\n\n\x06TAG_ID\x10\x01\x12\x0c\n\x08PLACE_Id\x10\x02\x12\x0c\n\x08TAG_NAME\x10\x03\x12\x0b\n\x07TAG_KEY\x10\x04\x12\r\n\tTAG_VALUE\x10\x05\x12\x0c\n\x08TILE_KEY\x10\x06\x12\x12\n\x0eREFERENCE_TYPE\x10\x07\x12\r\n\tATTRIBUTE\x10\x08\x12\x11\n\rATTRIBUTE_KEY\x10\t*\x97\x01\n\rReferenceType\x12\x12\n\x0eNO_ENTITY_TYPE\x10\x00\x12\x13\n\x0f\x44\x45VICE_REF_TYPE\x10\x01\x12\x14\n\x10MACHINE_REF_TYPE\x10\x02\x12\x08\n\x04USER\x10\x03\x12\x11\n\rFARM_REF_TYPE\x10\x04\x12\x15\n\x11OPERATOR_REF_TYPE\x10\x05\x12\x13\n\x0fPARENT_REF_TYPE\x10\x06*\x9d\x02\n\x0c\x41ttributeKey\x12\x14\n\x10NO_ATTRIBUTE_KEY\x10\x00\x12\x06\n\x02ID\x10\x01\x12\x0c\n\x08\x41TT_NAME\x10\x02\x12\r\n\tSERIAL_NO\x10\x03\x12\x0e\n\nMACHINE_ID\x10\x04\x12\r\n\tDEVICE_ID\x10\x05\x12\x10\n\x0c\x41\x43RE_SPRAYED\x10\x06\x12\x0b\n\x07\x41\x44\x44RESS\x10\x07\x12\x19\n\x15\x46\x41RM_ID_ATTRIBUTE_KEY\x10\x08\x12\r\n\tFUEL_TYPE\x10\t\x12\x0e\n\nLAND_ACRES\x10\n\x12\x12\n\x0eMACHINE_NUMBER\x10\x0b\x12\x0c\n\x08PHONE_NO\x10\x0c\x12\x1a\n\x16RABI_22_CONTENT_ID_ATT\x10\r\x12\x1c\n\x18KHARIF_22_CONTENT_ID_ATT\x10\x0e*g\n\x0bServiceName\x12\x13\n\x0fNO_SERVICE_NAME\x10\x00\x12\x15\n\x11MAPS_VECTOR_STORE\x10\x01\x12\x15\n\x11MAPS_PLACES_STORE\x10\x02\x12\x15\n\x11MAPS_RASTER_INDEX\x10\x03*\xad\x01\n\tValueType\x12\x11\n\rNO_VALUE_TYPE\x10\x00\x12\x15\n\x11VALUE_TYPE_DOUBLE\x10\x01\x12\x15\n\x11VALUE_TYPE_STRING\x10\x02\x12\x16\n\x12VALUE_TYPE_BOOLEAN\x10\x03\x12\x14\n\x10VALUE_TYPE_INT64\x10\x04\x12\x14\n\x10VALUE_TYPE_INT32\x10\x05\x12\x1b\n\x17VALUE_TYPE_NSV_PLACE_ID\x10\x06*\xa0\x01\n\x0eValidationName\x12\x11\n\rNO_VALIDATION\x10\x00\x12\x1d\n\x19\x41\x45RATION_EVENT_VALIDATION\x10\x01\x12 \n\x1cPIPE_INSTALLATION_VALIDATION\x10\x02\x12\x1a\n\x16INSIDE_BUND_VALIDATION\x10\x03\x12\x1e\n\x1aINSIDE_GEOFENCE_VALIDATION\x10\x04*Z\n\x0eValidationType\x12\x16\n\x12NO_VALIDATION_TYPE\x10\x00\x12\x17\n\x13VALIDATION_TYPE_DSR\x10\x01\x12\x17\n\x13VALIDATION_TYPE_AWD\x10\x02*[\n\x10HealthParameters\x12\x11\n\rSYSTEM_HEALTH\x10\x00\x12\r\n\tDB_HEALTH\x10\x01\x12\x10\n\x0c\x43\x41\x43HE_HEALTH\x10\x02\x12\x13\n\x0fUPSTREAM_HEALTH\x10\x03*Q\n\nCloudStore\x12\x12\n\x0eNO_Cloud_Store\x10\x00\x12\x12\n\x0eS3_Cloud_Store\x10\x01\x12\x1b\n\x17\x43loud_Front_Cloud_Store\x10\x02*3\n\nUrlBuilder\x12\x12\n\x0eNO_URL_BUILDER\x10\x00\x12\x11\n\rURL_BUILDER_1\x10\x01*/\n\tSatellite\x12\x10\n\x0cNO_SATELLITE\x10\x00\x12\x10\n\x0cSATELLITE_S1\x10\x01*-\n\x04\x42\x61nd\x12\x0b\n\x07NO_BAND\x10\x00\x12\x0b\n\x07\x42\x41ND_VH\x10\x01\x12\x0b\n\x07\x42\x41ND_VV\x10\x02*P\n\x07\x41ppName\x12\x0f\n\x0bNO_APP_NAME\x10\x00\x12\x10\n\x0c\x41PP_NAME_AWD\x10\x01\x12\x10\n\x0c\x41PP_NAME_CRM\x10\x02\x12\x10\n\x0c\x41PP_NAME_DSR\x10\x03\x42X\n(farm.nurture.core.contracts.common.enumsP\x01Z\'code.nurture.farm/Core/Contracts/Common\xa0\x01\x01\x62\x06proto3'
 )
 
 _PROJECTIONTYPE = _descriptor.EnumDescriptor(
@@ -501,16 +501,11 @@ _PLACESOURCETYPE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='MACHINE_BATCH_SPRAY', index=18, number=18,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=1112,
-  serialized_end=1517,
+  serialized_end=1492,
 )
 _sym_db.RegisterEnumDescriptor(_PLACESOURCETYPE)
 
@@ -605,8 +600,8 @@ _PLACEVISIBLETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1520,
-  serialized_end=1906,
+  serialized_start=1495,
+  serialized_end=1881,
 )
 _sym_db.RegisterEnumDescriptor(_PLACEVISIBLETYPE)
 
@@ -801,8 +796,8 @@ _PLACETAGPROPERTY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1909,
-  serialized_end=2572,
+  serialized_start=1884,
+  serialized_end=2547,
 )
 _sym_db.RegisterEnumDescriptor(_PLACETAGPROPERTY)
 
@@ -907,8 +902,8 @@ _PLACETAGNAME = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2575,
-  serialized_end=2878,
+  serialized_start=2550,
+  serialized_end=2853,
 )
 _sym_db.RegisterEnumDescriptor(_PLACETAGNAME)
 
@@ -938,8 +933,8 @@ _GEOMETRYREPRESENTATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2880,
-  serialized_end=2940,
+  serialized_start=2855,
+  serialized_end=2915,
 )
 _sym_db.RegisterEnumDescriptor(_GEOMETRYREPRESENTATIONTYPE)
 
@@ -1009,8 +1004,8 @@ _VALIDATIONRESPONSECODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2943,
-  serialized_end=3399,
+  serialized_start=2918,
+  serialized_end=3374,
 )
 _sym_db.RegisterEnumDescriptor(_VALIDATIONRESPONSECODE)
 
@@ -1080,8 +1075,8 @@ _VALIDATIONRESPONSEMSG = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3402,
-  serialized_end=3837,
+  serialized_start=3377,
+  serialized_end=3812,
 )
 _sym_db.RegisterEnumDescriptor(_VALIDATIONRESPONSEMSG)
 
@@ -1111,8 +1106,8 @@ _GEORESPONSESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3839,
-  serialized_end=3921,
+  serialized_start=3814,
+  serialized_end=3896,
 )
 _sym_db.RegisterEnumDescriptor(_GEORESPONSESTATUS)
 
@@ -1152,8 +1147,8 @@ _GEOVALIDATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3924,
-  serialized_end=4112,
+  serialized_start=3899,
+  serialized_end=4087,
 )
 _sym_db.RegisterEnumDescriptor(_GEOVALIDATIONTYPE)
 
@@ -1228,8 +1223,8 @@ _GEOVALIDATIONNAME = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4115,
-  serialized_end=4636,
+  serialized_start=4090,
+  serialized_end=4611,
 )
 _sym_db.RegisterEnumDescriptor(_GEOVALIDATIONNAME)
 
@@ -1264,8 +1259,8 @@ _ASSERTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4638,
-  serialized_end=4735,
+  serialized_start=4613,
+  serialized_end=4710,
 )
 _sym_db.RegisterEnumDescriptor(_ASSERTIONTYPE)
 
@@ -1295,8 +1290,8 @@ _GEODATASOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4737,
-  serialized_end=4811,
+  serialized_start=4712,
+  serialized_end=4786,
 )
 _sym_db.RegisterEnumDescriptor(_GEODATASOURCE)
 
@@ -1361,8 +1356,8 @@ _FILTERKEY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4814,
-  serialized_end=4973,
+  serialized_start=4789,
+  serialized_end=4948,
 )
 _sym_db.RegisterEnumDescriptor(_FILTERKEY)
 
@@ -1412,8 +1407,8 @@ _REFERENCETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4976,
-  serialized_end=5127,
+  serialized_start=4951,
+  serialized_end=5102,
 )
 _sym_db.RegisterEnumDescriptor(_REFERENCETYPE)
 
@@ -1503,8 +1498,8 @@ _ATTRIBUTEKEY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5130,
-  serialized_end=5415,
+  serialized_start=5105,
+  serialized_end=5390,
 )
 _sym_db.RegisterEnumDescriptor(_ATTRIBUTEKEY)
 
@@ -1539,8 +1534,8 @@ _SERVICENAME = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5417,
-  serialized_end=5520,
+  serialized_start=5392,
+  serialized_end=5495,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICENAME)
 
@@ -1590,8 +1585,8 @@ _VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5523,
-  serialized_end=5696,
+  serialized_start=5498,
+  serialized_end=5671,
 )
 _sym_db.RegisterEnumDescriptor(_VALUETYPE)
 
@@ -1631,8 +1626,8 @@ _VALIDATIONNAME = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5699,
-  serialized_end=5859,
+  serialized_start=5674,
+  serialized_end=5834,
 )
 _sym_db.RegisterEnumDescriptor(_VALIDATIONNAME)
 
@@ -1662,8 +1657,8 @@ _VALIDATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5861,
-  serialized_end=5951,
+  serialized_start=5836,
+  serialized_end=5926,
 )
 _sym_db.RegisterEnumDescriptor(_VALIDATIONTYPE)
 
@@ -1698,8 +1693,8 @@ _HEALTHPARAMETERS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5953,
-  serialized_end=6044,
+  serialized_start=5928,
+  serialized_end=6019,
 )
 _sym_db.RegisterEnumDescriptor(_HEALTHPARAMETERS)
 
@@ -1729,8 +1724,8 @@ _CLOUDSTORE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6046,
-  serialized_end=6127,
+  serialized_start=6021,
+  serialized_end=6102,
 )
 _sym_db.RegisterEnumDescriptor(_CLOUDSTORE)
 
@@ -1755,8 +1750,8 @@ _URLBUILDER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6129,
-  serialized_end=6180,
+  serialized_start=6104,
+  serialized_end=6155,
 )
 _sym_db.RegisterEnumDescriptor(_URLBUILDER)
 
@@ -1781,8 +1776,8 @@ _SATELLITE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6182,
-  serialized_end=6229,
+  serialized_start=6157,
+  serialized_end=6204,
 )
 _sym_db.RegisterEnumDescriptor(_SATELLITE)
 
@@ -1812,8 +1807,8 @@ _BAND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6231,
-  serialized_end=6276,
+  serialized_start=6206,
+  serialized_end=6251,
 )
 _sym_db.RegisterEnumDescriptor(_BAND)
 
@@ -1848,8 +1843,8 @@ _APPNAME = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6278,
-  serialized_end=6358,
+  serialized_start=6253,
+  serialized_end=6333,
 )
 _sym_db.RegisterEnumDescriptor(_APPNAME)
 
@@ -1913,7 +1908,6 @@ AERATION_1 = 14
 AERATION_2 = 15
 AERATION_3 = 16
 SENTINEL_1_L2A = 17
-MACHINE_BATCH_SPRAY = 18
 NO_VISIBLE_TYPE = 0
 VILLAGE_FARM = 1
 DISTRICT_FARM = 2

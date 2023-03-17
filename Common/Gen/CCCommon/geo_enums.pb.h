@@ -373,13 +373,12 @@ enum PlaceSourceType : int {
   AERATION_2 = 15,
   AERATION_3 = 16,
   SENTINEL_1_L2A = 17,
-  MACHINE_BATCH_SPRAY = 18,
   PlaceSourceType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   PlaceSourceType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool PlaceSourceType_IsValid(int value);
 constexpr PlaceSourceType PlaceSourceType_MIN = NO_SOURCE_TYPE;
-constexpr PlaceSourceType PlaceSourceType_MAX = MACHINE_BATCH_SPRAY;
+constexpr PlaceSourceType PlaceSourceType_MAX = SENTINEL_1_L2A;
 constexpr int PlaceSourceType_ARRAYSIZE = PlaceSourceType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PlaceSourceType_descriptor();

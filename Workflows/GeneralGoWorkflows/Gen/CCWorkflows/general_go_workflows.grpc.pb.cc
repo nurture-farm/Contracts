@@ -27,23 +27,9 @@ namespace workflows {
 namespace generalgo {
 
 static const char* GeneralGoWorkflows_method_names[] = {
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/OfferReward",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/OfferDiscountedSprayService",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/HandoverOtp",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/RescheduleMachinePreventiveMaintenance",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/UpdateActorsMachinePreventiveMaintenance",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/PreventiveMaintenanceTrigger",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/RefreshUserContent",
   "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/ExecuteCampaign",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/PostServiceFeedbackPN",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/PostPusaSprayPopUp",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/IotComputation",
   "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/ExecuteUserJourneyCampaign",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/OfferInsuranceRewards",
   "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/CreatePartitions",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/TriggerF2FPointExpiryCron",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/SendInsurancePurchaseEvent",
-  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/ExecuteScoreComputation",
 };
 
 std::unique_ptr< GeneralGoWorkflows::Stub> GeneralGoWorkflows::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -53,185 +39,10 @@ std::unique_ptr< GeneralGoWorkflows::Stub> GeneralGoWorkflows::NewStub(const std
 }
 
 GeneralGoWorkflows::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_OfferReward_(GeneralGoWorkflows_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OfferDiscountedSprayService_(GeneralGoWorkflows_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HandoverOtp_(GeneralGoWorkflows_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RescheduleMachinePreventiveMaintenance_(GeneralGoWorkflows_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateActorsMachinePreventiveMaintenance_(GeneralGoWorkflows_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PreventiveMaintenanceTrigger_(GeneralGoWorkflows_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RefreshUserContent_(GeneralGoWorkflows_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ExecuteCampaign_(GeneralGoWorkflows_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostServiceFeedbackPN_(GeneralGoWorkflows_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PostPusaSprayPopUp_(GeneralGoWorkflows_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_IotComputation_(GeneralGoWorkflows_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ExecuteUserJourneyCampaign_(GeneralGoWorkflows_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OfferInsuranceRewards_(GeneralGoWorkflows_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreatePartitions_(GeneralGoWorkflows_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_TriggerF2FPointExpiryCron_(GeneralGoWorkflows_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendInsurancePurchaseEvent_(GeneralGoWorkflows_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ExecuteScoreComputation_(GeneralGoWorkflows_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_ExecuteCampaign_(GeneralGoWorkflows_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ExecuteUserJourneyCampaign_(GeneralGoWorkflows_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreatePartitions_(GeneralGoWorkflows_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status GeneralGoWorkflows::Stub::OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OfferReward_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OfferReward_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::OfferReward(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OfferReward_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* GeneralGoWorkflows::Stub::PrepareAsyncOfferRewardRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OfferReward_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* GeneralGoWorkflows::Stub::AsyncOfferRewardRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncOfferRewardRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OfferDiscountedSprayService_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OfferDiscountedSprayService_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::OfferDiscountedSprayService(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OfferDiscountedSprayService_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* GeneralGoWorkflows::Stub::PrepareAsyncOfferDiscountedSprayServiceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse, ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OfferDiscountedSprayService_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse>* GeneralGoWorkflows::Stub::AsyncOfferDiscountedSprayServiceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncOfferDiscountedSprayServiceRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_HandoverOtp_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_HandoverOtp_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_HandoverOtp_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* GeneralGoWorkflows::Stub::PrepareAsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_HandoverOtp_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* GeneralGoWorkflows::Stub::AsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncHandoverOtpRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RescheduleMachinePreventiveMaintenance_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RescheduleMachinePreventiveMaintenance_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::RescheduleMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RescheduleMachinePreventiveMaintenance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* GeneralGoWorkflows::Stub::PrepareAsyncRescheduleMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RescheduleMachinePreventiveMaintenance_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse>* GeneralGoWorkflows::Stub::AsyncRescheduleMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncRescheduleMachinePreventiveMaintenanceRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateActorsMachinePreventiveMaintenance_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateActorsMachinePreventiveMaintenance_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::UpdateActorsMachinePreventiveMaintenance(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateActorsMachinePreventiveMaintenance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* GeneralGoWorkflows::Stub::PrepareAsyncUpdateActorsMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateActorsMachinePreventiveMaintenance_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse>* GeneralGoWorkflows::Stub::AsyncUpdateActorsMachinePreventiveMaintenanceRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncUpdateActorsMachinePreventiveMaintenanceRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PreventiveMaintenanceTrigger_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PreventiveMaintenanceTrigger_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::PreventiveMaintenanceTrigger(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PreventiveMaintenanceTrigger_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* GeneralGoWorkflows::Stub::PrepareAsyncPreventiveMaintenanceTriggerRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PreventiveMaintenanceTrigger_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse>* GeneralGoWorkflows::Stub::AsyncPreventiveMaintenanceTriggerRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncPreventiveMaintenanceTriggerRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RefreshUserContent_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RefreshUserContent_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::RefreshUserContent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RefreshUserContent_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* GeneralGoWorkflows::Stub::PrepareAsyncRefreshUserContentRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RefreshUserContent_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse>* GeneralGoWorkflows::Stub::AsyncRefreshUserContentRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncRefreshUserContentRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status GeneralGoWorkflows::Stub::ExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ExecuteCampaign_, context, request, response);
@@ -252,75 +63,6 @@ void GeneralGoWorkflows::Stub::async::ExecuteCampaign(::grpc::ClientContext* con
 ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>* GeneralGoWorkflows::Stub::AsyncExecuteCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncExecuteCampaignRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PostServiceFeedbackPN_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostServiceFeedbackPN_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::PostServiceFeedbackPN(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostServiceFeedbackPN_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* GeneralGoWorkflows::Stub::PrepareAsyncPostServiceFeedbackPNRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PostServiceFeedbackPN_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse>* GeneralGoWorkflows::Stub::AsyncPostServiceFeedbackPNRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncPostServiceFeedbackPNRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PostPusaSprayPopUp_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostPusaSprayPopUp_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::PostPusaSprayPopUp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PostPusaSprayPopUp_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* GeneralGoWorkflows::Stub::PrepareAsyncPostPusaSprayPopUpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PostPusaSprayPopUp_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse>* GeneralGoWorkflows::Stub::AsyncPostPusaSprayPopUpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncPostPusaSprayPopUpRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_IotComputation_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_IotComputation_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::IotComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_IotComputation_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* GeneralGoWorkflows::Stub::PrepareAsyncIotComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_IotComputation_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse>* GeneralGoWorkflows::Stub::AsyncIotComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncIotComputationRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -348,29 +90,6 @@ void GeneralGoWorkflows::Stub::async::ExecuteUserJourneyCampaign(::grpc::ClientC
   return result;
 }
 
-::grpc::Status GeneralGoWorkflows::Stub::OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OfferInsuranceRewards_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OfferInsuranceRewards_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::OfferInsuranceRewards(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OfferInsuranceRewards_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* GeneralGoWorkflows::Stub::PrepareAsyncOfferInsuranceRewardsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OfferInsuranceRewards_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse>* GeneralGoWorkflows::Stub::AsyncOfferInsuranceRewardsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncOfferInsuranceRewardsRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
 ::grpc::Status GeneralGoWorkflows::Stub::CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreatePartitions_, context, request, response);
 }
@@ -394,148 +113,9 @@ void GeneralGoWorkflows::Stub::async::CreatePartitions(::grpc::ClientContext* co
   return result;
 }
 
-::grpc::Status GeneralGoWorkflows::Stub::TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TriggerF2FPointExpiryCron_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TriggerF2FPointExpiryCron_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::TriggerF2FPointExpiryCron(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TriggerF2FPointExpiryCron_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* GeneralGoWorkflows::Stub::PrepareAsyncTriggerF2FPointExpiryCronRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TriggerF2FPointExpiryCron_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse>* GeneralGoWorkflows::Stub::AsyncTriggerF2FPointExpiryCronRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncTriggerF2FPointExpiryCronRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SendInsurancePurchaseEvent_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendInsurancePurchaseEvent_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::SendInsurancePurchaseEvent(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendInsurancePurchaseEvent_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* GeneralGoWorkflows::Stub::PrepareAsyncSendInsurancePurchaseEventRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SendInsurancePurchaseEvent_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse>* GeneralGoWorkflows::Stub::AsyncSendInsurancePurchaseEventRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSendInsurancePurchaseEventRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status GeneralGoWorkflows::Stub::ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ExecuteScoreComputation_, context, request, response);
-}
-
-void GeneralGoWorkflows::Stub::async::ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ExecuteScoreComputation_, context, request, response, std::move(f));
-}
-
-void GeneralGoWorkflows::Stub::async::ExecuteScoreComputation(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ExecuteScoreComputation_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* GeneralGoWorkflows::Stub::PrepareAsyncExecuteScoreComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ExecuteScoreComputation_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse>* GeneralGoWorkflows::Stub::AsyncExecuteScoreComputationRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncExecuteScoreComputationRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
 GeneralGoWorkflows::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       GeneralGoWorkflows_method_names[0],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* resp) {
-               return service->OfferReward(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* resp) {
-               return service->OfferDiscountedSprayService(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[2],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* resp) {
-               return service->HandoverOtp(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[3],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* resp) {
-               return service->RescheduleMachinePreventiveMaintenance(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[4],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* resp) {
-               return service->UpdateActorsMachinePreventiveMaintenance(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[5],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* resp) {
-               return service->PreventiveMaintenanceTrigger(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[6],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* resp) {
-               return service->RefreshUserContent(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](GeneralGoWorkflows::Service* service,
@@ -545,37 +125,7 @@ GeneralGoWorkflows::Service::Service() {
                return service->ExecuteCampaign(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[8],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* resp) {
-               return service->PostServiceFeedbackPN(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[9],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* resp) {
-               return service->PostPusaSprayPopUp(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[10],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* resp) {
-               return service->IotComputation(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[11],
+      GeneralGoWorkflows_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](GeneralGoWorkflows::Service* service,
@@ -585,17 +135,7 @@ GeneralGoWorkflows::Service::Service() {
                return service->ExecuteUserJourneyCampaign(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[12],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* resp) {
-               return service->OfferInsuranceRewards(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[13],
+      GeneralGoWorkflows_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](GeneralGoWorkflows::Service* service,
@@ -604,112 +144,12 @@ GeneralGoWorkflows::Service::Service() {
              ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* resp) {
                return service->CreatePartitions(ctx, req, resp);
              }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[14],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* resp) {
-               return service->TriggerF2FPointExpiryCron(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[15],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* resp) {
-               return service->SendInsurancePurchaseEvent(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      GeneralGoWorkflows_method_names[16],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](GeneralGoWorkflows::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* req,
-             ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* resp) {
-               return service->ExecuteScoreComputation(ctx, req, resp);
-             }, this)));
 }
 
 GeneralGoWorkflows::Service::~Service() {
 }
 
-::grpc::Status GeneralGoWorkflows::Service::OfferReward(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::OfferDiscountedSprayService(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::DiscountedSprayServiceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferRewardResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::HandoverOtp(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::RescheduleMachinePreventiveMaintenance(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RescheduleMachinePreventiveMaintenanceResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::UpdateActorsMachinePreventiveMaintenance(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::UpdateActorsMachinePreventiveMaintenanceResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::PreventiveMaintenanceTrigger(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PreventiveMaintenanceTriggerResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::RefreshUserContent(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::RefreshUserContentResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
 ::grpc::Status GeneralGoWorkflows::Service::ExecuteCampaign(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::PostServiceFeedbackPN(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostServiceFeedbackPNResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::PostPusaSprayPopUp(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::PostPusaSprayPopUpResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::IotComputation(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::IotComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::IotComputationResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -723,35 +163,7 @@ GeneralGoWorkflows::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status GeneralGoWorkflows::Service::OfferInsuranceRewards(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::OfferInsuranceRewardResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
 ::grpc::Status GeneralGoWorkflows::Service::CreatePartitions(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::TriggerF2FPointExpiryCron(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::TriggerF2FPointExpiryCronResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::SendInsurancePurchaseEvent(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::InsurancePurchaseEventResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status GeneralGoWorkflows::Service::ExecuteScoreComputation(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ScoreComputationResponse* response) {
   (void) context;
   (void) request;
   (void) response;
