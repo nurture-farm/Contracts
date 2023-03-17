@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common.enums";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+enum CropSeason {
+NO_CROP_SEASON = 0;
+
+KHARIF_2020 = 201;
+RABI_2020 = 202;
+KHARIF_2021 = 211;
+RABI_2021 = 212;
+KHARIF_2022 = 221;
+RABI_2022 = 222;
+KHARIF_2023 = 231;
+RABI_2023 = 232;
+KHARIF_2024 = 241;
+RABI_2024 = 242;
+KHARIF_2025 = 251;
+RABI_2025 = 252;
+KHARIF_2026 = 261;
+RABI_2026 = 262;
+KHARIF_2027 = 271;
+RABI_2027 = 272;
+KHARIF_2028 = 281;
+RABI_2028 = 282;
+KHARIF_2029 = 291;
+RABI_2029 = 292;
+KHARIF_2030 = 301;
+RABI_2030 = 302;
+KHARIF_2031 = 311;
+RABI_2031 = 312;
+KHARIF_2032 = 321;
+RABI_2033 = 322;
+}

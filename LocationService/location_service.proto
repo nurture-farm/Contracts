@@ -1,0 +1,1369 @@
+syntax = "proto3";
+
+package farm.nurture.location.service.proto;
+
+import "Common/utils.proto";
+import "Common/headers.proto";
+import "Common/entities.proto";
+import "Common/event_reference.proto";
+import "Common/time_slot.proto";
+import "Common/tags.proto";
+
+option java_multiple_files = true;
+option java_package = "farm.nurture.location.service.proto";
+option go_package = "code.nurture.farm/Core/Contracts/LocationService";
+
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				InsertLocation					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message InsertLocationRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	int64 id = 2;
+	string name = 3;
+	string boundary = 4;
+	double centerLatitude = 5;
+	double centerLongitude = 6;
+	double area = 7;
+	string labels = 8;
+	string namespace = 9;
+	string code = 10;
+	enum Status{ UNCLAIMED = 0; CLAIMED = 1;} 
+Status status = 11;
+	string metadata = 12;
+	int32 version = 13;
+	int32 minS2Level = 14;
+	int32 maxS2Level = 15;
+	int64 createdByActorId = 16;
+	string createdByActorType = 17;
+	int64 modifiedByActorId = 18;
+	string modifiedByActorType = 19;
+	enum Visibility{ VISIBLE = 0; INVISIBLE = 1;}
+Visibility visibility = 20;
+	string geographyUid = 21;
+	string pincode = 22;
+	string latLongGeohash = 23;
+}
+
+
+message BulkInsertLocationRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated InsertLocationRequest  requests = 2;
+}
+
+
+message InsertLocationResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+
+message BulkInsertLocationResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+ int32 count = 2;
+ repeated InsertLocationResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				InsertLocationS2Cell
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message InsertLocationS2CellRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	int64 locationId = 2;
+	string namespace = 3;
+	int64 s2CellId = 4;
+	int32 s2CellLevel = 5;
+	int64 s27LevelCellId = 6;
+	int64 s28LevelCellId = 7;
+	int64 s29LevelCellId = 8;
+	int64 s210LevelCellId = 9;
+	int64 s211LevelCellId = 10;
+	int64 s212LevelCellId = 11;
+	int64 s213LevelCellId = 12;
+	int64 s214LevelCellId = 13;
+	int64 s215LevelCellId = 14;
+	int64 s216LevelCellId = 15;
+	int64 s217LevelCellId = 16;
+	int64 s218LevelCellId = 17;
+}
+
+
+message BulkInsertLocationS2CellRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated InsertLocationS2CellRequest  requests = 2;
+}
+
+
+message InsertLocationS2CellResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkInsertLocationS2CellResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated InsertLocationS2CellResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				InsertConfig					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message InsertConfigRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	string key = 2;
+	string value = 3;
+}
+
+
+message BulkInsertConfigRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated InsertConfigRequest  requests = 2;
+}
+
+
+message InsertConfigResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkInsertConfigResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated InsertConfigResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchLocationById					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchLocationByIdRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	int64 id = 3;
+	string namespace = 4;
+}
+message LocationRecord {
+	int64 id = 1;
+	string name = 2;
+	string boundary = 3;
+	double centerLatitude = 4;
+	double centerLongitude = 5;
+	double area = 6;
+	string labels = 7;
+	string namespace = 8;
+	string code = 9;
+	string status = 10;
+	string metadata = 11;
+	int32 version = 12;
+	int32 minS2Level = 13;
+	int32 maxS2Level = 14;
+	int64 createdByActorId = 15;
+	string createdByActorType = 16;
+	int64 modifiedByActorId = 17;
+	string modifiedByActorType = 18;
+	int64 createdAt = 19;
+	int64 updatedAt = 20;
+	int64 deletedAt = 21;
+	string visibility = 22;
+	string geographyUid = 23;
+	string pincode = 24;
+	string latLongGeohash = 25;
+}
+message Location {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+     LocationRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchLocationByCodeAndNamespace					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchLocationByCodeAndNamespaceRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	string code = 3;
+	string namespace = 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchS2CellById					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchS2CellByIdRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	int64 id = 3;
+}
+message S2CellRecord {
+	int64 id = 1;
+	int64 locationId = 2;
+	int64 s2CellId = 3;
+	int32 s2CellLevel = 4;
+	int64 s27LevelCellId = 5;
+	int64 s28LevelCellId = 6;
+	int64 s29LevelCellId = 7;
+	int64 s210LevelCellId = 8;
+	int64 s211LevelCellId = 9;
+	int64 s212LevelCellId = 10;
+	int64 s213LevelCellId = 11;
+	int64 s214LevelCellId = 12;
+	int64 s215LevelCellId = 13;
+	int64 s216LevelCellId = 14;
+	int64 s217LevelCellId = 15;
+	int64 s218LevelCellId = 16;
+	int64 createdAt = 17;
+	int64 updatedAt = 18;
+	int64 deletedAt = 19;
+}
+message S2Cell {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+     S2CellRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchS2CellByLocation					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchS2CellByLocationRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	int64 locationId = 3;
+	int64 s2CellId = 4;
+	int32 s2CellLevel = 5;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchS2CellByLocationId					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchS2CellByLocationIdRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	int64 locationId = 3;
+}
+message LocationS2CellsRecord {
+	int64 id = 1;
+	int64 locationId = 2;
+	int64 s2CellId = 3;
+	int32 s2CellLevel = 4;
+	int64 s27LevelCellId = 5;
+	int64 s28LevelCellId = 6;
+	int64 s29LevelCellId = 7;
+	int64 s210LevelCellId = 8;
+	int64 s211LevelCellId = 9;
+	int64 s212LevelCellId = 10;
+	int64 s213LevelCellId = 11;
+	int64 s214LevelCellId = 12;
+	int64 s215LevelCellId = 13;
+	int64 s216LevelCellId = 14;
+	int64 s217LevelCellId = 15;
+	int64 s218LevelCellId = 16;
+	int64 createdAt = 17;
+	int64 updatedAt = 18;
+	int64 deletedAt = 19;
+}
+message LocationS2Cells {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated LocationS2CellsRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				UpdateLocationById					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message UpdateLocationByIdRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	string name = 2;
+	string boundary = 3;
+	double centerLatitude = 4;
+	double centerLongitude = 5;
+	double area = 6;
+	string labels = 7;
+	string namespace = 8;
+	string code = 9;
+	enum Status{ UNCLAIMED = 0; CLAIMED = 1;} 
+Status status = 10;
+	string metadata = 11;
+	int32 newVersion = 12;
+	int32 minS2Level = 13;
+	int32 maxS2Level = 14;
+	int64 modifiedByActorId = 15;
+	string modifiedByActorType = 16;
+	enum Visibility{ VISIBLE = 0; INVISIBLE = 1;} 
+Visibility visibility = 17;
+	string geographyUid = 18;
+	string pincode = 19;
+	string latLongGeohash = 20;
+	int64 id = 21;
+	int32 oldVersion = 22;
+}
+
+
+message BulkUpdateLocationByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated UpdateLocationByIdRequest  requests = 2;
+}
+
+
+message UpdateLocationByIdResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkUpdateLocationByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated UpdateLocationByIdResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				UpdateLocationLabelById					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message UpdateLocationLabelByIdRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	string labels = 2;
+	int64 modifiedByActorId = 3;
+	string modifiedByActorType = 4;
+	int64 id = 5;
+}
+
+
+message BulkUpdateLocationLabelByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated UpdateLocationLabelByIdRequest  requests = 2;
+}
+
+
+message UpdateLocationLabelByIdResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkUpdateLocationLabelByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated UpdateLocationLabelByIdResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				UpdateDeleteS2CellByLocation					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message UpdateDeleteS2CellByLocationRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	int64 deletedAt = 2;
+	int64 locationId = 3;
+	int64 s2CellId = 4;
+	int32 s2CellLevel = 5;
+}
+
+
+message BulkUpdateDeleteS2CellByLocationRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated UpdateDeleteS2CellByLocationRequest  requests = 2;
+}
+
+
+message UpdateDeleteS2CellByLocationResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkUpdateDeleteS2CellByLocationResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated UpdateDeleteS2CellByLocationResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchConfigById					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchConfigByIdRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	int64 id = 3;
+}
+message ConfigRecord {
+	int64 id = 1;
+	string key = 2;
+	string value = 3;
+	int64 createdAt = 4;
+	int64 updatedAt = 5;
+	int64 deletedAt = 6;
+}
+message Config {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+     ConfigRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				AddLocation					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message AddLocationRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	 	Format format = 2;   
+	string boundary = 3;     
+	repeated Label labels =4;     
+	double center_latitude = 5;     
+	double center_longitude=6;     
+	double area=7;     
+	string namespace =8;     
+	Status status = 9;  
+	string name = 10; 
+	string code = 11;  
+  int64 id = 12; 
+  int64 created_by_actor_id = 13;  
+  string created_by_actor_type = 14;
+  Visibility  visibility =15;
+  string geography_uid=16;
+  string pincode=17; 
+  string lat_long_geohash=18;
+}
+ 
+enum Namespace { 
+	NO_NAMESPACE = 0;
+	NURTURE_FARM = 1; 
+	NURTURE_SUSTAIN = 2; 
+	MUNICIPALITY = 3; 
+	NURTURE_TRADE = 4;
+}
+
+enum Status { 
+	NO_STATUS = 0;
+	UNCLAIMED = 1; 
+	CLAIMED = 2;
+}
+
+enum Format { 
+	NO_FORMAT = 0;
+	KML = 1; 
+	GEOJSON = 2;  
+  TEXT = 3;  
+  SHP = 4;
+}   
+
+enum Visibility { 
+	NO_VISIBILITY = 0;
+	VISIBLE = 1; 
+	INVISIBLE= 2;
+}
+
+message Label { 
+  	string key = 1; 
+  	string value = 2;
+  	bool deleteKey = 3;
+}
+
+
+message BulkAddLocationRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated AddLocationRequest  requests = 2;
+}
+
+
+message AddLocationResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkAddLocationResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated AddLocationResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				UpdateLocation					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message UpdateLocationRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	 	Format format = 2;   
+	string boundary = 3;     
+	repeated Label labels =4;     
+	double center_latitude = 5;     
+	double center_longitude=6;     
+	double area=7;     
+	string namespace =8;     
+	Status status = 9; 
+	string name = 10; 
+	int64 id = 11; 
+	string code = 12;  
+ int64 modified_by_actor_id = 13;  
+  string modified_by_actor_type = 14;
+  Visibility  visibility =15;
+  string geography_uid=16;
+  string pincode=17; 
+   string lat_long_geohash=18;
+}
+
+
+message BulkUpdateLocationRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated UpdateLocationRequest  requests = 2;
+}
+
+
+message UpdateLocationResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkUpdateLocationResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated UpdateLocationResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				GetLocationsWithBoundary					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message GetLocationsWithBoundaryRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	 	Format format = 3;    
+  LabelGroup labels =4;     
+	double latitude = 5;     
+	double longitude=6;     
+	double radius=7;     
+	string namespace =8;     
+	Status status = 9;  
+	int64 pageSize = 10;  
+	int64 pageNumber = 11;  
+  string boundary=12;     
+  Format polygonFormat=13;
+}
+
+message LabelGroup { 
+	repeated LabelOPP labelOpp = 1;
+}
+
+message LabelOPP { 
+	 string operator = 1; 
+  repeated Label label = 2;
+}
+message GetLocationsWithBoundaryResponseRecord {
+
+}
+message GetLocationsWithBoundaryResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+     	repeated LocationWithBoundary locationWithBoundary= 4;
+}
+
+message LocationWithBoundary { 
+ int64 id = 1;  
+  string name = 2;  
+  Format format = 3;   
+	string boundary = 4;     
+	repeated Label labels =5;     
+	double center_latitude = 6;     
+	double center_longitude=7;     
+	double area=8;     
+	string namespace =9;     
+	Status locationStatus = 10;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				GetLocations					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message GetLocationsRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	 	LabelGroup labels =3;     
+	double latitude = 4;     
+	double longitude=5;     
+	double radius=6;     
+	string namespace =7;     
+	Status status = 8; 
+	int64 pageSize = 9;  
+	int64 pageNumber = 10;   
+ string boundary=11;     
+  Format polygonFormat=12;
+
+}
+message GetLocationsResponseRecord {
+
+}
+message GetLocationsResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+     	repeated LocationWithoutBoundary locationWithoutBoundary= 4;
+}
+
+message LocationWithoutBoundary { 
+ int64 id = 1;  
+ string name =2;  
+ repeated Label labels =3;     
+	double center_latitude = 4;     
+	double center_longitude=5;     
+	double area=6;     
+	string namespace =7;     
+	Status locationStatus = 8;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				GeographyTypeMessage					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message GeographyDataType {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+		GeographyType geoType = 2;  
+  LabelKey labelKey = 3;
+}
+
+enum GeographyType {
+ 	NO_GEOGRAPHY_TYPE=0;  
+ VILLAGE=1; 
+ 	TEHSIL = 2;  
+ 	DISTRICT = 3; 
+ 	STATE = 4; 
+ 	COUNTRY = 5;
+}
+
+enum LabelKey {
+ 	no_label_type=0; 
+ 	country = 1;  
+ 	state_id = 2; 
+ 	state = 3; 
+ 	district_id = 4; 
+  district = 5;
+ 	tehsil_id = 6;
+ 	tehsil = 7;
+ 	type = 8;
+
+}
+
+
+message BulkGeographyDataType {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated GeographyDataType  requests = 2;
+}
+
+
+message GeographyTypeMessageResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkGeographyTypeMessageResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated GeographyTypeMessageResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				GetChildGeographies					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message GetChildGeographiesRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	 	int64 id = 3;     
+	string namespace =4;     
+	string code = 5;  
+	Format format = 6; 
+	int64 pageSize = 7;  
+	int64 pageNumber = 8;
+}
+message GetChildGeographiesResponseRecord {
+
+}
+message GetChildGeographiesResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+     	repeated LocationWithBoundary locationWithBoundary= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				InsertLocationWithoutBoundary					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message InsertLocationWithoutBoundaryRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	int64 id = 2;
+	string name = 3;
+	string labels = 4;
+	string namespace = 5;
+	string code = 6;
+	enum Status{ UNCLAIMED = 0; CLAIMED = 1;} 
+Status status = 7;
+	string metadata = 8;
+	int32 version = 9;
+	int32 minS2Level = 10;
+	int32 maxS2Level = 11;
+	int64 createdByActorId = 12;
+	string createdByActorType = 13;
+	int64 modifiedByActorId = 14;
+	string modifiedByActorType = 15;
+	enum Visibility{ VISIBLE = 0; INVISIBLE = 1;} 
+Visibility visibility = 16;
+	string geographyUid = 17;
+	string pincode = 18;
+	string latLongGeohash = 19;
+}
+
+
+message BulkInsertLocationWithoutBoundaryRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated InsertLocationWithoutBoundaryRequest  requests = 2;
+}
+
+
+message InsertLocationWithoutBoundaryResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkInsertLocationWithoutBoundaryResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated InsertLocationWithoutBoundaryResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				UpdateLocationWithoutBoundaryById					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message UpdateLocationWithoutBoundaryByIdRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	string name = 2;
+	string labels = 3;
+	string namespace = 4;
+	string code = 5;
+	enum Status{ UNCLAIMED = 0; CLAIMED = 1;} 
+Status status = 6;
+	string metadata = 7;
+	int32 newVersion = 8;
+	int32 minS2Level = 9;
+	int32 maxS2Level = 10;
+	int64 modifiedByActorId = 11;
+	string modifiedByActorType = 12;
+	enum Visibility{ VISIBLE = 0; INVISIBLE = 1;} 
+Visibility visibility = 13;
+	string geographyUid = 14;
+	string pincode = 15;
+	string latLongGeohash = 16;
+	int64 id = 17;
+	int32 oldVersion = 18;
+}
+
+
+message BulkUpdateLocationWithoutBoundaryByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated UpdateLocationWithoutBoundaryByIdRequest  requests = 2;
+}
+
+
+message UpdateLocationWithoutBoundaryByIdResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkUpdateLocationWithoutBoundaryByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated UpdateLocationWithoutBoundaryByIdResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				DeleteLocationById					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message DeleteLocationByIdRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	int64 deletedAt = 2;
+	int64 modifiedByActorId = 3;
+	string modifiedByActorType = 4;
+	int64 id = 5;
+}
+
+
+message BulkDeleteLocationByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated DeleteLocationByIdRequest  requests = 2;
+}
+
+
+message DeleteLocationByIdResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkDeleteLocationByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated DeleteLocationByIdResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchDuplicateVillages					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchDuplicateVillagesRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	int64 id = 3;
+	string name = 4;
+}
+message FetchDuplicateVillagesResponseRecord {
+	int64 id = 1;
+}
+message FetchDuplicateVillagesResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated FetchDuplicateVillagesResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchDuplicateVillagesBySDTVLatLong					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchDuplicateVillagesBySDTVLatLongRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	string countryStored = 3;
+	string stateStored = 4;
+	string districtStored = 5;
+	string tehsilStored = 6;
+	string name = 7;
+}
+message FetchDuplicateVillagesBySDTVLatLongResponseRecord {
+	int64 id = 1;
+}
+message FetchDuplicateVillagesBySDTVLatLongResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated FetchDuplicateVillagesBySDTVLatLongResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchDuplicateTehsilsBySDTVLatLong					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchDuplicateTehsilsBySDTVLatLongRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	string countryStored = 3;
+	string stateStored = 4;
+	string districtStored = 5;
+	string name = 6;
+}
+message FetchDuplicateTehsilsBySDTVLatLongResponseRecord {
+	int64 id = 1;
+}
+message FetchDuplicateTehsilsBySDTVLatLongResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated FetchDuplicateTehsilsBySDTVLatLongResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchDuplicateDistrictsBySDTVLatLong					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchDuplicateDistrictsBySDTVLatLongRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	string countryStored = 3;
+	string stateStored = 4;
+	string name = 5;
+}
+message FetchDuplicateDistrictsBySDTVLatLongResponseRecord {
+	int64 id = 1;
+}
+message FetchDuplicateDistrictsBySDTVLatLongResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated FetchDuplicateDistrictsBySDTVLatLongResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FetchDuplicateStatesBySDTVLatLong					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FetchDuplicateStatesBySDTVLatLongRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	string countryStored = 3;
+	string name = 4;
+}
+message FetchDuplicateStatesBySDTVLatLongResponseRecord {
+	int64 id = 1;
+}
+message FetchDuplicateStatesBySDTVLatLongResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated FetchDuplicateStatesBySDTVLatLongResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				GetDuplicateGeographies					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message GetDuplicateGeographiesRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	double latitude = 4;     
+double longitude=5; 
+string country=6;    
+string state =7;     
+string district =8;  
+string tehsil =9; 
+string village =10;
+GeographyType geoType = 11;  
+  
+}
+message GetDuplicateGeographiesResponseRecord {
+
+}
+message GetDuplicateGeographiesResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated int64 id = 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				InsertVendorLocationData					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message InsertVendorLocationDataRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	string vendorId = 2;
+	string vendorType = 3;
+	string geohash7 = 4;
+	string geohash6 = 5;
+	double latitude = 6;
+	double longitude = 7;
+	string village = 8;
+	string tehsil = 9;
+	string district = 10;
+	string state = 11;
+	string country = 12;
+	string vendorResponse = 13;
+}
+
+
+message BulkInsertVendorLocationDataRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated InsertVendorLocationDataRequest  requests = 2;
+}
+
+
+message InsertVendorLocationDataResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkInsertVendorLocationDataResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated InsertVendorLocationDataResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				SearchVendorLocationsByGeohash					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message SearchVendorLocationsByGeohashRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	string geohash7 = 3;
+	string geohash6 = 4;
+}
+message SearchVendorLocationsByGeohashResponseRecord {
+	double latitude = 1;
+	double longitude = 2;
+	string village = 3;
+	string tehsil = 4;
+	string district = 5;
+	string state = 6;
+	string country = 7;
+}
+message SearchVendorLocationsByGeohashResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated SearchVendorLocationsByGeohashResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				SearchLocationsByGeohash					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message SearchLocationsByGeohashRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	string geohash8 = 3;
+}
+message SearchLocationsByGeohashResponseRecord {
+	double latitude = 1;
+	double longitude = 2;
+	string village = 3;
+	string tehsil = 4;
+	string district = 5;
+	string state = 6;
+	string country = 7;
+}
+message SearchLocationsByGeohashResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated SearchLocationsByGeohashResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				GetLocationDataByLatLng					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message GetLocationDataByLatLngRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+	double latitude = 4; double longitude=5;
+}
+message GetLocationDataByLatLngResponseRecord {
+
+}
+message GetLocationDataByLatLngResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    double latitude = 4; double longitude = 5; string village = 6; string tehsil = 7; string district = 8; string state = 9; string country = 10;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				AddVendorApiLedger					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message AddVendorApiLedgerRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+	string vendor = 2;
+	string apiName = 3;
+	string responseStatus = 4;
+	string params = 5;
+}
+
+
+message BulkAddVendorApiLedgerRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+ repeated AddVendorApiLedgerRequest  requests = 2;
+}
+
+
+message AddVendorApiLedgerResponse {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    int32 count = 2;
+    string recordId = 3;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+    
+}
+
+
+message BulkAddVendorApiLedgerResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1; 
+ int32 count = 2; 
+ repeated AddVendorApiLedgerResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				 Multi Queries 					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message MultiRequests {
+    bool onTxn = 1;
+    repeated Request request = 2;
+}
+
+message Request {
+    string index = 1;
+    oneof ARequest {
+        		InsertLocationRequest reqInsertLocation = 2;
+		BulkInsertLocationRequest reqInsertLocationBulk = 3;
+		InsertLocationS2CellRequest reqInsertLocationS2Cell = 4;
+		BulkInsertLocationS2CellRequest reqInsertLocationS2CellBulk = 5;
+		InsertConfigRequest reqInsertConfig = 6;
+		BulkInsertConfigRequest reqInsertConfigBulk = 7;
+		FetchLocationByIdRequest reqFetchLocationById = 8;
+		FetchLocationByCodeAndNamespaceRequest reqFetchLocationByCodeAndNamespace = 9;
+		FetchS2CellByIdRequest reqFetchS2CellById = 10;
+		FetchS2CellByLocationRequest reqFetchS2CellByLocation = 11;
+		FetchS2CellByLocationIdRequest reqFetchS2CellByLocationId = 12;
+		UpdateLocationByIdRequest reqUpdateLocationById = 13;
+		BulkUpdateLocationByIdRequest reqUpdateLocationByIdBulk = 14;
+		UpdateLocationLabelByIdRequest reqUpdateLocationLabelById = 15;
+		BulkUpdateLocationLabelByIdRequest reqUpdateLocationLabelByIdBulk = 16;
+		UpdateDeleteS2CellByLocationRequest reqUpdateDeleteS2CellByLocation = 17;
+		BulkUpdateDeleteS2CellByLocationRequest reqUpdateDeleteS2CellByLocationBulk = 18;
+		FetchConfigByIdRequest reqFetchConfigById = 19;
+		AddLocationRequest reqAddLocation = 20;
+		BulkAddLocationRequest reqAddLocationBulk = 21;
+		UpdateLocationRequest reqUpdateLocation = 22;
+		BulkUpdateLocationRequest reqUpdateLocationBulk = 23;
+		GetLocationsWithBoundaryRequest reqGetLocationsWithBoundary = 24;
+		GetLocationsRequest reqGetLocations = 25;
+		GetChildGeographiesRequest reqGetChildGeographies = 26;
+		InsertLocationWithoutBoundaryRequest reqInsertLocationWithoutBoundary = 27;
+		BulkInsertLocationWithoutBoundaryRequest reqInsertLocationWithoutBoundaryBulk = 28;
+		UpdateLocationWithoutBoundaryByIdRequest reqUpdateLocationWithoutBoundaryById = 29;
+		BulkUpdateLocationWithoutBoundaryByIdRequest reqUpdateLocationWithoutBoundaryByIdBulk = 30;
+		DeleteLocationByIdRequest reqDeleteLocationById = 31;
+		BulkDeleteLocationByIdRequest reqDeleteLocationByIdBulk = 32;
+		FetchDuplicateVillagesRequest reqFetchDuplicateVillages = 33;
+		FetchDuplicateVillagesBySDTVLatLongRequest reqFetchDuplicateVillagesBySDTVLatLong = 34;
+		FetchDuplicateTehsilsBySDTVLatLongRequest reqFetchDuplicateTehsilsBySDTVLatLong = 35;
+		FetchDuplicateDistrictsBySDTVLatLongRequest reqFetchDuplicateDistrictsBySDTVLatLong = 36;
+		FetchDuplicateStatesBySDTVLatLongRequest reqFetchDuplicateStatesBySDTVLatLong = 37;
+		GetDuplicateGeographiesRequest reqGetDuplicateGeographies = 38;
+		InsertVendorLocationDataRequest reqInsertVendorLocationData = 39;
+		BulkInsertVendorLocationDataRequest reqInsertVendorLocationDataBulk = 40;
+		SearchVendorLocationsByGeohashRequest reqSearchVendorLocationsByGeohash = 41;
+		SearchLocationsByGeohashRequest reqSearchLocationsByGeohash = 42;
+		GetLocationDataByLatLngRequest reqGetLocationDataByLatLng = 43;
+		AddVendorApiLedgerRequest reqAddVendorApiLedger = 44;
+		BulkAddVendorApiLedgerRequest reqAddVendorApiLedgerBulk = 45;
+
+	}
+}
+
+message MultiResponses {
+    farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+    repeated Response response = 2;
+}
+
+message Response {
+    string index = 1;
+    farm.nurture.core.contracts.common.RequestStatusResult status = 2;
+    oneof AResponse {
+        		InsertLocationResponse resInsertLocation = 3;
+		BulkInsertLocationResponse resInsertLocationBulk = 4;
+		InsertLocationS2CellResponse resInsertLocationS2Cell = 5;
+		BulkInsertLocationS2CellResponse resInsertLocationS2CellBulk = 6;
+		InsertConfigResponse resInsertConfig = 7;
+		BulkInsertConfigResponse resInsertConfigBulk = 8;
+		Location resFetchLocationById = 9;
+		Location resFetchLocationByCodeAndNamespace = 10;
+		S2Cell resFetchS2CellById = 11;
+		S2Cell resFetchS2CellByLocation = 12;
+		LocationS2Cells resFetchS2CellByLocationId = 13;
+		UpdateLocationByIdResponse resUpdateLocationById = 14;
+		BulkUpdateLocationByIdResponse resUpdateLocationByIdBulk = 15;
+		UpdateLocationLabelByIdResponse resUpdateLocationLabelById = 16;
+		BulkUpdateLocationLabelByIdResponse resUpdateLocationLabelByIdBulk = 17;
+		UpdateDeleteS2CellByLocationResponse resUpdateDeleteS2CellByLocation = 18;
+		BulkUpdateDeleteS2CellByLocationResponse resUpdateDeleteS2CellByLocationBulk = 19;
+		Config resFetchConfigById = 20;
+		AddLocationResponse resAddLocation = 21;
+		BulkAddLocationResponse resAddLocationBulk = 22;
+		UpdateLocationResponse resUpdateLocation = 23;
+		BulkUpdateLocationResponse resUpdateLocationBulk = 24;
+		GetLocationsWithBoundaryResponse resGetLocationsWithBoundary = 25;
+		GetLocationsResponse resGetLocations = 26;
+		GetChildGeographiesResponse resGetChildGeographies = 27;
+		InsertLocationWithoutBoundaryResponse resInsertLocationWithoutBoundary = 28;
+		BulkInsertLocationWithoutBoundaryResponse resInsertLocationWithoutBoundaryBulk = 29;
+		UpdateLocationWithoutBoundaryByIdResponse resUpdateLocationWithoutBoundaryById = 30;
+		BulkUpdateLocationWithoutBoundaryByIdResponse resUpdateLocationWithoutBoundaryByIdBulk = 31;
+		DeleteLocationByIdResponse resDeleteLocationById = 32;
+		BulkDeleteLocationByIdResponse resDeleteLocationByIdBulk = 33;
+		FetchDuplicateVillagesResponse resFetchDuplicateVillages = 34;
+		FetchDuplicateVillagesBySDTVLatLongResponse resFetchDuplicateVillagesBySDTVLatLong = 35;
+		FetchDuplicateTehsilsBySDTVLatLongResponse resFetchDuplicateTehsilsBySDTVLatLong = 36;
+		FetchDuplicateDistrictsBySDTVLatLongResponse resFetchDuplicateDistrictsBySDTVLatLong = 37;
+		FetchDuplicateStatesBySDTVLatLongResponse resFetchDuplicateStatesBySDTVLatLong = 38;
+		GetDuplicateGeographiesResponse resGetDuplicateGeographies = 39;
+		InsertVendorLocationDataResponse resInsertVendorLocationData = 40;
+		BulkInsertVendorLocationDataResponse resInsertVendorLocationDataBulk = 41;
+		SearchVendorLocationsByGeohashResponse resSearchVendorLocationsByGeohash = 42;
+		SearchLocationsByGeohashResponse resSearchLocationsByGeohash = 43;
+		GetLocationDataByLatLngResponse resGetLocationDataByLatLng = 44;
+		AddVendorApiLedgerResponse resAddVendorApiLedger = 45;
+		BulkAddVendorApiLedgerResponse resAddVendorApiLedgerBulk = 46;
+
+	}
+}
+service LocationService {
+    
+	rpc ExecuteInsertLocation (InsertLocationRequest ) returns (InsertLocationResponse) {}
+	rpc ExecuteInsertLocationBulk ( BulkInsertLocationRequest ) returns ( BulkInsertLocationResponse ) {}
+	rpc ExecuteInsertLocationS2Cell (InsertLocationS2CellRequest ) returns (InsertLocationS2CellResponse) {}
+	rpc ExecuteInsertLocationS2CellBulk ( BulkInsertLocationS2CellRequest ) returns ( BulkInsertLocationS2CellResponse ) {}
+	rpc ExecuteInsertConfig (InsertConfigRequest ) returns (InsertConfigResponse) {}
+	rpc ExecuteInsertConfigBulk ( BulkInsertConfigRequest ) returns ( BulkInsertConfigResponse ) {}
+	rpc ExecuteFetchLocationById (FetchLocationByIdRequest ) returns (Location) {}
+	rpc ExecuteFetchLocationByCodeAndNamespace (FetchLocationByCodeAndNamespaceRequest ) returns (Location) {}
+	rpc ExecuteFetchS2CellById (FetchS2CellByIdRequest ) returns (S2Cell) {}
+	rpc ExecuteFetchS2CellByLocation (FetchS2CellByLocationRequest ) returns (S2Cell) {}
+	rpc ExecuteFetchS2CellByLocationId (FetchS2CellByLocationIdRequest ) returns (LocationS2Cells) {}
+	rpc ExecuteUpdateLocationById (UpdateLocationByIdRequest ) returns (UpdateLocationByIdResponse) {}
+	rpc ExecuteUpdateLocationByIdBulk ( BulkUpdateLocationByIdRequest ) returns ( BulkUpdateLocationByIdResponse ) {}
+	rpc ExecuteUpdateLocationLabelById (UpdateLocationLabelByIdRequest ) returns (UpdateLocationLabelByIdResponse) {}
+	rpc ExecuteUpdateLocationLabelByIdBulk ( BulkUpdateLocationLabelByIdRequest ) returns ( BulkUpdateLocationLabelByIdResponse ) {}
+	rpc ExecuteUpdateDeleteS2CellByLocation (UpdateDeleteS2CellByLocationRequest ) returns (UpdateDeleteS2CellByLocationResponse) {}
+	rpc ExecuteUpdateDeleteS2CellByLocationBulk ( BulkUpdateDeleteS2CellByLocationRequest ) returns ( BulkUpdateDeleteS2CellByLocationResponse ) {}
+	rpc ExecuteFetchConfigById (FetchConfigByIdRequest ) returns (Config) {}
+	rpc ExecuteAddLocation (AddLocationRequest ) returns (AddLocationResponse) {}
+	rpc ExecuteAddLocationBulk ( BulkAddLocationRequest ) returns ( BulkAddLocationResponse ) {}
+	rpc ExecuteUpdateLocation (UpdateLocationRequest ) returns (UpdateLocationResponse) {}
+	rpc ExecuteUpdateLocationBulk ( BulkUpdateLocationRequest ) returns ( BulkUpdateLocationResponse ) {}
+	rpc ExecuteGetLocationsWithBoundary (GetLocationsWithBoundaryRequest ) returns (GetLocationsWithBoundaryResponse) {}
+	rpc ExecuteGetLocations (GetLocationsRequest ) returns (GetLocationsResponse) {}
+	rpc ExecuteGetChildGeographies (GetChildGeographiesRequest ) returns (GetChildGeographiesResponse) {}
+	rpc ExecuteInsertLocationWithoutBoundary (InsertLocationWithoutBoundaryRequest ) returns (InsertLocationWithoutBoundaryResponse) {}
+	rpc ExecuteInsertLocationWithoutBoundaryBulk ( BulkInsertLocationWithoutBoundaryRequest ) returns ( BulkInsertLocationWithoutBoundaryResponse ) {}
+	rpc ExecuteUpdateLocationWithoutBoundaryById (UpdateLocationWithoutBoundaryByIdRequest ) returns (UpdateLocationWithoutBoundaryByIdResponse) {}
+	rpc ExecuteUpdateLocationWithoutBoundaryByIdBulk ( BulkUpdateLocationWithoutBoundaryByIdRequest ) returns ( BulkUpdateLocationWithoutBoundaryByIdResponse ) {}
+	rpc ExecuteDeleteLocationById (DeleteLocationByIdRequest ) returns (DeleteLocationByIdResponse) {}
+	rpc ExecuteDeleteLocationByIdBulk ( BulkDeleteLocationByIdRequest ) returns ( BulkDeleteLocationByIdResponse ) {}
+	rpc ExecuteFetchDuplicateVillages (FetchDuplicateVillagesRequest ) returns (FetchDuplicateVillagesResponse) {}
+	rpc ExecuteFetchDuplicateVillagesBySDTVLatLong (FetchDuplicateVillagesBySDTVLatLongRequest ) returns (FetchDuplicateVillagesBySDTVLatLongResponse) {}
+	rpc ExecuteFetchDuplicateTehsilsBySDTVLatLong (FetchDuplicateTehsilsBySDTVLatLongRequest ) returns (FetchDuplicateTehsilsBySDTVLatLongResponse) {}
+	rpc ExecuteFetchDuplicateDistrictsBySDTVLatLong (FetchDuplicateDistrictsBySDTVLatLongRequest ) returns (FetchDuplicateDistrictsBySDTVLatLongResponse) {}
+	rpc ExecuteFetchDuplicateStatesBySDTVLatLong (FetchDuplicateStatesBySDTVLatLongRequest ) returns (FetchDuplicateStatesBySDTVLatLongResponse) {}
+	rpc ExecuteGetDuplicateGeographies (GetDuplicateGeographiesRequest ) returns (GetDuplicateGeographiesResponse) {}
+	rpc ExecuteInsertVendorLocationData (InsertVendorLocationDataRequest ) returns (InsertVendorLocationDataResponse) {}
+	rpc ExecuteInsertVendorLocationDataBulk ( BulkInsertVendorLocationDataRequest ) returns ( BulkInsertVendorLocationDataResponse ) {}
+	rpc ExecuteSearchVendorLocationsByGeohash (SearchVendorLocationsByGeohashRequest ) returns (SearchVendorLocationsByGeohashResponse) {}
+	rpc ExecuteSearchLocationsByGeohash (SearchLocationsByGeohashRequest ) returns (SearchLocationsByGeohashResponse) {}
+	rpc ExecuteGetLocationDataByLatLng (GetLocationDataByLatLngRequest ) returns (GetLocationDataByLatLngResponse) {}
+	rpc ExecuteAddVendorApiLedger (AddVendorApiLedgerRequest ) returns (AddVendorApiLedgerResponse) {}
+	rpc ExecuteAddVendorApiLedgerBulk ( BulkAddVendorApiLedgerRequest ) returns ( BulkAddVendorApiLedgerResponse ) {}
+	rpc Execute (MultiRequests) returns (MultiResponses) {}
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+message UserPersonalDetails {
+  string first_name = 1;
+  string last_name = 2;
+  string email = 3;
+}
+
+message UserFarmAreaDetails {
+  float acres = 1;
+}
+
+message UserWithAreaDetails {
+  UserPersonalDetails user_personal_details = 1;
+  UserFarmAreaDetails user_farm_area_details = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common.enums";
+//option java_outer_classname = "Enums";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+enum RewardActionsTriggerType {
+  NO_REWARD_ACTION_TRIGGER = 0;
+  FIRST_REWARD_POINT_ACTION_TRIGGER = 1;
+}

@@ -1,0 +1,261 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.ce;
+
+import "Common/enums.proto";
+import "Common/entities.proto";
+import "Common/headers.proto";
+import "Common/loyalty_enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_package = "farm.nurture.core.contracts.communication.engine";
+option java_multiple_files = true;
+
+option go_package = "code.nurture.farm/Core/Contracts/CommunicationEngine";
+
+service CommunicationEngine {
+    rpc sendCommunication(CommunicationEvent) returns (CommunicationResponse);
+    rpc sendBulkCommunication(BulkCommunicationEvent) returns (BulkCommunicationResponse);
+}
+
+service CommunicationEnginePlatform {
+    rpc optInUser(OptInRequest) returns (OptInRespone);
+    rpc searchMessageAcknowledgements(MessageAcknowledgementRequest) returns (MessageAcknowledgementResponse);
+    rpc addTemplate(AddTemplateRequest) returns (AddTemplateResponse);
+    rpc optOutUser(OptOutRequest) returns (OptOutResponse);
+    rpc getAllTemplate(GetAllTemplateRequest) returns (GetAllTemplateResponse);
+    rpc updateTemplate(TemplateUpdateRequest) returns (AddTemplateResponse);
+    rpc activateTemplate(ActivationRequest) returns (ActivationResponse);
+
+}
+
+message CommunicationEvent {
+    string content_title = 1;
+    string template_name = 2;
+    repeated Placeholder placeholder = 3;
+    farm.nurture.core.contracts.common.ActorID receiver_actor = 4;
+
+    string client_id = 5;
+    string business_flow = 6;
+
+    // Notification Expires afer given time
+    google.protobuf.Timestamp expiry = 7;
+
+    // Send notification afer given time
+    google.protobuf.Timestamp send_after = 8;
+
+    repeated farm.nurture.core.contracts.common.CommunicationChannel channel = 9;
+    string reference_id = 10;
+    repeated Placeholder content_metadata = 11;
+    ActorDetails receiver_actor_details = 12;
+    CommunicationChannelAttributes channel_attributes = 13;
+    farm.nurture.core.contracts.common.Tenant tenant = 14;
+    Media media = 15;
+
+    string parent_reference_id = 16;
+    string campaign_name = 17;
+    farm.nurture.core.contracts.common.CommunicationVendor vendor = 18;
+}
+
+message Media {
+    farm.nurture.core.contracts.common.MediaType media_type = 1;
+    farm.nurture.core.contracts.common.MediaAccessType media_access_type = 2;
+    string media_info = 3;
+    string document_name = 4;
+    string msg = 5;
+}
+
+message BulkCommunicationEvent {
+    repeated CommunicationEvent communication_events = 1;
+}
+
+message CommunicationChannelAttributes {
+    farm.nurture.core.contracts.common.PushNotificationType push_notification_type = 1;
+}
+
+message Placeholder {
+    string key = 1;
+    string value = 2;
+}
+
+message BulkCommunicationResponse {
+    repeated CommunicationResponse communication_responses = 1;
+}
+
+message CommunicationResponse {
+    string reference_id = 1;
+}
+
+message ActorDetails {
+    string email_id = 1;
+    string mobile_number = 2;
+    farm.nurture.core.contracts.common.LanguageCode language_code = 3;
+    string fcm_token = 4;
+    farm.nurture.core.contracts.common.AppID app_id = 5;
+    farm.nurture.core.contracts.common.AppType app_type = 6;
+    farm.nurture.core.contracts.common.LanguageCode secondaryLanguage_code=7;
+    repeated string to_recipients=8;
+    repeated string cc_recipients=9;
+    repeated string bcc_recipients=10;
+}
+
+message OptInRequest {
+    farm.nurture.core.contracts.common.RequestHeaders request_headers = 1;
+    farm.nurture.core.contracts.common.ActorID actor = 2;
+    string mobile_number = 3;
+    string farmer_name = 4;
+    farm.nurture.core.contracts.common.SourceSystem sourceSystem = 5;
+    farm.nurture.core.contracts.common.NameSpace nameSpace = 6;
+}
+
+message OptInRespone {
+    farm.nurture.core.contracts.common.ResponseStatus status = 1;
+    farm.nurture.core.contracts.common.ResponseStatusCode status_code = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    int64 id = 4;
+}
+
+message OptOutRequest {
+    farm.nurture.core.contracts.common.RequestHeaders request_headers = 1;
+    farm.nurture.core.contracts.common.ActorID actor = 2;
+    string mobile_number = 3;
+    farm.nurture.core.contracts.common.NameSpace nameSpace = 4;
+}
+
+message OptOutResponse {
+    farm.nurture.core.contracts.common.ResponseStatus status = 1;
+    farm.nurture.core.contracts.common.ResponseStatusCode status_code = 2;
+}
+
+message MessageAcknowledgementRequest {
+    farm.nurture.core.contracts.common.RequestHeaders request_headers = 1;
+    google.protobuf.Timestamp start_time = 2;
+    google.protobuf.Timestamp end_time = 3;
+    repeated farm.nurture.core.contracts.common.CommunicationChannel channels = 4;
+    string template_name_like = 5;
+    string mobile_number = 6;
+    string reference_id = 7;
+    int32 limit = 8;
+    int32 offset = 9;
+    farm.nurture.core.contracts.common.ResponseOrderType responseOrderType = 10;
+}
+
+message MessageAcknowledgementResponse {
+    farm.nurture.core.contracts.common.ResponseStatus status = 1;
+    farm.nurture.core.contracts.common.ResponseStatusCode status_code = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    repeated MessageAcknowledgement message_acknowledgements = 4;
+}
+
+message MessageAcknowledgement {
+    int64 id = 1;
+    farm.nurture.core.contracts.common.ActorID actor = 2;
+    string mobile_number = 3;
+    farm.nurture.core.contracts.common.CommunicationChannel channel = 4;
+    string reference_id = 5;
+    string template_name = 6;
+    farm.nurture.core.contracts.common.Language language = 7;
+    string message_content = 8;
+    bool is_unicode = 9;
+    string vendor_name = 10;
+    string vendor_message_id = 11;
+    farm.nurture.core.contracts.common.CommunicationState state = 12;
+    int32 retry_count = 13;
+    repeated Placeholder placeholders = 14;
+    repeated farm.nurture.core.contracts.common.Attribs attributes = 15;
+    google.protobuf.Timestamp vendor_delivery_time = 16;
+    google.protobuf.Timestamp actor_delivery_time = 17;
+
+    farm.nurture.core.contracts.common.ContactType contact_type = 18;
+    string actor_contact_id = 19;
+    string parent_reference_id = 20;
+    string campaign_name = 21;
+
+    google.protobuf.Timestamp created_at = 22;
+    google.protobuf.Timestamp updated_at = 23;
+}
+
+message Template{
+    int64 id = 1;
+    string name = 2;
+    farm.nurture.core.contracts.common.Language language = 3;
+    farm.nurture.core.contracts.common.TemplateContentType content_type = 4;
+    string content = 5;
+    string title = 6;
+    bool active = 7;
+    google.protobuf.Timestamp created_at = 8;
+    google.protobuf.Timestamp updated_at = 9;
+    google.protobuf.Timestamp deleted_at = 10;
+    repeated farm.nurture.core.contracts.common.Attribs attributes = 11;
+    string owner_email = 12;
+    string vertical = 13;
+    repeated farm.nurture.core.contracts.common.Attribs meta_data = 14;
+}
+message AddTemplateRequest {
+    string name = 1;
+    farm.nurture.core.contracts.common.LanguageCode language_code = 2;
+    farm.nurture.core.contracts.common.CommunicationChannel channel = 3;
+    farm.nurture.core.contracts.common.TemplateContentType templateContentType = 4;
+    string content = 5;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 6;
+    string owner = 7;
+    string vertical = 8;
+    string title = 9;
+    repeated farm.nurture.core.contracts.common.Attribs meta_data = 10;
+}
+
+message AddTemplateResponse {
+    farm.nurture.core.contracts.common.ResponseStatus status = 1;
+    farm.nurture.core.contracts.common.ResponseStatusCode status_code = 2;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+    int64 id = 4;
+    repeated VendorResponse vendors_response = 5;
+}
+message TemplateUpdateRequest{
+    string content = 1;
+    repeated farm.nurture.core.contracts.common.Attribs attribs = 2;
+    string title = 3;
+    string owner = 4;
+    string vertical = 5;
+    string name = 6;
+    farm.nurture.core.contracts.common.LanguageCode language_code = 7;
+    repeated farm.nurture.core.contracts.common.Attribs meta_data = 8;
+}
+
+message GetAllTemplateResponse {
+    farm.nurture.core.contracts.common.ResponseStatus status = 1;
+    farm.nurture.core.contracts.common.ResponseStatusCode status_code = 2;
+    repeated Template templates = 3;
+}
+
+message GetAllTemplateRequest{
+    int64 limit = 1;
+    int64 offset = 2;
+    farm.nurture.core.contracts.common.RequestHeaders request_headers = 3;
+    string searchQuery = 4;
+    farm.nurture.core.contracts.common.NameSpace namespace = 5;
+    farm.nurture.core.contracts.common.Status status = 6;
+    repeated string templateNames=7;
+
+}
+
+message VendorResponse{
+    string vendor_name = 1;
+    farm.nurture.core.contracts.common.ResponseStatus status = 2;
+    farm.nurture.core.contracts.common.ResponseStatusCode status_code = 3;
+    string error_msg = 4;
+}
+message ActivationResponse{
+    repeated VendorResponse vendors_response = 1;
+    bool active_template = 2;
+}
+
+message  ActivationRequest{
+    string template_name = 1;
+    farm.nurture.core.contracts.common.CommunicationChannel channel = 2;
+    Media media = 3;
+    repeated Placeholder placeholders = 4;
+    farm.nurture.core.contracts.common.ActorID actor = 5;
+    string mobile_number = 6;
+    farm.nurture.core.contracts.common.LanguageCode language_code = 7;
+}

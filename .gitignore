@@ -1,0 +1,8 @@
+/target
+.idea*
+*.iml
+.DS_Store
+/vendor
+/bazel-out
+/bazel-Contracts
+/bazel-bin

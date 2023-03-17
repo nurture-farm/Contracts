@@ -1,0 +1,55 @@
+load("@rules_cc//cc:defs.bzl", "cc_proto_library")
+load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
+load("@rules_java//java:defs.bzl", "java_proto_library")
+load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+package(default_visibility = ["//visibility:public"])
+
+# Proto definitions
+proto_library(
+    name = "mb_proto",
+    srcs = ["mb.proto"],
+    deps = [
+        "//Common:utils_proto",
+        "@com_google_protobuf//:timestamp_proto",
+    ]
+)
+
+cc_proto_library(
+    name = "mb_cc_proto",
+    deps = [":mb_proto"],
+)
+
+cc_grpc_library(
+    name = "mb_cc_grpc",
+    srcs = [":mb_proto"],
+    grpc_only = True,
+    deps = [":mb_cc_proto"],
+)
+
+java_proto_library(
+    name = "mb_java_proto",
+    deps = [":mb_proto"],
+)
+
+java_grpc_library(
+    name = "mb_java_grpc",
+    srcs = [":mb_proto"],
+    deps = [":mb_java_proto"],
+)
+
+
+go_proto_library(
+    name = "mb_go_proto",
+
+    compiler = "@io_bazel_rules_go//proto:go_grpc",
+    importpath = "code.nurture.farm/Core/Contracts/PerformanceTracker/Gen/GoPerformanceTracker",
+
+    protos = [":mb_proto",],
+    deps = [
+        "//Common:common_enums_all_go_proto",
+    ],
+)
+

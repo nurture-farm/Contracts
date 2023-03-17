@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message LocalTime {
+  string date = 1;
+  int32 hour = 2;
+  int32 minute = 3;
+  int32 seconds = 4;
+}
+
+message TimeInterval {
+  string timezone = 1;
+  LocalTime start_time = 2;
+  LocalTime end_time = 3;
+}
+
+message TimeSlot {
+  google.protobuf.Timestamp start_time = 1;  // unix timestamp
+  google.protobuf.Duration duration = 2;     // duration
+}
+
+message DateSlot {
+  string start_date = 1;
+  string end_date = 2;
+  string time_zone = 3;
+}
+
+message TimeRange {
+  google.protobuf.Timestamp startTime = 1;
+  google.protobuf.Timestamp endTime = 2;
+}

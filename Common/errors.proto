@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+enum ErrorCode {
+  NO_ERROR_CODE = 0;
+  DATABASE_ERROR = 1000;
+  reserved 1010 to 1999;
+  SAM_DATABASE_ERROR = 1001;
+  BN_DATABASE_ERROR = 1002;
+  SCM_DATABASE_ERROR = 1003;
+
+  reserved 2003 to 2999; // Performance tracker reserved Error codes
+  PT_INTERNAL_SERVER_ERROR = 2001;
+  PT_SCORE_CALCULATION_ERROR = 2002;
+
+}

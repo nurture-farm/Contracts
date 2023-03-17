@@ -1,0 +1,332 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common";
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+import "Common/geo_enums.proto";
+import "Common/enums.proto";
+import "Common/time_slot.proto";
+
+message PlaceTag{
+  string placeTagName = 1;
+  string placeTagPropertyName = 2;
+  string placeTagPropertyValue = 3;
+  farm.nurture.core.contracts.common.PlaceTagName TagName = 4;
+  farm.nurture.core.contracts.common.PlaceTagProperty TagPropertyKey = 5;
+  string TagPropertyValue = 6;
+  int64 PlaceTagId = 7;
+  farm.nurture.core.contracts.common.PlaceTagValue value = 8;
+}
+
+message ValidationResponse {
+  farm.nurture.core.contracts.common.ValidationResponseMsg msg = 1;
+  farm.nurture.core.contracts.common.ValidationResponseCode valCode = 2;
+  string dsc = 3;
+  bool valid = 4;
+}
+
+message GeoPlaces {
+  string geometry = 1;
+  int64 PlaceId = 2;
+  farm.nurture.core.contracts.common.GeometryRepresentationType geometryRepresentationType = 3;
+  repeated farm.nurture.core.contracts.common.PlaceTag PlaceTags = 4;
+}
+
+message ValidationResults {
+  ValidationResponse vldtRs = 1;
+  bool valid = 2;
+  common.GeoValidationType validationType = 3;
+  common.GeoValidationName validationName = 4;
+  common.AssertionType assertType = 5;
+  repeated common.GeoPlaces places = 6;
+}
+
+message GeometryToValidate{
+  farm.nurture.core.contracts.common.PlaceSourceType PlcSrcType = 1;
+  farm.nurture.core.contracts.common.PlaceNamespace PlcNmspce = 2;
+  farm.nurture.core.contracts.common.PlaceVisibleType PlcVsble = 3;
+  string version = 4;
+  bool AuditRequired = 5;
+  int32 MinZoom = 6;
+  int32 MaxZoom = 7;
+  farm.nurture.core.contracts.common.UI_CLIENT UiClient = 9;
+  repeated ValidationsApplicable validationsApplicable = 10;
+  farm.nurture.core.contracts.common.GeometryRepresentationType gmRprType = 15;
+  string gmt = 16;
+  int32 thresholdDistance = 17;
+  repeated int64 plcIds = 18;
+}
+
+message ValidationsApplicable {
+  common.GeoValidationType validationType =1;
+  common.GeoValidationName validationName =2;
+  common.AssertionType assertType =3;
+}
+
+message FilterArguments{
+  repeated int64 placeIds = 1;
+  repeated int64 placeTagIds = 2;
+  repeated common.PlaceTagName tagNames = 3;
+  repeated common.PlaceTagProperty tagProperties = 4;
+  repeated string StringValues = 5;
+  repeated common.ReferenceType reference_types = 6;
+  repeated common.AttributeKey attribute_keys = 7;
+  repeated common.Value values = 8;
+}
+message Filter{
+  BaseConditions baseCondition = 1;
+  common.LogicOperator combiningOperator = 2;
+  repeated Filter conditions = 3;
+}
+message BaseConditions{
+  common.FilterKey filterKey = 1;
+  common.ComparisonCheckType operator = 2;
+  FilterArguments argument = 3;
+}
+
+message ReferenceAttribute {
+  farm.nurture.core.contracts.common.ReferenceType reference_type = 1;
+  repeated Attribute attributes = 2;
+}
+
+message ZoomRange {
+  int32 minZoom = 1;
+  int32 maxZoom = 2;
+}
+
+message MapTile {
+  int32 zoom = 1;
+  int64 tileX = 2;
+  int64 tileY = 3;
+}
+
+message Environment {
+  farm.nurture.core.contracts.common.PlaceNamespace namespace = 1;
+  farm.nurture.core.contracts.common.PlaceSourceType sourceType = 2;
+  farm.nurture.core.contracts.common.PlaceVisibleType visibleType = 3;
+  string model_version = 4;
+  farm.nurture.core.contracts.common.ZoomRange zoom_hints = 5;
+  farm.nurture.core.contracts.common.UI_CLIENT client = 6;
+}
+
+message Place {
+  string geometry = 1;
+  farm.nurture.core.contracts.common.GeometryRepresentationType representation_type = 2;
+  repeated farm.nurture.core.contracts.common.PlaceTag tags = 3;
+  repeated farm.nurture.core.contracts.common.ReferenceAttribute reference_attributes = 4;
+  farm.nurture.core.contracts.common.TimeRange time_range = 5;
+  int64 place_id = 6;
+  int64 source_id = 7;
+  int64 version = 8;
+  bool deleted = 9;
+  bool overlap = 10;
+  string source_id_str = 11;
+}
+
+message Attribute{
+  farm.nurture.core.contracts.common.AttributeKey key = 1;
+  farm.nurture.core.contracts.common.Value value = 2;
+}
+
+message Value {
+  farm.nurture.core.contracts.common.ValueType value_type = 1;
+  double number_value = 2;
+  string string_value = 3;
+  bool bool_value = 4;
+  int64 int64_value = 5;
+  int32 int32_value = 6;
+}
+
+message Options {
+  bool check_overlap = 1;
+  bool get_details = 2;
+}
+
+message UserContext {
+  int64 ugdnID = 1;
+}
+
+message PlacesData{
+  string SourceId = 1;
+  string geometry = 2;
+  int64 PlaceId = 3;
+  farm.nurture.core.contracts.common.GeometryRepresentationType geometryRepresentationType = 4;
+  repeated farm.nurture.core.contracts.common.PlaceTag PlaceTags = 5;
+  farm.nurture.core.contracts.common.PlaceSourceType place_source_type = 6;
+  farm.nurture.core.contracts.common.PlaceNamespace place_name_space = 7;
+  farm.nurture.core.contracts.common.PlaceVisibleType place_visible_type = 8;
+  GeometryType geometry_type = 9;
+}
+
+message Configuration {
+  bool audit_required = 1;
+  bool overlap = 2;
+  bool soft_delete = 3;
+  farm.nurture.core.contracts.common.ServiceName service_name = 4;
+}
+message TileRequest {
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.MapTile mapTiles = 2;
+  farm.nurture.core.contracts.common.Filter tag_filter = 3;
+}
+message TileResponse {
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.Place places = 2;
+}
+message UpdateRequest{
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.Place places = 2;
+  farm.nurture.core.contracts.common.Options options = 3;
+}
+message UpdateResponse {
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.Place updated_places = 2;
+  int64 updated_places_count = 3;
+  repeated OverlappingPlaces places_with_overlaps = 4;
+}
+message DeleteRequest {
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated int64 place_ids = 2;
+}
+message DeleteResponse {
+  farm.nurture.core.contracts.common.Environment env = 1;
+  int64 deleted_count = 2;
+  repeated farm.nurture.core.contracts.common.Place deleted_places = 3;
+}
+message InsertRequest{
+  farm.nurture.core.contracts.common.Environment env = 1;
+  farm.nurture.core.contracts.common.Options options = 2;
+  repeated farm.nurture.core.contracts.common.Place places = 3;
+  farm.nurture.core.contracts.common.Filter tag_filter = 4;
+}
+
+message InsertResponse {
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.Place inserted_or_updated_places = 2;
+  int64 inserted_or_updated_count = 3;
+  repeated OverlappingPlaces places_with_overlaps = 4;
+}
+
+message LatLng {
+  double lat = 1;
+  double lng = 2;
+}
+
+message UpdateReferenceRequest{
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.PlaceReference references = 2 ;
+  farm.nurture.core.contracts.common.Options options = 3;
+}
+
+message UpdateReferenceResponse {
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.UpdateReferenceResult update_ref_results = 2;
+}
+
+message UpdateReferenceResult{
+  farm.nurture.core.contracts.common.Place updated_place = 1;
+  int32 new_refs_count = 2;
+  int32 appended_refs_count = 3;
+  int32 added_ref_values_count = 4;
+  int32 deleted_refs_count = 5;
+  int32 deleted_ref_values_count = 6;
+}
+
+message PlaceReference {
+  int64 place_id = 1;
+  repeated farm.nurture.core.contracts.common.ReferenceAttribute replace_ref_values = 2;
+  repeated farm.nurture.core.contracts.common.ReferenceAttribute delete_references = 3;
+  repeated farm.nurture.core.contracts.common.ReferenceAttribute delete_ref_values = 4;
+  repeated farm.nurture.core.contracts.common.ReferenceAttribute append_ref_values = 5;
+}
+
+message UpdateTagsRequest{
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.UpdatePlaceTags tags = 2;
+  farm.nurture.core.contracts.common.Options options = 3;
+}
+
+message UpdatePlaceTags {
+  int64 place_id = 1;
+  repeated farm.nurture.core.contracts.common.PlaceTag replace_tag_values = 2;
+  repeated farm.nurture.core.contracts.common.PlaceTag delete_tags = 3;
+  repeated farm.nurture.core.contracts.common.PlaceTag delete_tag_values = 4;
+  repeated farm.nurture.core.contracts.common.PlaceTag append_tag_values = 5;
+}
+
+message UpdateTagsResponse {
+  farm.nurture.core.contracts.common.Environment env = 1;
+  repeated farm.nurture.core.contracts.common.UpdateTagResult update_tag_results = 2;
+}
+
+message UpdateTagResult {
+  farm.nurture.core.contracts.common.Place updated_place = 1;
+  int32 new_tags_count = 2;
+  int32 appended_tags_count = 3;
+  int32 added_tag_values_count = 4;
+  int32 deleted_tags_count = 5;
+  int32 deleted_tag_values_count = 6;
+}
+
+message PlaceTagValue {
+  farm.nurture.core.contracts.common.ValueType value_type = 1;
+  repeated double float_values = 2;
+  repeated string string_values = 3;
+  repeated bool bool_values = 4;
+  repeated int64 int64_values = 5;
+  repeated int32 int32_values = 6;
+  repeated NSVPlaceId nsv_place_id_values = 7;
+}
+
+message OverlappingPlace {
+  int64 place_id = 1;
+  string source_id = 2;
+  string intersecting_geometry = 3;
+}
+
+message OverlappingPlaces {
+  int64 place_id = 1;
+  string source_id = 2;
+  repeated OverlappingPlace overlaps = 3;
+}
+
+message Validation {
+  farm.nurture.core.contracts.common.ValidationName name = 1;
+  farm.nurture.core.contracts.common.ValidationType type = 2;
+}
+
+message RasterDataRequest {
+  farm.nurture.core.contracts.common.Environment environment = 1;
+  repeated farm.nurture.core.contracts.common.MapTile map_tiles = 2;
+  farm.nurture.core.contracts.common.TimeSlot time_slot = 3;
+}
+
+message RasterDataResponse {
+  farm.nurture.core.contracts.common.Environment environment = 1;
+  repeated MapTilesToPreSignedUrl pre_signed_urls = 2;
+}
+
+message MapTilesToPreSignedUrl {
+  farm.nurture.core.contracts.common.MapTile map_tile = 1;
+  string pre_signed_url = 2;
+}
+
+message RegisterSourceConfig {
+  farm.nurture.core.contracts.common.CloudStore cloudStore = 1;
+  farm.nurture.core.contracts.common.UrlBuilder url_builder = 2;
+  farm.nurture.core.contracts.common.Satellite satellite = 3;
+  farm.nurture.core.contracts.common.Band band = 4;
+  farm.nurture.core.contracts.common.TimeRange valid_time = 5;
+  string base_directory = 6;
+  farm.nurture.core.contracts.common.TimeRange date_range = 7;
+}
+
+message NSVPlaceId {
+  farm.nurture.core.contracts.common.PlaceNamespace PlaceNamespace = 1;
+  farm.nurture.core.contracts.common.PlaceSourceType PlaceSourceType = 2;
+  farm.nurture.core.contracts.common.PlaceVisibleType PlaceVisibleType = 3;
+  int64 place_id = 4;
+}

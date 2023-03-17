@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common";
+//option java_outer_classname = "Enums";
+
+import "Common/enums.proto";
+import "Common/headers.proto";
+import "Common/errors.proto";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+message RequestStatusResult {
+  farm.nurture.core.contracts.common.RequestStatus status = 1;
+  farm.nurture.core.contracts.common.RequestStatusReason status_reason = 2;
+  farm.nurture.core.contracts.common.ErrorCode error_code = 3;
+  repeated string reasons = 6;
+  repeated string  error_messages = 7;
+  int32 internal_error_code = 8;
+}
+
+message Row{
+  repeated string data = 1;
+}

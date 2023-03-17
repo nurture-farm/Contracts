@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_package = "farm.nurture.core.contracts.common";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+
+//option java_outer_classname = "EventReference";
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+import "Common/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+
+message EventReference {
+  farm.nurture.core.contracts.common.EventReferenceType event_reference_type = 1;
+  farm.nurture.core.contracts.common.ActorType referred_actor_type = 2;
+  int64 referred_actor_id = 3;
+  google.protobuf.Timestamp reference_time = 4;
+  string reference_code = 5;
+}
+

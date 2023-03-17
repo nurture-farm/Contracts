@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.mb;
+
+import "Common/utils.proto";
+
+option java_package = "farm.nurture.core.contracts.mb";
+option java_multiple_files = true;
+
+option go_package = "code.nurture.farm/Core/Contracts/MessageBus";
+
+
+// Service
+service MessageBus {
+  // Message Bus upload data request
+  rpc Upload(MessageBusRequest) returns (MessageBusResponse);
+}
+
+// Request
+message MessageBusRequest {
+  string trace_id = 1; // Should be unique
+  string tenant_id = 2;
+  bytes message = 3;
+  string storage_filepath = 4;
+}
+
+
+// Response Params
+message MessageBusResponse {
+  // Response status
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+}

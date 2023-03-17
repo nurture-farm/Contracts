@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.EventPortal;
+
+import "Common/enums.proto";
+import "Common/entities.proto";
+import "Common/headers.proto";
+import "Common/utils.proto";
+
+import "google/protobuf/timestamp.proto";
+option java_multiple_files = true;
+option java_package = "farm.nurture.event.portal.proto";
+option go_package = "code.nurture.farm/Core/Contracts/EventPortal";
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+				FilterEvents					
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */ 
+message FilterEventsRequest {
+    farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    bool isStaleAllowed = 2;
+
+  farm.nurture.core.contracts.common.NameSpace namespace = 3;
+	string name = 4;
+  int32 pageNumber = 5;
+  int32 limit = 6;
+}
+
+message FilterEventsResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  repeated FilterEventsResponseRecord record= 4;
+}
+
+message FilterEventsResponseRecord {
+	int64 id = 1;
+  farm.nurture.core.contracts.common.NameSpace namespace = 2;
+	string name = 3;
+	int32 index = 4;
+}
+
+message FilterEventPropertiesRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 eventId = 2;
+  int32 pageNumber = 3;
+  int32 limit = 4;
+}
+
+message FilterEventPropertiesResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  repeated EventProperty eventProperties = 4;
+}
+
+message EventProperty {
+  farm.nurture.core.contracts.common.EventPropertyType eventPropertyType = 1;
+  int64 id = 2;
+  string name = 3;
+  EventParameterMetadata eventParameterMetadata = 4;
+}
+
+message EventParameterMetadata {
+    EventParameterValues EventParameterValues = 1;
+}
+
+message EventParameterValues {
+  repeated string values = 1;
+}
+
+message FindEventPropertyByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 eventId = 2;
+  string name = 3;
+  farm.nurture.core.contracts.common.EventPropertyType eventPropertyType = 4;
+}
+
+message FindEventPropertyByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 2;
+  FindEventPropertyByIdRecord findEventPropertyByIdRecord = 3;
+}
+
+message FindEventPropertyByIdRecord {
+  farm.nurture.core.contracts.common.EventPropertyType eventPropertyType = 1;
+  EventParameterMetadata eventParameterMetadata = 3;
+}
+
+message EventRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actor = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attributes = 3;
+  google.protobuf.Timestamp event_time = 4;
+  farm.nurture.core.contracts.common.EventType event_type = 5;
+  string event_name = 6;
+}
+
+message EventResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+}
+
+service EventPortal {
+  rpc uploadEvent(EventRequest) returns (EventResponse) {}
+	rpc ExecuteFilterEvents (FilterEventsRequest ) returns (FilterEventsResponse) {}
+  rpc ExecuteFilterEventProperties (FilterEventPropertiesRequest) returns (FilterEventPropertiesResponse) {}
+  rpc ExecuteFindEventPropertyById (FindEventPropertyByIdRequest) returns (FindEventPropertyByIdResponse) {}
+}

@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common";
+//option java_outer_classname = "Enums";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+import "Common/enums.proto";
+import "Common/entities.proto";
+import "google/protobuf/timestamp.proto";
+
+message RequestHeaders {
+  string clientId = 1;
+  string tracingId = 2;
+  bool traceDetails = 3;
+  string i18N = 4;
+  float latitude = 5;
+  float longitude = 6;
+  float accuracy = 7;
+  string experimentId = 8;
+  LanguageCode languageCode = 9;
+  string securityToken = 10;
+  repeated Attribs attribs = 11;
+  string prefferedUserName = 12;
+  Language language = 13;
+  Country country = 14;
+  string authToken = 15;
+  string appToken = 16;
+  farm.nurture.core.contracts.common.ActorEventTrace updatedByEvent = 17;
+  AppType appType = 18;
+  int64 appVersion = 19;
+  string sessionId = 20;
+  ClientType appName = 21;
+  common.ActorID user = 22;
+  string deviceId = 23;
+}
+
+message Attribs {
+  string key = 1;
+  string value = 2;
+}
+
+message DataPlatformMessage {
+  string eventName = 1;
+  string externalId = 2;
+  DPSource dpSource = 3;
+  int32 versionCode = 4;
+  string versionName = 5;
+  string osVersion = 6;
+  AppNameType appNameType = 7;
+  EventType eventType = 8;
+  int64 sessionId = 9;
+  google.protobuf.Timestamp timestamp = 10;
+  ActorID actor = 11;
+  bytes eventData = 12;
+  EventSubType eventSubType = 13;
+  NameSpace namespace = 14;
+  int32 eventIndex = 15;
+}
+
+message AppNameType {
+  string key = 1;
+  string value = 2;
+}

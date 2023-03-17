@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common.enums";
+//option java_outer_classname = "Enums";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+enum SourceSystem
+{
+NO_SOURCE_SYSTEM = 0;
+BOOKING_SYSTEM = 1;
+FARM_SERVICE_SYSTEM=2;
+RETAILER_SYSTEM =3;
+REWARDS_GATEWAY = 4;
+AFS_FARMER_APP = 5;
+OFFER_SERVICE = 6;
+FARM_APP = 7;
+RETAILER_APP = 8;
+}

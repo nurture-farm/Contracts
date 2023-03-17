@@ -1,0 +1,314 @@
+syntax = "proto3";
+
+package farm.nurture.platform.auth;
+
+import "Common/enums.proto";
+import "Common/headers.proto";
+import "Common/entities.proto";
+
+option java_multiple_files = true;
+option java_package = "farm.nurture.auth.service.proto";
+option go_package = "code.nurture.farm/Platform/Contracts/AuthService";
+
+message GenerateOtpRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string appName = 3;
+  int32 expiryInSeconds = 4;
+  int32 otpDigit = 5;
+  int32 maxRetries = 6;
+  string mobileNumber = 7;
+  string countryIsoCode = 8;
+  farm.nurture.core.contracts.common.ClientType clientType = 9;
+  farm.nurture.core.contracts.common.CommunicationChannel communicationChannel = 10;
+}
+
+message GenerateOtpResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+  farm.nurture.core.contracts.common.ActorID actorId = 3;
+  string appName = 4;
+  int64 expiry = 5;
+  string mobileNumber = 6;
+}
+
+message ResendOtpRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string appName = 3;
+  string mobileNumber = 4;
+  farm.nurture.core.contracts.common.ClientType clientType = 5;
+  farm.nurture.core.contracts.common.CommunicationChannel communicationChannel = 6;
+}
+
+message ResendOtpResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+  farm.nurture.core.contracts.common.ActorID actorId = 3;
+  string appName = 4;
+  int64 expiry = 5;
+  string mobileNumber = 6;
+}
+
+message ValidateOtpRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string appName = 3;
+  string otp = 4;
+  string mobileNumber = 5;
+}
+
+message ValidateOtpResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+}
+
+message GetAuthTokenRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string appName = 3;
+  string otp = 4;
+  string clientId = 5;
+  string clientSecret = 6;
+  string scope = 7;
+  string authSecret = 9;
+  farm.nurture.core.contracts.common.SecretType secretType = 10;
+  farm.nurture.core.contracts.common.ClientType clientType = 11;
+  repeated farm.nurture.core.contracts.common.Attribs claims = 12;
+}
+
+message GetAuthTokenResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+  string accessToken = 3;
+  int64 expiresIn = 4;
+  string idToken = 5;
+  string refreshToken = 6;
+  string scope = 7;
+  string tokenType = 8;
+}
+
+message OldTokenExchangeRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string appName = 4;
+  string clientId = 5;
+  string clientSecret = 6;
+  string scope = 7;
+  farm.nurture.core.contracts.common.ClientType clientType = 11;
+}
+
+message OldTokenExchangeResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+  string accessToken = 3;
+  int64 expiresIn = 4;
+  string idToken = 5;
+  string refreshToken = 6;
+  string scope = 7;
+  string tokenType = 8;
+}
+
+
+message GetOtpRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string appName = 3;
+  string mobileNumber = 4;
+}
+
+message GetOtpResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+  string otp = 3;
+  int64 generationTime = 4;
+  int64 expiryTime = 5;
+  string mobileNumber = 6;
+}
+
+message AddActorSecretRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string authSecret = 3;
+  farm.nurture.core.contracts.common.SecretType secretType = 4;
+  int32 expiryInSeconds = 5;
+  int32  maxRetries = 6;
+  string appName = 7;
+  string countryIsoCode = 8;
+  string mobileNumber = 9;
+  farm.nurture.core.contracts.common.ClientType clientType = 10;
+}
+
+message AddActorSecretResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+}
+
+message UpdateActorSecretRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string oldAuthSecret = 3;
+  string newAuthSecret = 4;
+  string accessToken = 5;
+  farm.nurture.core.contracts.common.SecretType secretType = 6;
+  int32 expiryInSeconds = 7;
+  int32  maxRetries = 8;
+  string appName = 9;
+  string mobileNumber = 10;
+  string resetSecretGuid = 11;
+  int64 resetSecretExpiry = 12;
+  farm.nurture.core.contracts.common.ClientType clientType = 13;
+}
+
+message UpdateActorSecretResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+}
+
+message ValidateSecretRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string authSecret = 3;
+  farm.nurture.core.contracts.common.SecretType secretType = 4;
+  string appName = 5;
+  string mobileNumber = 6;
+}
+
+message ValidateSecretResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+}
+
+
+message GenerateSecretResetTokenRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string email = 3;
+  farm.nurture.core.contracts.common.SecretType secretType = 4;
+  string appName = 5;
+}
+
+message GenerateSecretResetTokenResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+  int64 expiryTime = 3;
+}
+
+message DeleteSessionRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string appName = 3;
+  farm.nurture.core.contracts.common.ClientType clientType = 4;
+  string refreshToken = 5;
+}
+
+message DeleteSessionResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+}
+
+message ValidateJWTTokenRequest{
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  string token = 2;
+}
+
+message ValidateJWTTokenResponse{
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+}
+
+message RefreshAccessTokenRequest{
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID actorId = 2;
+  string clientId = 3;
+  string clientSecret = 4;
+  string scope = 5;
+  farm.nurture.core.contracts.common.ClientType clientType = 6;
+  string refreshToken = 7;
+}
+
+message RefreshAccessTokenResponse{
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+  string accessToken = 3;
+  int64 expiresIn = 4;
+  string idToken = 5;
+  string refreshToken = 6;
+  string scope = 7;
+  string tokenType = 8;
+}
+
+message GenerateActionSecretRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 entityId = 2; //primary key of caller table eg: order_id, reward_id etc
+  string entityType = 3; //table name which contains entity id eg: ORDER
+  string serviceName = 4; //service which has entity table eg: Hobbit
+  string action = 5;     //action which needs to be authenticated eg: Order Delivery
+  int32 secretDigit = 6;
+  int32 maxRetries = 7;
+  int32 expiryInSeconds = 8;
+  farm.nurture.core.contracts.common.ActorID receiverActor = 9; //mandatory
+  repeated CommunicationDetail communicationDetails = 10;
+}
+
+message CommunicationDetail{
+  string templateName = 1;
+  farm.nurture.core.contracts.common.CommunicationChannel communicationChannel = 2;
+}
+
+message GenerateActionSecretResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+}
+
+message FetchActionSecretRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 entityId = 2; //primary key of caller table eg: order_id, reward_id etc
+  string entityType = 3; //table name which contains entity id eg: ORDER
+  string serviceName = 4; //service which has entity table eg: Hobbit
+  string action = 5;     //action which needs to be authenticated eg: Order Delivery
+  farm.nurture.core.contracts.common.ActorID actorId = 6; //mandatory
+}
+
+message FetchActionSecretResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+  string secret = 3; //secret Code
+}
+
+
+message ValidateActionSecretRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 entityId = 2; //primary key of caller table eg: order_id, reward_id etc
+  string entityType = 3; //table name which contains entity id eg: ORDER
+  string serviceName = 4; //service which has entity table eg: Hobbit
+  string action = 5;     //action which needs to be authenticated eg: Order Delivery
+  string secret = 6; //secret Code
+}
+
+message ValidateActionSecretResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  farm.nurture.core.contracts.common.ResponseStatusCode statusCode = 2;
+}
+
+service AuthService {
+  rpc ExecuteGenerateOtp (GenerateOtpRequest ) returns (GenerateOtpResponse) {}
+  rpc ExecuteResendOtp (ResendOtpRequest ) returns (ResendOtpResponse) {}
+  rpc ExecuteValidateOtp (ValidateOtpRequest ) returns (ValidateOtpResponse) {}
+  rpc ExecuteGetAuthToken (GetAuthTokenRequest ) returns (GetAuthTokenResponse) {}
+  rpc ExecuteOldTokenExchange (OldTokenExchangeRequest ) returns (OldTokenExchangeResponse) {}
+  rpc ExecuteGetOtp(GetOtpRequest) returns (GetOtpResponse) {}
+  rpc ExecuteAddActorSecret (AddActorSecretRequest) returns (AddActorSecretResponse) {}
+  rpc ExecuteUpdateActorSecret(UpdateActorSecretRequest) returns (UpdateActorSecretResponse) {}
+  rpc ExecuteValidateSecret (ValidateSecretRequest) returns (ValidateSecretResponse) {}
+  rpc ExecuteGenerateSecretResetToken (GenerateSecretResetTokenRequest) returns (GenerateSecretResetTokenResponse) {}
+  rpc ExecuteDeleteSession (DeleteSessionRequest) returns (DeleteSessionResponse) {}
+  rpc ExecuteValidateJWTToken (ValidateJWTTokenRequest) returns (ValidateJWTTokenResponse) {}
+  rpc ExecuteRefreshAccessToken (RefreshAccessTokenRequest) returns (RefreshAccessTokenResponse) {}
+  rpc ExecuteGenerateActionSecret (GenerateActionSecretRequest) returns (GenerateActionSecretResponse) {}
+  rpc ExecuteFetchActionSecret (FetchActionSecretRequest) returns (FetchActionSecretResponse) {} //this can be fetched by the actor for which this secret was generated
+  rpc ExecuteValidateActionSecret (ValidateActionSecretRequest) returns (ValidateActionSecretResponse) {}
+}
+
+
+

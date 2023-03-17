@@ -1,0 +1,80 @@
+load("@bazel_skylib//lib:paths.bzl", "paths")
+
+def _copy_go_files(ctx):
+    print("Files: {}".format(ctx.files))
+    print("dir(Context): {}".format(dir(ctx)))
+    print("WORKSPACE name: {}".format(ctx.workspace_name))
+#    for file in ctx.files:
+#        print("File path: {}".format(file.path))
+#        print("Is Source: {}".format(file.is_source))
+#        print("File root: {}".format(file.root))
+#        print("File short path: {}".format(file.short_path))
+#        print("File base name: {}".format(file.basename))
+#        print("File dir name: {}".format(file.dirname))
+#        print("File extension: {}".format(file.extension))
+    for file in ctx.attr.srcs:
+        print("File: {}".format(file))
+#        print("File path: {}".format(file.path))
+#        print("Is Source: {}".format(file.is_source))
+#        print("File root: {}".format(file.root))
+#        print("File short path: {}".format(file.short_path))
+#        print("File base name: {}".format(file.basename))
+#        print("File dir name: {}".format(file.dirname))
+#        print("File extension: {}".format(file.extension))
+        print("dir(File): {}".format(dir(file)))
+        print("Target actions: {}".format(file.actions))
+        print("Data run files: {}".format(file.data_runfiles))
+        print("Default run files: {}".format(file.default_runfiles))
+        print("Target files: {}".format(file.files))
+        print("Target files to run: {}".format(file.files_to_run))
+        print("Target label: {}".format(file.label))
+        print("Target output groups: {}".format(file.output_groups.go_generated_srcs))
+        print("Target dir(output groups): {}".format(dir(file.output_groups)))
+        print("Target dir(output groups/ gen sources): {}".format(dir(file.output_groups.go_generated_srcs)))
+        for src in file.output_groups.go_generated_srcs.to_list():
+            print("Output group generated src: {}".format(src))
+            print("Output dir(group generated src): {}".format(dir(src)))
+            print("Source path: {}".format(src.path))
+            print("Source Is Source: {}".format(src.is_source))
+            print("Source root: {}".format(src.root))
+            print("Source root path: {}".format(src.root.path))
+            print("Source short path: {}".format(src.short_path))
+            print("Source base name: {}".format(src.basename))
+            print("Source dir name: {}".format(src.dirname))
+            print("Source extension: {}".format(src.extension))
+        print("Source Root members: {}".format(dir(src.root)))
+#        out_dir = ctx.actions.declare_directory(ctx.attr.out)
+#        ctx.actions.do_nothing(mnemonic="generate_dir", inputs=[out_dir])
+#        print("ctx.attr.out: {}".format(ctx.attr.out))
+#        print("OUT Directory members: {}".format(dir(out_dir)))
+#        print("OUT Directory name: {}".format(out_dir.dirname))
+        outs = []
+        base_path = paths.join("/Users/yugandhar/AFSAgTech/Code/Core/Contracts", ctx.attr.out)
+#        for src in file.output_groups.go_generated_srcs.to_list():
+#            out = ctx.actions.declare_file(paths.join(base_path, src.basename))
+#            ctx.actions.expand_template(
+#                output = out,
+#                template = src,
+#                substitutions = {},
+#            )
+#            outs.append(out)
+#        print("OUTS: {}".format(outs))
+#        return [DefaultInfo(files=depset(outs))]
+        for src in file.output_groups.go_generated_srcs.to_list():
+            out_path = paths.join(base_path, src.basename)
+            ctx.actions.run_shell(inputs=[src],
+                                  outputs = [],
+                                  command=["cp -R {} {}".format(src.path, out_path)])
+
+
+
+
+    print("Run files: {}".format(ctx.runfiles()))
+
+copy_go_files = rule(
+    implementation = _copy_go_files,
+    attrs = {
+        "srcs": attr.label_list(),
+        "out": attr.string(default = "go", doc = "The final path to store go code")
+#        "out" : attr.label(),
+    })

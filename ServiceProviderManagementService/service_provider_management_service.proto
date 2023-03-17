@@ -1,0 +1,617 @@
+syntax = "proto3";
+
+package farm.nurture.serviceProvider.service.proto;
+
+
+
+option java_multiple_files = true;
+option java_package = "farm.nurture.serviceProvider.service.proto";
+option go_package = "ServiceProviderManagementService/ServiceProviderManagementService";
+
+message RequestHeaders {
+  string prefferedUserName = 1;
+  string clientId = 2;
+  string tracingId = 3;
+  bool traceDetails = 4;
+  enum LANGUAGE {
+    English = 0;
+    Hindi = 2;
+  }
+  LANGUAGE language = 5;
+
+  float latitude = 6;
+  float longitude = 7;
+  float accuracy = 8;
+
+  enum COUNTRY {
+    India = 0;
+    Australia = 2;
+  }
+  COUNTRY country = 9;
+
+  string experimentId = 10;
+  repeated Attribs attribs = 11;
+
+  string authToken = 12;
+  string appToken = 13;
+
+}
+
+message Attribs {
+  string key = 1;
+  string value = 2;
+}
+
+message Status {
+  StatusCode status = 1;
+  repeated string  error_messages = 2;
+  int32 internal_error_code = 3;
+}
+
+enum StatusCode {
+  SUCCESS = 0;
+  NOT_FOUND = 1;
+  ZERO_RESULTS = 2;
+  DUPLICATE = 3;
+  LIMIT_EXCEEDED = 4;
+  INVALID_REQUEST = 5;
+  TEMPORARILY_SUSPENDED = 6;
+  OVER_USAGE_LIMIT = 7;
+  REQUEST_DENIED = 8;
+  UNKNOWN_ERROR = 9;
+  DB_FAILURE = 10;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddServiceProvider
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddServiceProviderRequest {
+  RequestHeaders requestHeaders = 1;
+
+  string name = 2;
+  string mobileNumber = 3;
+  string whatsappNumber = 4;
+  string pincode = 5;
+}
+
+
+message BulkAddServiceProviderRequest {
+  RequestHeaders requestHeaders = 1;
+  repeated AddServiceProviderRequest  requests = 2;
+}
+
+
+message AddServiceProviderResponse {
+  Status status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated Attribs attribs = 4;
+
+}
+
+
+message BulkAddServiceProviderResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated AddServiceProviderResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddServiceLocation
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddServiceLocationRequest {
+  RequestHeaders requestHeaders = 1;
+
+  int64 serviceProviderId = 2;
+  string geographyId = 3;
+  string district = 4;
+  string state = 5;
+  string geoHash = 6;
+  double latitude = 7;
+  double longitude = 8;
+}
+
+
+message BulkAddServiceLocationRequest {
+  RequestHeaders requestHeaders = 1;
+  repeated AddServiceLocationRequest  requests = 2;
+}
+
+
+message AddServiceLocationResponse {
+  Status status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated Attribs attribs = 4;
+
+}
+
+
+message BulkAddServiceLocationResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated AddServiceLocationResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddServices
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddServicesRequest {
+  RequestHeaders requestHeaders = 1;
+
+  string serviceName = 2;
+  string serviceType = 3;
+  string imageUrl = 4;
+  string translationKey = 5;
+}
+
+
+message BulkAddServicesRequest {
+  RequestHeaders requestHeaders = 1;
+  repeated AddServicesRequest  requests = 2;
+}
+
+
+message AddServicesResponse {
+  Status status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated Attribs attribs = 4;
+
+}
+
+
+message BulkAddServicesResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated AddServicesResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddServiceProviderMapping
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddServiceProviderMappingRequest {
+  RequestHeaders requestHeaders = 1;
+
+  int64 serviceId = 2;
+  int64 serviceProviderId = 3;
+  int64 machineCount = 4;
+  string costPerAcre = 5;
+}
+
+
+message BulkAddServiceProviderMappingRequest {
+  RequestHeaders requestHeaders = 1;
+  repeated AddServiceProviderMappingRequest  requests = 2;
+}
+
+
+message AddServiceProviderMappingResponse {
+  Status status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated Attribs attribs = 4;
+
+}
+
+
+message BulkAddServiceProviderMappingResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated AddServiceProviderMappingResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddServiceConfig
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddServiceConfigRequest {
+  RequestHeaders requestHeaders = 1;
+
+  string serviceType = 2;
+  int64 cropId = 3;
+  string regionName = 4;
+  int64 section = 5;
+  int64 serviceRank = 6;
+  int64 validFrom = 7;
+  int64 validTill = 8;
+}
+
+
+message BulkAddServiceConfigRequest {
+  RequestHeaders requestHeaders = 1;
+  repeated AddServiceConfigRequest  requests = 2;
+}
+
+
+message AddServiceConfigResponse {
+  Status status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated Attribs attribs = 4;
+
+}
+
+
+message BulkAddServiceConfigResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated AddServiceConfigResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServiceProvider
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServiceProviderRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  int64 page = 6; int64 offset = 7; repeated int64 cropId = 8; double latitude = 9; double longitude = 10; string serviceName = 11;
+}
+message GetServiceProviderResponseRecord {
+
+}
+message GetServiceProviderResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated ServiceProviderInfo serviceProviderInfo = 5; } message ServiceProviderInfo{string serviceProviderName = 1; string serviceProviderContactDetails = 2; string serviceProviderAddress = 3; string costPerAcre = 4; double distance = 5; string serviceProviderWhatsappNumber = 6;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddServiceProviderFromExcel
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddServiceProviderFromExcelRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  string csv = 6;
+}
+message AddServiceProviderFromExcelResponseRecord {
+
+}
+message AddServiceProviderFromExcelResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated AddServiceProviderRequest addServiceProviderRequest = 5;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetSDTVOnLatLong
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetSDTVOnLatLongRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  double latitude = 6; double longitude = 7;
+}
+message GetSDTVOnLatLongResponseRecord {
+
+}
+message GetSDTVOnLatLongResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  int64 regionId = 5; int64 villageId = 6; int64 tehsilId = 7; int64 districtId = 8; int64 zoneId = 9; string villageName = 10; string tehsilName = 11; string districtName = 12; string regionName = 13; string zoneName = 14; string villageCode = 15; string tehsilCode = 16; string districtCode = 17; string regionCode = 18; string zoneCode = 19;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServiceDetailsOnLatLong
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServiceDetailsOnLatLongRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  double latitude = 6; double longitude = 7;
+}
+message GetServiceDetailsOnLatLongResponseRecord {
+
+}
+message GetServiceDetailsOnLatLongResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated ServiceDetailsResponse serviceDetailsResponse = 5;} message ServiceDetailsResponse { string serviceType = 1; string imageUrl = 2; int64 rank = 3; int64 section = 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServicesOnServiceNameAndServiceType
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServicesOnServiceNameAndServiceTypeRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  string serviceName = 3;
+  string serviceType = 4;
+}
+message GetServicesOnServiceNameAndServiceTypeResponseRecord {
+  int64 id = 1;
+  string serviceName = 2;
+  string serviceType = 3;
+}
+message GetServicesOnServiceNameAndServiceTypeResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated GetServicesOnServiceNameAndServiceTypeResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServiceProviderOnMobileNumber
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServiceProviderOnMobileNumberRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  string mobileNumber = 3;
+}
+message GetServiceProviderOnMobileNumberResponseRecord {
+  int64 id = 1;
+  string mobileNumber = 2;
+}
+message GetServiceProviderOnMobileNumberResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated GetServiceProviderOnMobileNumberResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServiceLocationOnRegionName
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServiceLocationOnRegionNameRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  repeated string regionName = 6;
+}
+message GetServiceLocationOnRegionNameResponseRecord {
+
+}
+message GetServiceLocationOnRegionNameResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated GeographyDetail geographyDetail = 5; } message GeographyDetail { string geographyName = 1; string geographyUid = 2; string geographyLongitude = 3; string geographyLatitude = 4; repeated GeographyDetail geographyDetail=5;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServiceConfigOnCondition
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServiceConfigOnConditionRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  string regionName = 3;
+}
+message GetServiceConfigOnConditionResponseRecord {
+  string serviceType = 1;
+  int64 cropId = 2;
+  string regionName = 3;
+  int64 section = 4;
+  int64 serviceRank = 5;
+}
+message GetServiceConfigOnConditionResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated GetServiceConfigOnConditionResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServiceProviderOnServiceType
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServiceProviderOnServiceTypeRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  string serviceType = 3;
+}
+message GetServiceProviderOnServiceTypeResponseRecord {
+  int64 id = 1;
+  string name = 2;
+  string mobileNumber = 3;
+  string whatsappNumber = 4;
+  string pincode = 5;
+  int64 machineCount = 6;
+  string costPerAcre = 7;
+}
+message GetServiceProviderOnServiceTypeResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated GetServiceProviderOnServiceTypeResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetLocationOnServiceProviderId
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetLocationOnServiceProviderIdRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  string serviceProviderId = 3;
+}
+message GetLocationOnServiceProviderIdResponseRecord {
+  int64 serviceProviderId = 1;
+  string district = 2;
+  string state = 3;
+  double latitude = 4;
+  double longitude = 5;
+}
+message GetLocationOnServiceProviderIdResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated GetLocationOnServiceProviderIdResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServiceConfig
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServiceConfigRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  repeated string state = 6;
+}
+message GetServiceConfigResponseRecord {
+
+}
+message GetServiceConfigResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated ServiceDetailsResponse serviceDetailsResponse = 5;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetServiceConfigOnRegionName
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetServiceConfigOnRegionNameRequest {
+  RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  string regionName = 3;
+}
+message GetServiceConfigOnRegionNameResponseRecord {
+  string serviceType = 1;
+  int64 cropId = 2;
+  string regionName = 3;
+  int64 section = 4;
+  int64 serviceRank = 5;
+}
+message GetServiceConfigOnRegionNameResponse {
+  Status status = 1;
+  int32 count = 2;
+  repeated Attribs attribs = 3;
+  repeated GetServiceConfigOnRegionNameResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				 Multi Queries
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message MultiRequests {
+  bool onTxn = 1;
+  repeated Request request = 2;
+}
+
+message Request {
+  string index = 1;
+  oneof ARequest {
+    AddServiceProviderRequest reqAddServiceProvider = 2;
+    BulkAddServiceProviderRequest reqAddServiceProviderBulk = 3;
+    AddServiceLocationRequest reqAddServiceLocation = 4;
+    BulkAddServiceLocationRequest reqAddServiceLocationBulk = 5;
+    AddServicesRequest reqAddServices = 6;
+    BulkAddServicesRequest reqAddServicesBulk = 7;
+    AddServiceProviderMappingRequest reqAddServiceProviderMapping = 8;
+    BulkAddServiceProviderMappingRequest reqAddServiceProviderMappingBulk = 9;
+    AddServiceConfigRequest reqAddServiceConfig = 10;
+    BulkAddServiceConfigRequest reqAddServiceConfigBulk = 11;
+    GetServiceProviderRequest reqGetServiceProvider = 12;
+    AddServiceProviderFromExcelRequest reqAddServiceProviderFromExcel = 13;
+    GetSDTVOnLatLongRequest reqGetSDTVOnLatLong = 14;
+    GetServiceDetailsOnLatLongRequest reqGetServiceDetailsOnLatLong = 15;
+    GetServicesOnServiceNameAndServiceTypeRequest reqGetServicesOnServiceNameAndServiceType = 16;
+    GetServiceProviderOnMobileNumberRequest reqGetServiceProviderOnMobileNumber = 17;
+    GetServiceLocationOnRegionNameRequest reqGetServiceLocationOnRegionName = 18;
+    GetServiceConfigOnConditionRequest reqGetServiceConfigOnCondition = 19;
+    GetServiceProviderOnServiceTypeRequest reqGetServiceProviderOnServiceType = 20;
+    GetLocationOnServiceProviderIdRequest reqGetLocationOnServiceProviderId = 21;
+    GetServiceConfigRequest reqGetServiceConfig = 22;
+    GetServiceConfigOnRegionNameRequest reqGetServiceConfigOnRegionName = 23;
+
+  }
+}
+
+message MultiResponses {
+  Status status = 1;
+  repeated Response response = 2;
+}
+
+message Response {
+  string index = 1;
+  Status status = 2;
+  oneof AResponse {
+    AddServiceProviderResponse resAddServiceProvider = 3;
+    BulkAddServiceProviderResponse resAddServiceProviderBulk = 4;
+    AddServiceLocationResponse resAddServiceLocation = 5;
+    BulkAddServiceLocationResponse resAddServiceLocationBulk = 6;
+    AddServicesResponse resAddServices = 7;
+    BulkAddServicesResponse resAddServicesBulk = 8;
+    AddServiceProviderMappingResponse resAddServiceProviderMapping = 9;
+    BulkAddServiceProviderMappingResponse resAddServiceProviderMappingBulk = 10;
+    AddServiceConfigResponse resAddServiceConfig = 11;
+    BulkAddServiceConfigResponse resAddServiceConfigBulk = 12;
+    GetServiceProviderResponse resGetServiceProvider = 13;
+    AddServiceProviderFromExcelResponse resAddServiceProviderFromExcel = 14;
+    GetSDTVOnLatLongResponse resGetSDTVOnLatLong = 15;
+    GetServiceDetailsOnLatLongResponse resGetServiceDetailsOnLatLong = 16;
+    GetServicesOnServiceNameAndServiceTypeResponse resGetServicesOnServiceNameAndServiceType = 17;
+    GetServiceProviderOnMobileNumberResponse resGetServiceProviderOnMobileNumber = 18;
+    GetServiceLocationOnRegionNameResponse resGetServiceLocationOnRegionName = 19;
+    GetServiceConfigOnConditionResponse resGetServiceConfigOnCondition = 20;
+    GetServiceProviderOnServiceTypeResponse resGetServiceProviderOnServiceType = 21;
+    GetLocationOnServiceProviderIdResponse resGetLocationOnServiceProviderId = 22;
+    GetServiceConfigResponse resGetServiceConfig = 23;
+    GetServiceConfigOnRegionNameResponse resGetServiceConfigOnRegionName = 24;
+
+  }
+}
+service ServiceProviderManagementService {
+
+  rpc ExecuteAddServiceProvider (AddServiceProviderRequest ) returns (AddServiceProviderResponse) {}
+  rpc ExecuteAddServiceProviderBulk ( BulkAddServiceProviderRequest ) returns ( BulkAddServiceProviderResponse ) {}
+  rpc ExecuteAddServiceLocation (AddServiceLocationRequest ) returns (AddServiceLocationResponse) {}
+  rpc ExecuteAddServiceLocationBulk ( BulkAddServiceLocationRequest ) returns ( BulkAddServiceLocationResponse ) {}
+  rpc ExecuteAddServices (AddServicesRequest ) returns (AddServicesResponse) {}
+  rpc ExecuteAddServicesBulk ( BulkAddServicesRequest ) returns ( BulkAddServicesResponse ) {}
+  rpc ExecuteAddServiceProviderMapping (AddServiceProviderMappingRequest ) returns (AddServiceProviderMappingResponse) {}
+  rpc ExecuteAddServiceProviderMappingBulk ( BulkAddServiceProviderMappingRequest ) returns ( BulkAddServiceProviderMappingResponse ) {}
+  rpc ExecuteAddServiceConfig (AddServiceConfigRequest ) returns (AddServiceConfigResponse) {}
+  rpc ExecuteAddServiceConfigBulk ( BulkAddServiceConfigRequest ) returns ( BulkAddServiceConfigResponse ) {}
+  rpc ExecuteGetServiceProvider (GetServiceProviderRequest ) returns (GetServiceProviderResponse) {}
+  rpc ExecuteAddServiceProviderFromExcel (AddServiceProviderFromExcelRequest ) returns (AddServiceProviderFromExcelResponse) {}
+  rpc ExecuteGetSDTVOnLatLong (GetSDTVOnLatLongRequest ) returns (GetSDTVOnLatLongResponse) {}
+  rpc ExecuteGetServiceDetailsOnLatLong (GetServiceDetailsOnLatLongRequest ) returns (GetServiceDetailsOnLatLongResponse) {}
+  rpc ExecuteGetServicesOnServiceNameAndServiceType (GetServicesOnServiceNameAndServiceTypeRequest ) returns (GetServicesOnServiceNameAndServiceTypeResponse) {}
+  rpc ExecuteGetServiceProviderOnMobileNumber (GetServiceProviderOnMobileNumberRequest ) returns (GetServiceProviderOnMobileNumberResponse) {}
+  rpc ExecuteGetServiceLocationOnRegionName (GetServiceLocationOnRegionNameRequest ) returns (GetServiceLocationOnRegionNameResponse) {}
+  rpc ExecuteGetServiceConfigOnCondition (GetServiceConfigOnConditionRequest ) returns (GetServiceConfigOnConditionResponse) {}
+  rpc ExecuteGetServiceProviderOnServiceType (GetServiceProviderOnServiceTypeRequest ) returns (GetServiceProviderOnServiceTypeResponse) {}
+  rpc ExecuteGetLocationOnServiceProviderId (GetLocationOnServiceProviderIdRequest ) returns (GetLocationOnServiceProviderIdResponse) {}
+  rpc ExecuteGetServiceConfig (GetServiceConfigRequest ) returns (GetServiceConfigResponse) {}
+  rpc ExecuteGetServiceConfigOnRegionName (GetServiceConfigOnRegionNameRequest ) returns (GetServiceConfigOnRegionNameResponse) {}
+  rpc Execute (MultiRequests) returns (MultiResponses) {}
+}

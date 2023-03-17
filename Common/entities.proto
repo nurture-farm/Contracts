@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+import "Common/enums.proto";
+import "google/protobuf/timestamp.proto";
+import "Common/time_slot.proto";
+
+message ActorID {
+  ActorType actor_type = 1;
+  int64 actor_id = 2;
+}
+
+message Location{
+  double latitude = 1;
+  double longitude = 2;
+  double accuracy = 3;
+}
+
+message ActorEventTrace {
+  ActorID actor = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
+
+//TODO this should be in location service
+message Geography {
+  farm.nurture.core.contracts.common.GeographyType geographyType = 1;
+  int64 geographyId = 2;
+}
+
+message KafkaProductInterestProto {
+  string farmerMobileNumber = 1;
+  string farmerName = 2;
+  string productName = 3;
+  string productBrandName = 4;
+  string productCode = 5;
+  double latitude = 6;
+  double longitude = 7;
+  string district = 8;
+  string state = 9;
+  int64 enquiry = 10;
+  int64 farmerId = 11;
+}
+
+message RoleGeoPair {
+  string role = 1;
+  int64 geoId = 2;
+  string subRole = 3;
+}
+
+message UserAttributes {
+  LocationHierarchy locationHierarchy = 1;
+  string product_reference_type = 2;
+  string product_reference_id = 3;
+  BookingSource booking_source = 4;
+  repeated string crop = 5;
+  bool isDSRSignedUp = 6;
+  int64 bookingCount = 7;
+  bool isKavach = 8;
+}
+
+message LocationHierarchy {
+  repeated string loc = 1;
+}
+
+message ProductDetails {
+  string materialCode = 1;
+  farm.nurture.core.contracts.common.UnitType unit = 2;
+  double tolerancePercentage = 3;
+  double dosagePerAcre = 4;
+  double unitPackSize = 5;
+}
+
+message IOTStats {
+  bool isMalfunctioned = 1;
+  double iotAcre = 2;
+  double allowAcreChangePercentage = 3;
+  int64 totalPingsCount = 4;
+  TimeSlot timeslot = 5;
+  int64 engineOnCount = 6;
+  int64 speedCount = 7;
+  double pingDensityPerMinute = 8;
+  bool isMisbehaved = 9;
+  string deviceId = 10;
+  string machineNumber = 11;
+}

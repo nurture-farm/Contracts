@@ -1,0 +1,900 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.CampaignService;
+
+import "Common/enums.proto";
+import "Common/utils.proto";
+import "Common/headers.proto";
+import "Common/entities.proto";
+import "Common/event_reference.proto";
+import "Common/time_slot.proto";
+import "Common/tags.proto";
+import "CommunicationEngine/communication_engine.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "farm.nurture.farm.service.proto";
+option go_package = "code.nurture.farm/Core/Contracts/CampaignService";
+
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddCampaign
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+  farm.nurture.core.contracts.common.NameSpace namespace = 2;
+  string name = 3;
+  string description = 4;
+  string cronExpression = 5;
+  int32 occurrences = 6;
+  repeated farm.nurture.core.contracts.common.Attribs content_metadata = 7;
+  farm.nurture.core.contracts.common.CommunicationChannel communicationChannel = 8;
+  farm.nurture.core.contracts.common.CampaignStatus status = 9;
+  farm.nurture.core.contracts.common.CampaignQueryType type = 10;
+  farm.nurture.core.contracts.common.CampaignScheduleType campaignScheduleType = 11;
+  google.protobuf.Duration inactionDuration = 12;
+  string query = 13;
+  string inaction_query = 14;
+  farm.nurture.core.contracts.common.ActorID createdByActor = 15;
+  farm.nurture.core.contracts.ce.Media media = 16;
+  farm.nurture.core.contracts.ce.CommunicationChannelAttributes channel_attributes = 17;
+  string metadata = 18;
+  int32 controlGroupPercentage=19;
+}
+
+message TestCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+  farm.nurture.core.contracts.common.NameSpace namespace = 2;
+  repeated farm.nurture.core.contracts.common.Attribs content_metadata = 3;
+  farm.nurture.core.contracts.common.CommunicationChannel communicationChannel = 4;
+  farm.nurture.core.contracts.common.CampaignQueryType type = 5;
+  string query = 6;
+  farm.nurture.core.contracts.ce.Media media = 7;
+  farm.nurture.core.contracts.ce.CommunicationChannelAttributes channel_attributes = 8;
+}
+
+
+message BulkAddCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  repeated AddCampaignRequest  requests = 2;
+}
+
+
+message AddCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+
+message BulkAddCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated AddCampaignResponse  responses = 3;
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddControlGroup
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+
+message AddControlGroupRequest {
+farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 campaignId=2;
+  string attributes = 3;
+  bytes bloomFilter=4;
+}
+message AddControlGroupResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				UpdateCampaign
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message UpdateCampaignRequest {
+farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+    int64 id = 8;
+    farm.nurture.core.contracts.common.ActorID updatedByActor = 6;
+    AddCampaignRequest addCampaignRequest = 9;
+    repeated AddCampaignTemplateRequest addCampaignTemplateRequests = 10;
+
+
+}
+
+
+message BulkUpdateCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  repeated UpdateCampaignRequest  requests = 2;
+}
+
+
+message UpdateCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+
+message BulkUpdateCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated UpdateCampaignResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddCampaignTemplate
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddCampaignTemplateRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+  int64 campaignId = 2;
+  string templateName = 3;
+  string campaignName = 4;
+  int32 distributionPercent = 5;
+}
+
+message TestCampaignTemplateRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  string templateName = 2;
+  int32 distributionPercent = 3;
+}
+
+
+message BulkAddCampaignTemplateRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  repeated AddCampaignTemplateRequest  requests = 2;
+}
+
+
+message AddCampaignTemplateResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+
+message BulkAddCampaignTemplateResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated AddCampaignTemplateResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddNewCampaign
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddNewCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+  AddCampaignRequest addCampaignRequest = 3; repeated AddCampaignTemplateRequest addCampaignTemplateRequests = 4; repeated AddTargetUserRequest addTargetUserRequests = 5;
+}
+
+
+message BulkAddNewCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  repeated AddNewCampaignRequest  requests = 2;
+}
+
+
+message AddNewCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+
+message BulkAddNewCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated AddNewCampaignResponse  responses = 3;
+}
+
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetUserList
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message CampaignRequest { //GetUserList Request
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+  int64 campaignId = 3;
+}
+
+message CampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				FindCampaignById
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message FindCampaignByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  int64 id = 3;
+}
+message FindCampaignByIdResponseRecord {
+  int64 id = 1;
+  string namespace = 2;
+  string name = 3;
+  string description = 4;
+  string cronExpression = 5;
+  int32 occurrences = 6;
+  string communicationChannel = 7;
+  string status = 8;
+  string type = 9;
+  string scheduleType = 10;
+  string query = 11;
+  string inactionQuery = 12;
+  int64 inactionDuration = 13;
+  string attributes = 14;
+  int64 createdByActorid = 15;
+  string createdByActortype = 16;
+  int64 updatedByActorid = 17;
+  string updatedByActortype = 18;
+  int64 version = 19;
+  int64 createdAt = 20;
+  int64 updatedAt = 21;
+  int64 deletedAt = 22;
+  FindCampaignTemplateByIdResponse templateResponse = 23;
+}
+message FindCampaignByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  FindCampaignByIdResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	   FindControlGroupByCampaignId
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message FindControlGroupByCampaignIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+  int64 campaignId = 3;
+}
+message FindControlGroupByCampaignIdResponseRecord {
+  int64 id = 1;
+  int64 campaignId=2;
+  string attributes = 3;
+  bytes bloomFilter=4;
+}
+message FindControlGroupByCampaignIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  FindControlGroupByCampaignIdResponseRecord records= 4;
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				FindCampaignTemplateById
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message FindCampaignTemplateByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  int64 campaignId = 3;
+}
+message FindCampaignTemplateByIdResponseRecord {
+  int64 id = 1;
+  int64 campaignId = 2;
+  string templateName = 3;
+  string campaignName = 4;
+  int32 distributionPercent = 5;
+}
+message FindCampaignTemplateByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  repeated FindCampaignTemplateByIdResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				FindTargetUserById
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message FindTargetUserByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  int64 campaignId = 3;
+}
+message FindTargetUserByIdResponseRecord {
+  int64 id = 1;
+  int64 campaignId = 2;
+  int64 userId = 3;
+  string userType = 4;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 5;
+}
+message FindTargetUserByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  repeated FindTargetUserByIdResponseRecord records= 4;
+}
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				GetDynamicDataByKey
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message GetDynamicDataByKeyRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  int64 campaignId = 3;
+  string dynamicKey = 4;
+}
+message GetDynamicDataByKeyResponseRecord {
+  int64 campaignId = 1;
+  string dynamicKey = 2;
+  string ctaLink = 3;
+  string media = 4;
+}
+message GetDynamicDataByKeyResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  repeated GetDynamicDataByKeyResponseRecord records= 4;
+}
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddDynamicData
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddDynamicDataRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+  int64 campaignId = 2;
+  string dynamicKey = 3;
+  string ctaLink = 4;
+  string media = 5;
+}
+
+
+message BulkAddDynamicDataRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  repeated AddDynamicDataRequest  requests = 2;
+}
+
+
+message AddDynamicDataResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+
+message BulkAddDynamicDataResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated AddDynamicDataResponse  responses = 3;
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				FindQueryCampaign
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message FindQueryCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+
+  string type = 3;
+}
+message FindQueryCampaignResponseRecord {
+  string name = 1;
+  string query = 2;
+}
+message FindQueryCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  repeated FindQueryCampaignResponseRecord records= 4;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddQueryCampaign
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddQueryCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  string name = 2;
+  string type = 3;
+  string query = 4;
+  string updatedBy = 5;
+}
+
+
+message BulkAddQueryCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  repeated AddQueryCampaignRequest  requests = 2;
+}
+
+
+message AddQueryCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+
+message BulkAddQueryCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated AddQueryCampaignResponse  responses = 3;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddTargetUser
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddTargetUserRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+  int64 campaignId = 2;
+  farm.nurture.core.contracts.common.ActorID user = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+}
+
+message TestTargetUserRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.ActorID user = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+}
+
+message BulkAddTargetUserRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  repeated AddTargetUserRequest  requests = 2;
+}
+
+
+message AddTargetUserResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+
+message BulkAddTargetUserResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated AddTargetUserResponse  responses = 3;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				AddInactionTargetUser
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message AddInactionTargetUserRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+  int64 campaignId = 2;
+  farm.nurture.core.contracts.common.ActorID user = 3;
+}
+
+
+message BulkAddInactionTargetUserRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  repeated AddInactionTargetUserRequest  requests = 2;
+}
+
+message AddInactionTargetUserResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  string recordId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+
+}
+
+message BulkAddInactionTargetUserResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated AddInactionTargetUserResponse  responses = 3;
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				FindInactionTargetUserByCampaignId
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message FindInactionTargetUserByCampaignIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  bool isStaleAllowed = 2;
+  int64 campaignId = 3;
+}
+message FindInactionTargetUserByCampaignIdResponseRecord {
+  int64 id = 1;
+  int64 campaignId = 2;
+  int64 userId = 3;
+  string userType = 4;
+}
+message FindInactionTargetUserByCampaignIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 3;
+  repeated FindInactionTargetUserByCampaignIdResponseRecord records= 4;
+}
+
+message AthenaQueryRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  string athenaQuery = 2;
+}
+
+message AthenaQueryResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int64 count = 2;
+}
+
+message TestNewCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+
+  TestCampaignRequest testCampaignRequest = 3; repeated TestCampaignTemplateRequest testCampaignTemplateRequests = 4; repeated TestTargetUserRequest testTargetUserRequests = 5;
+}
+
+message TestNewCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+}
+
+message ScheduleUserJourneyCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  farm.nurture.core.contracts.common.NameSpace namespace = 2;
+  string name = 3;
+  UserJourneyCampaign campaign = 4;
+  farm.nurture.core.contracts.common.ActorID createdByActor = 7;
+  int64 campaignId = 8;
+  bool triggerCampaign = 9;
+  string userJourneyMetadata = 10;
+  string engagementMetadata = 11;
+}
+
+message UserJourneyCampaign {
+  repeated UserJourney userJourneys = 1;
+  EngagementVertex engagementStartVertex = 2;
+}
+
+message UserJourney {
+  UserJourneyVertex userJourneyVertex = 1;
+  farm.nurture.core.contracts.common.LogicalOperator operator = 2;
+  UserMetadata userMetadata=3;
+}
+
+message UserJourneyVertex {
+  string id = 1;
+  farm.nurture.core.contracts.common.UserJourneyEventType eventType = 2;
+  EventMetadata eventMetadata = 3;
+  EventMetadata inactionEventMetadata = 4;
+  string inactionDuration = 5;
+  UserJourneyEdge edge = 6;
+  repeated PastEventData pastEventData = 8;
+}
+
+message PastEventData {
+  farm.nurture.core.contracts.common.UserJourneyEventType eventType = 1;
+  string eventName = 2;
+  repeated farm.nurture.core.contracts.common.Attribs eventFilters = 3;
+  string duration = 4;
+}
+
+message EventMetadata {
+  string eventName = 1;
+  repeated farm.nurture.core.contracts.common.Attribs eventFilters = 2;
+}
+
+message UserMetadata{
+  repeated farm.nurture.core.contracts.common.Attribs userFilters = 1;
+}
+
+//wait for - 15 min, 60min....
+///wait till - 20 June 2:00 PM
+
+message UserJourneyEdge {
+  string id = 1;
+  WaitTime waitTime = 2;
+  farm.nurture.core.contracts.common.CampaignEdgeType edgeType = 3;
+  UserJourneyVertex userJourneyVertex = 4;
+}
+
+message WaitTime {
+  string waitFor = 1;
+  string waitTill = 2;
+}
+
+message EngagementVertex {
+  string id = 1;
+  farm.nurture.core.contracts.common.CommunicationChannel communicationChannel = 2;
+  string templateName = 3;
+  repeated string placeholders = 4;
+  string athenaQuery = 5; //for mapping placeholders with userId
+  repeated farm.nurture.core.contracts.common.Attribs contentMetadata = 6;
+  MediaInfo mediaInfo = 7;
+  repeated EngagementEdge edges = 8;
+}
+
+message MediaInfo {
+  bytes fileBytes = 1;
+  farm.nurture.core.contracts.common.MediaType mediaType = 2;
+  farm.nurture.core.contracts.common.FileType fileType = 3;
+  string fileName = 4;
+}
+
+message EngagementEdge {
+  string id = 1;
+  WaitTime waitTime = 2;
+  farm.nurture.core.contracts.common.CampaignEdgeType edgeType = 3;
+  repeated farm.nurture.core.contracts.common.CommunicationState states = 4;
+  EngagementVertex vertex = 5;
+}
+
+
+message ScheduleUserJourneyCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  int64 campaignId = 3;
+  repeated farm.nurture.core.contracts.common.Attribs attribs = 4;
+  farm.nurture.core.contracts.common.RequestStatusResult triggerCampaignStatus = 5;
+  int64 engagementVertexId = 6;
+  string referenceId = 7;
+  string cronSchedule = 8;
+
+}
+
+message FindUserJourneyCampaignByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 campaignId = 2;
+}
+
+message FindUserJourneyCampaignByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  string name = 2;
+  UserJourneyCampaign campaign = 3;
+  string userJourneyMetadata = 4;
+  string engagementMetadata = 5;
+}
+
+message FilterUserJourneyCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  string searchFilter = 2;
+  farm.nurture.core.contracts.common.NameSpace namespace = 3;
+  farm.nurture.core.contracts.common.CampaignStatus status = 4;
+  string startTime = 5;
+  string endTime = 6;
+  int32 pageNumber = 7;
+  int32 limit = 8;
+}
+
+message FilterUserJourneyCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated FilterUserJourneyCampaignResponseRecord records = 3;
+}
+
+message FilterUserJourneyCampaignResponseRecord {
+  int64 id = 1;
+  string name = 2;
+  string namespace = 3;
+  int64 qualifications = 4;
+  int64 goaltMet = 5;
+  string status = 6;
+  double conversions = 7;
+  string startTime= 8;
+  bool triggerAction = 9;
+  bool view = 10;
+}
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				 Multi Queries
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+message MultiRequests {
+  bool onTxn = 1;
+  repeated Request request = 2;
+}
+
+message Request {
+  string index = 1;
+  oneof ARequest {
+    AddCampaignRequest reqAddCampaign = 2;
+    BulkAddCampaignRequest reqAddCampaignBulk = 3;
+    UpdateCampaignRequest reqUpdateCampaign = 4;
+    BulkUpdateCampaignRequest reqUpdateCampaignBulk = 5;
+    AddCampaignTemplateRequest reqAddCampaignTemplate = 6;
+    BulkAddCampaignTemplateRequest reqAddCampaignTemplateBulk = 7;
+    AddNewCampaignRequest reqAddNewCampaign = 8;
+    BulkAddNewCampaignRequest reqAddNewCampaignBulk = 9;
+    CampaignRequest reqGetUserList = 10;
+    FindCampaignByIdRequest reqFindCampaignById = 11;
+    FindCampaignTemplateByIdRequest reqFindCampaignTemplateById = 12;
+    AddTargetUserRequest reqAddTargetUser = 13;
+    BulkAddTargetUserRequest reqAddTargetUserBulk = 14;
+    AddInactionTargetUserRequest reqAddInactionTargetUser = 15;
+    BulkAddInactionTargetUserRequest reqAddInactionTargetUserBulk = 16;
+    FindInactionTargetUserByCampaignIdRequest reqFindInactionTargetUserByCampaignId = 17;
+    GetDynamicDataByKeyRequest reqGetDynamicDataByKey = 18;
+    AddDynamicDataRequest reqAddDynamicData = 19;
+    BulkAddDynamicDataRequest reqAddDynamicDataBulk = 20;
+    FindQueryCampaignRequest reqFindQueryCampaign = 21;
+    AddQueryCampaignRequest reqAddQueryCampaign = 22;
+    BulkAddQueryCampaignRequest reqAddQueryCampaignBulk = 23;
+
+  }
+}
+
+message MultiResponses {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  repeated Response response = 2;
+}
+
+message Response {
+  string index = 1;
+  farm.nurture.core.contracts.common.RequestStatusResult status = 2;
+  oneof AResponse {
+    AddCampaignResponse resAddCampaign = 3;
+    BulkAddCampaignResponse resAddCampaignBulk = 4;
+    UpdateCampaignResponse resUpdateCampaign = 5;
+    BulkUpdateCampaignResponse resUpdateCampaignBulk = 6;
+    AddCampaignTemplateResponse resAddCampaignTemplate = 7;
+    BulkAddCampaignTemplateResponse resAddCampaignTemplateBulk = 8;
+    AddNewCampaignResponse resAddNewCampaign = 9;
+    BulkAddNewCampaignResponse resAddNewCampaignBulk = 10;
+    CampaignResponse resGetUserList = 11;
+    FindCampaignByIdResponse resFindCampaignById = 12;
+    FindCampaignTemplateByIdResponse resFindCampaignTemplateById = 13;
+    AddTargetUserResponse resAddTargetUser = 14;
+    BulkAddTargetUserResponse resAddTargetUserBulk = 15;
+    AddInactionTargetUserResponse resAddInactionTargetUser = 16;
+    BulkAddInactionTargetUserResponse resAddInactionTargetUserBulk = 17;
+    FindInactionTargetUserByCampaignIdResponse resFindInactionTargetUserByCampaignId = 18;
+    GetDynamicDataByKeyResponse resGetDynamicDataByKey = 19;
+    AddDynamicDataResponse resAddDynamicData = 20;
+    BulkAddDynamicDataResponse resAddDynamicDataBulk = 21;
+    FindQueryCampaignResponse resFindQueryCampaign = 22;
+    AddQueryCampaignResponse resAddQueryCampaign = 23;
+    BulkAddQueryCampaignResponse resAddQueryCampaignBulk = 24;
+  }
+}
+
+message FilterCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  string name = 2;
+  farm.nurture.core.contracts.common.CampaignStatus status = 3;
+  string description = 4;
+  string templateName = 5;
+  int32 pageNumber = 6;
+  int32 limit = 7;
+}
+
+message FilterCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 count = 2;
+  repeated FindCampaignByIdResponseRecord records = 3;
+}
+
+message UserJourneyCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 campaignId = 2;
+  int64 engagementVertexId = 3;
+  string referenceId = 4;
+}
+
+message UserJourneyCampaignResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int64 engagementVertexId = 2;
+  string referenceId = 3;
+}
+
+message TestCampaignByIdRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 campaignId = 2;
+  string athenaQuery = 3;
+}
+
+message TestCampaignByIdResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+}
+
+message FetchCampaignScheduleRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 scheduleStartTime = 2; //default current time to be passed from UI
+  int64 scheduleEndTime = 3; //default current time + 30 days to be passed from UI
+  farm.nurture.core.contracts.common.NameSpace namespace = 4; //optional
+  farm.nurture.core.contracts.common.CampaignStatus status = 5; //optional
+  farm.nurture.core.contracts.common.CommunicationChannel communicationChannel = 6; //optional
+}
+
+message FetchCampaignScheduleResponse {
+  farm.nurture.core.contracts.common.RequestStatusResult status = 1;
+  int32 countDays = 2; //number of days of campaign schedule response
+  repeated CampaignsSchedule campaignSchedule = 3;
+}
+
+message CampaignsSchedule {
+  string date = 1;
+  int32 count = 2; //number of campaigns running on a day
+  repeated CampaignSchedule campaignSchedule = 3;
+}
+
+message CampaignSchedule {
+  string startTime = 1;
+  string endTime = 2; //will be used in future
+  CampaignMetaData campaignMetaData = 3;
+}
+
+message CampaignMetaData {
+  int64 campaignId = 1;
+  string campaignName = 2;
+  farm.nurture.core.contracts.common.NameSpace namespace = 4;
+  farm.nurture.core.contracts.common.CommunicationChannel communicationChannel = 6;
+  repeated string templateNames = 7;
+  int64 userSegmentSize = 8;
+}
+
+service CampaignService {
+
+  rpc ExecuteAddCampaign (AddCampaignRequest ) returns (AddCampaignResponse) {}
+  rpc ExecuteAddCampaignBulk ( BulkAddCampaignRequest ) returns ( BulkAddCampaignResponse ) {}
+  rpc ExecuteAddControlGroup (AddControlGroupRequest ) returns (AddControlGroupResponse) {}
+  rpc ExecuteUpdateCampaign (UpdateCampaignRequest ) returns (UpdateCampaignResponse) {}
+  rpc ExecuteUpdateCampaignBulk ( BulkUpdateCampaignRequest ) returns ( BulkUpdateCampaignResponse ) {}
+  rpc ExecuteAddCampaignTemplate (AddCampaignTemplateRequest ) returns (AddCampaignTemplateResponse) {}
+  rpc ExecuteAddCampaignTemplateBulk ( BulkAddCampaignTemplateRequest ) returns ( BulkAddCampaignTemplateResponse ) {}
+  rpc ExecuteAddNewCampaign (AddNewCampaignRequest ) returns (AddNewCampaignResponse) {}
+  rpc ExecuteAddNewCampaignBulk ( BulkAddNewCampaignRequest ) returns ( BulkAddNewCampaignResponse ) {}
+  rpc ExecuteCampaign (CampaignRequest ) returns (CampaignResponse) {}
+  rpc ExecuteFindCampaignById (FindCampaignByIdRequest ) returns (FindCampaignByIdResponse) {}
+  rpc ExecuteFindCampaignTemplateById (FindCampaignTemplateByIdRequest ) returns (FindCampaignTemplateByIdResponse) {}
+  rpc ExecuteFindTargetUserById (FindTargetUserByIdRequest ) returns (FindTargetUserByIdResponse) {}
+  rpc ExecuteAddTargetUser (AddTargetUserRequest ) returns (AddTargetUserResponse) {}
+  rpc ExecuteAddTargetUserBulk ( BulkAddTargetUserRequest ) returns ( BulkAddTargetUserResponse ) {}
+  rpc ExecuteAddInactionTargetUser (AddInactionTargetUserRequest ) returns (AddInactionTargetUserResponse) {}
+  rpc ExecuteAddInactionTargetUserBulk ( BulkAddInactionTargetUserRequest ) returns ( BulkAddInactionTargetUserResponse ) {}
+  rpc ExecuteFindInactionTargetUserByCampaignId (FindInactionTargetUserByCampaignIdRequest ) returns (FindInactionTargetUserByCampaignIdResponse) {}
+  rpc Execute (MultiRequests) returns (MultiResponses) {}
+  rpc ExecuteAthenaQuery (AthenaQueryRequest) returns (AthenaQueryResponse) {}
+  rpc ExecuteTestNewCampaign (TestNewCampaignRequest) returns (TestNewCampaignResponse) {}
+  rpc ExecuteFilterCampaigns (FilterCampaignRequest) returns (FilterCampaignResponse) {}
+  rpc ExecuteTestCampaignById (TestCampaignByIdRequest) returns (TestCampaignByIdResponse) {}
+  rpc ExecuteGetDynamicDataByKey (GetDynamicDataByKeyRequest ) returns (GetDynamicDataByKeyResponse) {}
+  rpc ExecuteAddDynamicData (AddDynamicDataRequest ) returns (AddDynamicDataResponse) {}
+  rpc ExecuteAddDynamicDataBulk ( BulkAddDynamicDataRequest ) returns ( BulkAddDynamicDataResponse ) {}
+  rpc ExecuteFindQueryCampaign (FindQueryCampaignRequest ) returns (FindQueryCampaignResponse) {}
+  rpc ExecuteAddQueryCampaign (AddQueryCampaignRequest ) returns (AddQueryCampaignResponse) {}
+  rpc ExecuteAddQueryCampaignBulk ( BulkAddQueryCampaignRequest ) returns ( BulkAddQueryCampaignResponse ) {}
+  rpc ExecuteScheduleUserJourneyCampaign (ScheduleUserJourneyCampaignRequest) returns (ScheduleUserJourneyCampaignResponse) {}
+  rpc ExecuteFindUserJourneyCampaignById (FindUserJourneyCampaignByIdRequest) returns (FindUserJourneyCampaignByIdResponse) {}
+  rpc ExecuteFilterUserJourneyCampaigns (FilterUserJourneyCampaignRequest) returns (FilterUserJourneyCampaignResponse) {}
+  rpc ExecuteUserJourneyCampaign (UserJourneyCampaignRequest) returns (UserJourneyCampaignResponse) {}
+  rpc ExecuteFetchCampaignsSchedule (FetchCampaignScheduleRequest) returns (FetchCampaignScheduleResponse) {}
+  rpc ExecuteFindControlGroupByCampaignId (FindControlGroupByCampaignIdRequest ) returns (FindControlGroupByCampaignIdResponse) {}
+}

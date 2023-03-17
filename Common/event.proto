@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+import "Common/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+message Event {
+  farm.nurture.core.contracts.common.ActorType actor_type = 1;
+  string actor_id = 2;
+  string farm_id = 3;
+  string crop_cycle_id = 4;
+
+  farm.nurture.core.contracts.common.EventType event_type = 5;
+  farm.nurture.core.contracts.common.ServiceType service_type = 6;
+  // Reserved 7 for sub type in future
+
+  farm.nurture.core.contracts.common.EventReason event_reason = 8;
+
+  // This timestamp at source (for farmer the app time)
+  google.protobuf.Timestamp request_timestamp = 9;
+  farm.nurture.core.contracts.common.ActorType created_actor = 10;
+  // Could be the farmer it self
+  string created_by_id = 11;
+}

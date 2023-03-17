@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.common;
+
+import "Common/enums.proto";
+//import "Common/time_slot.proto";
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "farm.nurture.core.contracts.common.services";
+
+option go_package = "code.nurture.farm/Core/Contracts/Common";
+
+enum SupplyTaskType {
+  NO_TASK_TYPE = 0;
+  SPRAY_TASK = 1;
+  WATER_FILL_TASK = 2;
+  PAUSE_TASK = 3;
+  SERVICE_CLOSURE_TASK = 4;
+  ON_ROUTE_TASK = 5;
+}
+
+enum SupplyActivityType {
+  NO_ACTIVITY_TYPE = 0;
+  SPRAY_ACTIVITY = 1;
+  DRY_RUN_ACTIVITY = 2;
+  CALL_FARMER_ACTIVITY = 3;
+  MACHINE_SOFTWARE_UPDATE_ACTIVITY = 4;
+}
+
+enum SupplyActivitySubType {
+  NO_ACTIVITY_SUB_TYPE = 0;
+}
+
+message SupplyActivitySpec {
+  SupplyActivityType activity_type = 1;
+  SupplyTaskType task_type = 2;
+}
+
+message SupplyWorkSpec {
+  SupplyActivityType activity_type = 1;
+  SupplyActivitySubType activity_sub_type = 2;
+}
+
+message ServiceAreaSpec {
+  // For a given location find
+  ServiceAreaNamespace service_area_namespace = 1;
+  int64 service_area_id = 2;
+}
+
+message SupplySpec {
+  ActorType actor_type = 1;
+  int64 actor_id = 2;
+}
+
+message ActivityLocation {
+  farm.nurture.core.contracts.common.LocationType location_type = 1;
+  // could be optional
+  int64 farm_id = 2;
+  int64 farm_crop_id = 3;
+  // location centroid
+  double latitude = 4;
+  double longitude = 5;
+
+  // set of polylines describing the location
+  repeated string location_closures = 6;
+
+}
+
+message ActivityBookingReference {
+  // farmer to serve
+  farm.nurture.core.contracts.common.ActorType actor_type = 6;
+  int64 actor_id = 7;
+
+  // booking reference
+  int64 booking_id = 8;
+  int64 booking_version_id = 9;
+  int64 service_id = 10;
+  int64 service_version_id = 11;
+}
+
+enum SupplyGroupType {
+  NO_SUPPLY_GROUP_TYPE = 0;
+  SUPPLY_GROUP_OPERATOR_MACHINE = 1;
+  SUPPLY_GROUP_OPERATOR = 2;
+}

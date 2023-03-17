@@ -1,0 +1,63 @@
+load("@rules_cc//cc:defs.bzl", "cc_proto_library")
+load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
+load("@rules_java//java:defs.bzl", "java_proto_library")
+load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+package(default_visibility = ["//visibility:public"])
+
+# Proto definitions
+proto_library(
+    name = "communication_engine_proto",
+    srcs = ["communication_engine.proto"],
+    deps = [
+        "//Common:common_enums_proto",
+        "//Common:entities_proto",
+        "//Common:event_reference_proto",
+        "//Common:headers_proto",
+        "//Common:loyalty_enums_proto",
+        "@com_google_protobuf//:timestamp_proto",
+    ]
+)
+
+#cc_proto_library(
+#    name = "communication_engine_cc_proto",
+#    deps = [":communication_engine_proto"],
+#)
+
+#cc_grpc_library(
+#    name = "communication_engine_cc_grpc",
+#    srcs = [":communication_engine_proto"],
+#    gprc_only = True,
+#    deps = [":communication_engine_cc_proto"],
+#)
+
+java_proto_library(
+    name = "communication_engine_java_proto",
+    deps = [":communication_engine_proto"],
+)
+
+java_grpc_library(
+    name = "communication_engine_java_grpc",
+    srcs = [":communication_engine_proto"],
+    deps = [
+        ":communication_engine_java_proto",
+#        "@maven//:com_google_api_grpc_proto_google_common_protos",
+#        "@maven//:com_google_code_findbugs_jsr305",
+#        "@maven//:com_google_code_gson_gson",
+#        "@maven//:com_google_guava_guava",
+    ],
+)
+
+go_proto_library(
+    name = "communication_engine_go_proto",
+
+    compiler = "@io_bazel_rules_go//proto:go_grpc",
+    importpath = "code.nurture.farm/Core/Contracts/CommunicationEngine/Gen/GoCommunicationEngine",
+
+    protos = [":communication_engine_proto",],
+    deps = [
+        "//Common:common_enums_all_go_proto",
+    ],
+)
