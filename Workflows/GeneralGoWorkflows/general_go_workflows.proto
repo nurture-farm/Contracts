@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package farm.nurture.core.contracts.workflows.generalgo;
+
+import "Common/enums.proto";
+import "Common/entities.proto";
+import "Common/headers.proto";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+option java_package = "farm.nurture.core.contracts.workflows.generalgo";
+option java_multiple_files = true;
+
+option go_package = "code.nurture.farm/Core/Contracts/Workflows/GeneralGoWorkflows";
+
+service GeneralGoWorkflows {
+  rpc ExecuteCampaign (ExecuteCampaignRequest) returns (ExecuteCampaignResponse) {}
+  rpc ExecuteUserJourneyCampaign (ExecuteUserJourneyCampaignRequest) returns (ExecuteUserJourneyCampaignResponse) {}
+  rpc CreatePartitions(CreatePartitionsRequest) returns (CreatePartitionsResponse);
+}
+
+message ExecuteUserJourneyCampaignRequest {
+  farm.nurture.core.contracts.common.RequestHeaders requestHeaders = 1;
+  int64 campaignId = 2;
+  int64 engagementVertexId = 3;
+  string referenceId = 4;
+  google.protobuf.Duration waitDuration = 5;
+}
+
+message ExecuteUserJourneyCampaignResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+}
+
+message ExecuteCampaignRequest{
+  int64 campaign_id = 1;
+  farm.nurture.core.contracts.common.CampaignScheduleType campaignScheduleType = 2;
+  google.protobuf.Duration inactionDuration = 3;
+}
+
+message ExecuteCampaignResponse{
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+}
+
+message CreatePartitionsRequest {
+  string tableName = 1;
+  string databaseName = 2;
+  string bucket = 3;
+  int64 numberOfDays = 4;
+}
+
+message CreatePartitionsResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+}
