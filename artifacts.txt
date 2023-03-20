@@ -1,8 +1,11 @@
 ./CampaignService/Gen/JavaCampaignService/libcampaign_service_java_grpc.jar campaign_service_grpc
 ./CampaignService/Gen/JavaCampaignService/libcampaign_service_proto-speed.jar campaign_service_proto
+./CommunicationEngine/Gen/JavaCommunicationEngine/libcommunication_engine_java_grpc.jar communication_engine_grpc
 ./CommunicationEngine/Gen/JavaCommunicationEngine/libcommunication_engine_proto-speed.jar communication_engine_proto
 ./Workflows/GeneralGoWorkflows/Gen/JavaWorkflows/libgeneral_go_workflows_proto-speed.jar general_go_workflows_proto
 ./Workflows/GeneralGoWorkflows/Gen/JavaWorkflows/libgeneral_go_workflows_java_grpc.jar general_go_workflows_grpc
+./EventPortal/Gen/JavaEventPortal/libevent_portal_proto-speed.jar event_portal_proto
+./EventPortal/Gen/JavaEventPortal/libevent_portal_java_grpc.jar event_portal_grpc
 ./Common/Gen/JavaCommon/libentities_proto-speed.jar entities_proto
 ./Common/Gen/JavaCommon/libcommon_enums_proto-speed.jar common_enums_proto
 ./Common/Gen/JavaCommon/libevent_reference_proto-speed.jar event_reference_proto

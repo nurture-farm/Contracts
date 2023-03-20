@@ -37,7 +37,7 @@ go_proto_library(
     name = "service_provider_management_service_go_proto",
 
     compiler = "@io_bazel_rules_go//proto:go_grpc",
-    importpath = "code.nurture.farm/Core/Contracts/service_provider_management_service/Gen/Goservice_provider_management_service",
+    importpath = "github.com/nurture-farm/Contracts/service_provider_management_service/Gen/Goservice_provider_management_service",
 
     protos = [":service_provider_management_service_proto",],
     deps = [

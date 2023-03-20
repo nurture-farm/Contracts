@@ -49,7 +49,7 @@ go_proto_library(
     name = "location_service_go_proto",
 
     compiler = "@io_bazel_rules_go//proto:go_grpc",
-    importpath = "code.nurture.farm/Core/Contracts/LocationService/Gen/GoLocationService",
+    importpath = "github.com/nurture-farm/Contracts/LocationService/Gen/GoLocationService",
 
     protos = [":location_service_proto",],
     deps = [

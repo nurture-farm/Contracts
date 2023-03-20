@@ -5,7 +5,7 @@ option java_generate_equals_and_hash = true;
 option java_multiple_files = true;
 option java_package = "farm.nurture.core.contracts.common";
 
-option go_package = "code.nurture.farm/Core/Contracts/Common";
+option go_package = "github.com/nurture-farm/Contracts/Common";
 
 import "Common/enums.proto";
 import "google/protobuf/timestamp.proto";

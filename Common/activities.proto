@@ -9,7 +9,7 @@ option java_generate_equals_and_hash = true;
 option java_multiple_files = true;
 option java_package = "farm.nurture.core.contracts.common.services";
 
-option go_package = "code.nurture.farm/Core/Contracts/Common";
+option go_package = "github.com/nurture-farm/Contracts/Common";
 
 enum SupplyTaskType {
   NO_TASK_TYPE = 0;

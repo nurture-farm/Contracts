@@ -48,7 +48,7 @@ go_proto_library(
     name = "general_go_workflows_go_proto",
 
     compiler = "@io_bazel_rules_go//proto:go_grpc",
-    importpath = "code.nurture.farm/Core/Contracts/Workflows/GeneralGoWorkflows/Gen/GoGeneralGoWorkflows",
+    importpath = "github.com/nurture-farm/Contracts/Workflows/GeneralGoWorkflows/Gen/GoGeneralGoWorkflows",
 
     protos = [":general_go_workflows_proto",],
     deps = [

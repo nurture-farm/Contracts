@@ -1036,10 +1036,10 @@ const char descriptor_table_protodef_Common_2fenums_2eproto[] PROTOBUF_SECTION_V
   "\n\023MODEL_TYPE_TEMPORAL\020\002*\'\n\007TaxType\022\010\n\004CG"
   "ST\020\000\022\010\n\004SGST\020\001\022\010\n\004IGST\020\002*O\n\024ScoringStrat"
   "ergyType\022\035\n\031NO_SCORING_STRATERGY_TYPE\020\000\022"
-  "\030\n\024ROLLING_WEIGHTED_SUM\020\001BX\n(farm.nurtur"
-  "e.core.contracts.common.enumsP\001Z\'code.nu"
-  "rture.farm/Core/Contracts/Common\240\001\001b\006pro"
-  "to3"
+  "\030\n\024ROLLING_WEIGHTED_SUM\020\001BY\n(farm.nurtur"
+  "e.core.contracts.common.enumsP\001Z(github."
+  "com/nurture-farm/Contracts/Common\240\001\001b\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Common_2fenums_2eproto_deps[1] = {
 };
@@ -1047,7 +1047,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Common_2fenums_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Common_2fenums_2eproto = {
-  false, false, descriptor_table_protodef_Common_2fenums_2eproto, "Common/enums.proto", 40283,
+  false, false, descriptor_table_protodef_Common_2fenums_2eproto, "Common/enums.proto", 40284,
   &descriptor_table_Common_2fenums_2eproto_once, descriptor_table_Common_2fenums_2eproto_sccs, descriptor_table_Common_2fenums_2eproto_deps, 0, 0,
   schemas, file_default_instances, TableStruct_Common_2fenums_2eproto::offsets,
   file_level_metadata_Common_2fenums_2eproto, 0, file_level_enum_descriptors_Common_2fenums_2eproto, file_level_service_descriptors_Common_2fenums_2eproto,

@@ -375,9 +375,9 @@ const char descriptor_table_protodef_Common_2fentities_2eproto[] PROTOBUF_SECTIO
   "Count\030\006 \001(\003\022\022\n\nspeedCount\030\007 \001(\003\022\034\n\024pingD"
   "ensityPerMinute\030\010 \001(\001\022\024\n\014isMisbehaved\030\t "
   "\001(\010\022\020\n\010deviceId\030\n \001(\t\022\025\n\rmachineNumber\030\013"
-  " \001(\tBR\n\"farm.nurture.core.contracts.comm"
-  "onP\001Z\'code.nurture.farm/Core/Contracts/C"
-  "ommon\240\001\001b\006proto3"
+  " \001(\tBS\n\"farm.nurture.core.contracts.comm"
+  "onP\001Z(github.com/nurture-farm/Contracts/"
+  "Common\240\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Common_2fentities_2eproto_deps[3] = {
   &::descriptor_table_Common_2fenums_2eproto,
@@ -398,7 +398,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Common_2fentities_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Common_2fentities_2eproto = {
-  false, false, descriptor_table_protodef_Common_2fentities_2eproto, "Common/entities.proto", 1776,
+  false, false, descriptor_table_protodef_Common_2fentities_2eproto, "Common/entities.proto", 1777,
   &descriptor_table_Common_2fentities_2eproto_once, descriptor_table_Common_2fentities_2eproto_sccs, descriptor_table_Common_2fentities_2eproto_deps, 10, 3,
   schemas, file_default_instances, TableStruct_Common_2fentities_2eproto::offsets,
   file_level_metadata_Common_2fentities_2eproto, 10, file_level_enum_descriptors_Common_2fentities_2eproto, file_level_service_descriptors_Common_2fentities_2eproto,

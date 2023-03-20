@@ -10,7 +10,7 @@ import "Common/utils.proto";
 import "google/protobuf/timestamp.proto";
 option java_multiple_files = true;
 option java_package = "farm.nurture.event.portal.proto";
-option go_package = "code.nurture.farm/Core/Contracts/EventPortal";
+option go_package = "github.com/nurture-farm/Contracts/EventPortal";
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 				FilterEvents					

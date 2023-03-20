@@ -11,7 +11,7 @@ import "Common/enums.proto";
 import "Common/headers.proto";
 import "Common/errors.proto";
 
-option go_package = "code.nurture.farm/Core/Contracts/Common";
+option go_package = "github.com/nurture-farm/Contracts/Common";
 
 message RequestStatusResult {
   farm.nurture.core.contracts.common.RequestStatus status = 1;

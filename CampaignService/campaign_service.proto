@@ -15,7 +15,7 @@ import "google/protobuf/timestamp.proto";
 
 option java_multiple_files = true;
 option java_package = "farm.nurture.farm.service.proto";
-option go_package = "code.nurture.farm/Core/Contracts/CampaignService";
+option go_package = "github.com/nurture-farm/Contracts/CampaignService";
 
 
 

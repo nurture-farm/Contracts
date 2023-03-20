@@ -45,7 +45,7 @@ go_proto_library(
     name = "mb_go_proto",
 
     compiler = "@io_bazel_rules_go//proto:go_grpc",
-    importpath = "code.nurture.farm/Core/Contracts/PerformanceTracker/Gen/GoPerformanceTracker",
+    importpath = "github.com/nurture-farm/Contracts/PerformanceTracker/Gen/GoPerformanceTracker",
 
     protos = [":mb_proto",],
     deps = [

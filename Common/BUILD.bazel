@@ -452,7 +452,7 @@ go_proto_library(
         ":ai_enums_proto"
     ],
     compiler = "@io_bazel_rules_go//proto:go_grpc",
-    importpath = "code.nurture.farm/Core/Contracts/Common/Gen/GoCommon",
+    importpath = "github.com/nurture-farm/Contracts/Common/Gen/GoCommon",
 )
 
 #py_proto_library(

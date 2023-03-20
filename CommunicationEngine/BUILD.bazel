@@ -54,7 +54,7 @@ go_proto_library(
     name = "communication_engine_go_proto",
 
     compiler = "@io_bazel_rules_go//proto:go_grpc",
-    importpath = "code.nurture.farm/Core/Contracts/CommunicationEngine/Gen/GoCommunicationEngine",
+    importpath = "github.com/nurture-farm/Contracts/CommunicationEngine/Gen/GoCommunicationEngine",
 
     protos = [":communication_engine_proto",],
     deps = [

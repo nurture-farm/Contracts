@@ -194,9 +194,9 @@ const char descriptor_table_protodef_Common_2ftime_5fslot_2eproto[] PROTOBUF_SEC
   "\t\022\021\n\ttime_zone\030\003 \001(\t\"g\n\tTimeRange\022-\n\tsta"
   "rtTime\030\001 \001(\0132\032.google.protobuf.Timestamp"
   "\022+\n\007endTime\030\002 \001(\0132\032.google.protobuf.Time"
-  "stampBR\n\"farm.nurture.core.contracts.com"
-  "monP\001Z\'code.nurture.farm/Core/Contracts/"
-  "Common\240\001\001b\006proto3"
+  "stampBS\n\"farm.nurture.core.contracts.com"
+  "monP\001Z(github.com/nurture-farm/Contracts"
+  "/Common\240\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Common_2ftime_5fslot_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fduration_2eproto,
@@ -211,7 +211,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Common_2ftime_5fslot_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Common_2ftime_5fslot_2eproto = {
-  false, false, descriptor_table_protodef_Common_2ftime_5fslot_2eproto, "Common/time_slot.proto", 737,
+  false, false, descriptor_table_protodef_Common_2ftime_5fslot_2eproto, "Common/time_slot.proto", 738,
   &descriptor_table_Common_2ftime_5fslot_2eproto_once, descriptor_table_Common_2ftime_5fslot_2eproto_sccs, descriptor_table_Common_2ftime_5fslot_2eproto_deps, 5, 2,
   schemas, file_default_instances, TableStruct_Common_2ftime_5fslot_2eproto::offsets,
   file_level_metadata_Common_2ftime_5fslot_2eproto, 5, file_level_enum_descriptors_Common_2ftime_5fslot_2eproto, file_level_service_descriptors_Common_2ftime_5fslot_2eproto,

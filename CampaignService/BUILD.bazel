@@ -52,7 +52,7 @@ go_proto_library(
     name = "campaign_service_go_proto",
 
     compiler = "@io_bazel_rules_go//proto:go_grpc",
-    importpath = "code.nurture.farm/Core/Contracts/CampaignService/Gen/GoCampaignService",
+    importpath = "github.com/nurture-farm/Contracts/CampaignService/Gen/GoCampaignService",
 
     protos = [":campaign_service_proto",],
     deps = [

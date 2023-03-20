@@ -47,7 +47,7 @@ go_proto_library(
     name = "event_portal_go_proto",
 
     compiler = "@io_bazel_rules_go//proto:go_grpc",
-    importpath = "code.nurture.farm/Core/Contracts/EventPortal/Gen/GoEventPortal",
+    importpath = "github.com/nurture-farm/Contracts/EventPortal/Gen/GoEventPortal",
 
     protos = [":event_portal_proto",],
     deps = [

@@ -245,10 +245,10 @@ const char descriptor_table_protodef_Workflows_2fGeneralGoWorkflows_2fgeneral_5f
   "s.workflows.generalgo.CreatePartitionsRe"
   "quest\032I.farm.nurture.core.contracts.work"
   "flows.generalgo.CreatePartitionsResponse"
-  "Br\n/farm.nurture.core.contracts.workflow"
-  "s.generalgoP\001Z=code.nurture.farm/Core/Co"
-  "ntracts/Workflows/GeneralGoWorkflowsb\006pr"
-  "oto3"
+  "Bs\n/farm.nurture.core.contracts.workflow"
+  "s.generalgoP\001Z>github.com/nurture-farm/C"
+  "ontracts/Workflows/GeneralGoWorkflowsb\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto_deps[5] = {
   &::descriptor_table_Common_2fentities_2eproto,
@@ -267,7 +267,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Wor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto = {
-  false, false, descriptor_table_protodef_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto, "Workflows/GeneralGoWorkflows/general_go_workflows.proto", 1764,
+  false, false, descriptor_table_protodef_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto, "Workflows/GeneralGoWorkflows/general_go_workflows.proto", 1765,
   &descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto_once, descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto_sccs, descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto_deps, 6, 5,
   schemas, file_default_instances, TableStruct_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto::offsets,
   file_level_metadata_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto, 6, file_level_enum_descriptors_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto, file_level_service_descriptors_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto,
