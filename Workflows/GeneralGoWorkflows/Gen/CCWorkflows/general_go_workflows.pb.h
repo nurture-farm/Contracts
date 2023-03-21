@@ -51,7 +51,7 @@ struct TableStruct_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2ep
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -82,6 +82,12 @@ extern ExecuteUserJourneyCampaignRequestDefaultTypeInternal _ExecuteUserJourneyC
 class ExecuteUserJourneyCampaignResponse;
 class ExecuteUserJourneyCampaignResponseDefaultTypeInternal;
 extern ExecuteUserJourneyCampaignResponseDefaultTypeInternal _ExecuteUserJourneyCampaignResponse_default_instance_;
+class HandoverOtpRequest;
+class HandoverOtpRequestDefaultTypeInternal;
+extern HandoverOtpRequestDefaultTypeInternal _HandoverOtpRequest_default_instance_;
+class HandoverOtpResponse;
+class HandoverOtpResponseDefaultTypeInternal;
+extern HandoverOtpResponseDefaultTypeInternal _HandoverOtpResponse_default_instance_;
 }  // namespace generalgo
 }  // namespace workflows
 }  // namespace contracts
@@ -95,6 +101,8 @@ template<> ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampai
 template<> ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* Arena::CreateMaybeMessage<::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse>(Arena*);
 template<> ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* Arena::CreateMaybeMessage<::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest>(Arena*);
 template<> ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* Arena::CreateMaybeMessage<::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>(Arena*);
+template<> ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* Arena::CreateMaybeMessage<::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest>(Arena*);
+template<> ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* Arena::CreateMaybeMessage<::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace farm {
 namespace nurture {
@@ -1084,6 +1092,323 @@ class CreatePartitionsResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto;
 };
+// -------------------------------------------------------------------
+
+class HandoverOtpRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest) */ {
+ public:
+  inline HandoverOtpRequest() : HandoverOtpRequest(nullptr) {}
+  virtual ~HandoverOtpRequest();
+
+  HandoverOtpRequest(const HandoverOtpRequest& from);
+  HandoverOtpRequest(HandoverOtpRequest&& from) noexcept
+    : HandoverOtpRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline HandoverOtpRequest& operator=(const HandoverOtpRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HandoverOtpRequest& operator=(HandoverOtpRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const HandoverOtpRequest& default_instance();
+
+  static inline const HandoverOtpRequest* internal_default_instance() {
+    return reinterpret_cast<const HandoverOtpRequest*>(
+               &_HandoverOtpRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(HandoverOtpRequest& a, HandoverOtpRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HandoverOtpRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HandoverOtpRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline HandoverOtpRequest* New() const final {
+    return CreateMaybeMessage<HandoverOtpRequest>(nullptr);
+  }
+
+  HandoverOtpRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<HandoverOtpRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const HandoverOtpRequest& from);
+  void MergeFrom(const HandoverOtpRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HandoverOtpRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest";
+  }
+  protected:
+  explicit HandoverOtpRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto);
+    return ::descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOtpFieldNumber = 1,
+    kMobileNumberFieldNumber = 3,
+    kActorDetailsFieldNumber = 2,
+  };
+  // string otp = 1;
+  void clear_otp();
+  const std::string& otp() const;
+  void set_otp(const std::string& value);
+  void set_otp(std::string&& value);
+  void set_otp(const char* value);
+  void set_otp(const char* value, size_t size);
+  std::string* mutable_otp();
+  std::string* release_otp();
+  void set_allocated_otp(std::string* otp);
+  private:
+  const std::string& _internal_otp() const;
+  void _internal_set_otp(const std::string& value);
+  std::string* _internal_mutable_otp();
+  public:
+
+  // string mobileNumber = 3;
+  void clear_mobilenumber();
+  const std::string& mobilenumber() const;
+  void set_mobilenumber(const std::string& value);
+  void set_mobilenumber(std::string&& value);
+  void set_mobilenumber(const char* value);
+  void set_mobilenumber(const char* value, size_t size);
+  std::string* mutable_mobilenumber();
+  std::string* release_mobilenumber();
+  void set_allocated_mobilenumber(std::string* mobilenumber);
+  private:
+  const std::string& _internal_mobilenumber() const;
+  void _internal_set_mobilenumber(const std::string& value);
+  std::string* _internal_mutable_mobilenumber();
+  public:
+
+  // .farm.nurture.core.contracts.common.ActorID actorDetails = 2;
+  bool has_actordetails() const;
+  private:
+  bool _internal_has_actordetails() const;
+  public:
+  void clear_actordetails();
+  const ::farm::nurture::core::contracts::common::ActorID& actordetails() const;
+  ::farm::nurture::core::contracts::common::ActorID* release_actordetails();
+  ::farm::nurture::core::contracts::common::ActorID* mutable_actordetails();
+  void set_allocated_actordetails(::farm::nurture::core::contracts::common::ActorID* actordetails);
+  private:
+  const ::farm::nurture::core::contracts::common::ActorID& _internal_actordetails() const;
+  ::farm::nurture::core::contracts::common::ActorID* _internal_mutable_actordetails();
+  public:
+  void unsafe_arena_set_allocated_actordetails(
+      ::farm::nurture::core::contracts::common::ActorID* actordetails);
+  ::farm::nurture::core::contracts::common::ActorID* unsafe_arena_release_actordetails();
+
+  // @@protoc_insertion_point(class_scope:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr otp_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mobilenumber_;
+  ::farm::nurture::core::contracts::common::ActorID* actordetails_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto;
+};
+// -------------------------------------------------------------------
+
+class HandoverOtpResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpResponse) */ {
+ public:
+  inline HandoverOtpResponse() : HandoverOtpResponse(nullptr) {}
+  virtual ~HandoverOtpResponse();
+
+  HandoverOtpResponse(const HandoverOtpResponse& from);
+  HandoverOtpResponse(HandoverOtpResponse&& from) noexcept
+    : HandoverOtpResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline HandoverOtpResponse& operator=(const HandoverOtpResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HandoverOtpResponse& operator=(HandoverOtpResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const HandoverOtpResponse& default_instance();
+
+  static inline const HandoverOtpResponse* internal_default_instance() {
+    return reinterpret_cast<const HandoverOtpResponse*>(
+               &_HandoverOtpResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(HandoverOtpResponse& a, HandoverOtpResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HandoverOtpResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HandoverOtpResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline HandoverOtpResponse* New() const final {
+    return CreateMaybeMessage<HandoverOtpResponse>(nullptr);
+  }
+
+  HandoverOtpResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<HandoverOtpResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const HandoverOtpResponse& from);
+  void MergeFrom(const HandoverOtpResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HandoverOtpResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "farm.nurture.core.contracts.workflows.generalgo.HandoverOtpResponse";
+  }
+  protected:
+  explicit HandoverOtpResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto);
+    return ::descriptor_table_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStatusFieldNumber = 1,
+  };
+  // .farm.nurture.core.contracts.common.ResponseStatus status = 1;
+  void clear_status();
+  ::farm::nurture::core::contracts::common::ResponseStatus status() const;
+  void set_status(::farm::nurture::core::contracts::common::ResponseStatus value);
+  private:
+  ::farm::nurture::core::contracts::common::ResponseStatus _internal_status() const;
+  void _internal_set_status(::farm::nurture::core::contracts::common::ResponseStatus value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  int status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_Workflows_2fGeneralGoWorkflows_2fgeneral_5fgo_5fworkflows_2eproto;
+};
 // ===================================================================
 
 
@@ -1770,9 +2095,240 @@ inline void CreatePartitionsResponse::set_status(::farm::nurture::core::contract
   // @@protoc_insertion_point(field_set:farm.nurture.core.contracts.workflows.generalgo.CreatePartitionsResponse.status)
 }
 
+// -------------------------------------------------------------------
+
+// HandoverOtpRequest
+
+// string otp = 1;
+inline void HandoverOtpRequest::clear_otp() {
+  otp_.ClearToEmpty();
+}
+inline const std::string& HandoverOtpRequest::otp() const {
+  // @@protoc_insertion_point(field_get:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.otp)
+  return _internal_otp();
+}
+inline void HandoverOtpRequest::set_otp(const std::string& value) {
+  _internal_set_otp(value);
+  // @@protoc_insertion_point(field_set:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.otp)
+}
+inline std::string* HandoverOtpRequest::mutable_otp() {
+  // @@protoc_insertion_point(field_mutable:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.otp)
+  return _internal_mutable_otp();
+}
+inline const std::string& HandoverOtpRequest::_internal_otp() const {
+  return otp_.Get();
+}
+inline void HandoverOtpRequest::_internal_set_otp(const std::string& value) {
+  
+  otp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void HandoverOtpRequest::set_otp(std::string&& value) {
+  
+  otp_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.otp)
+}
+inline void HandoverOtpRequest::set_otp(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  otp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.otp)
+}
+inline void HandoverOtpRequest::set_otp(const char* value,
+    size_t size) {
+  
+  otp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.otp)
+}
+inline std::string* HandoverOtpRequest::_internal_mutable_otp() {
+  
+  return otp_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* HandoverOtpRequest::release_otp() {
+  // @@protoc_insertion_point(field_release:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.otp)
+  return otp_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void HandoverOtpRequest::set_allocated_otp(std::string* otp) {
+  if (otp != nullptr) {
+    
+  } else {
+    
+  }
+  otp_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), otp,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.otp)
+}
+
+// .farm.nurture.core.contracts.common.ActorID actorDetails = 2;
+inline bool HandoverOtpRequest::_internal_has_actordetails() const {
+  return this != internal_default_instance() && actordetails_ != nullptr;
+}
+inline bool HandoverOtpRequest::has_actordetails() const {
+  return _internal_has_actordetails();
+}
+inline const ::farm::nurture::core::contracts::common::ActorID& HandoverOtpRequest::_internal_actordetails() const {
+  const ::farm::nurture::core::contracts::common::ActorID* p = actordetails_;
+  return p != nullptr ? *p : reinterpret_cast<const ::farm::nurture::core::contracts::common::ActorID&>(
+      ::farm::nurture::core::contracts::common::_ActorID_default_instance_);
+}
+inline const ::farm::nurture::core::contracts::common::ActorID& HandoverOtpRequest::actordetails() const {
+  // @@protoc_insertion_point(field_get:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.actorDetails)
+  return _internal_actordetails();
+}
+inline void HandoverOtpRequest::unsafe_arena_set_allocated_actordetails(
+    ::farm::nurture::core::contracts::common::ActorID* actordetails) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(actordetails_);
+  }
+  actordetails_ = actordetails;
+  if (actordetails) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.actorDetails)
+}
+inline ::farm::nurture::core::contracts::common::ActorID* HandoverOtpRequest::release_actordetails() {
+  
+  ::farm::nurture::core::contracts::common::ActorID* temp = actordetails_;
+  actordetails_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::farm::nurture::core::contracts::common::ActorID* HandoverOtpRequest::unsafe_arena_release_actordetails() {
+  // @@protoc_insertion_point(field_release:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.actorDetails)
+  
+  ::farm::nurture::core::contracts::common::ActorID* temp = actordetails_;
+  actordetails_ = nullptr;
+  return temp;
+}
+inline ::farm::nurture::core::contracts::common::ActorID* HandoverOtpRequest::_internal_mutable_actordetails() {
+  
+  if (actordetails_ == nullptr) {
+    auto* p = CreateMaybeMessage<::farm::nurture::core::contracts::common::ActorID>(GetArena());
+    actordetails_ = p;
+  }
+  return actordetails_;
+}
+inline ::farm::nurture::core::contracts::common::ActorID* HandoverOtpRequest::mutable_actordetails() {
+  // @@protoc_insertion_point(field_mutable:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.actorDetails)
+  return _internal_mutable_actordetails();
+}
+inline void HandoverOtpRequest::set_allocated_actordetails(::farm::nurture::core::contracts::common::ActorID* actordetails) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(actordetails_);
+  }
+  if (actordetails) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(actordetails)->GetArena();
+    if (message_arena != submessage_arena) {
+      actordetails = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, actordetails, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  actordetails_ = actordetails;
+  // @@protoc_insertion_point(field_set_allocated:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.actorDetails)
+}
+
+// string mobileNumber = 3;
+inline void HandoverOtpRequest::clear_mobilenumber() {
+  mobilenumber_.ClearToEmpty();
+}
+inline const std::string& HandoverOtpRequest::mobilenumber() const {
+  // @@protoc_insertion_point(field_get:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.mobileNumber)
+  return _internal_mobilenumber();
+}
+inline void HandoverOtpRequest::set_mobilenumber(const std::string& value) {
+  _internal_set_mobilenumber(value);
+  // @@protoc_insertion_point(field_set:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.mobileNumber)
+}
+inline std::string* HandoverOtpRequest::mutable_mobilenumber() {
+  // @@protoc_insertion_point(field_mutable:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.mobileNumber)
+  return _internal_mutable_mobilenumber();
+}
+inline const std::string& HandoverOtpRequest::_internal_mobilenumber() const {
+  return mobilenumber_.Get();
+}
+inline void HandoverOtpRequest::_internal_set_mobilenumber(const std::string& value) {
+  
+  mobilenumber_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void HandoverOtpRequest::set_mobilenumber(std::string&& value) {
+  
+  mobilenumber_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.mobileNumber)
+}
+inline void HandoverOtpRequest::set_mobilenumber(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mobilenumber_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.mobileNumber)
+}
+inline void HandoverOtpRequest::set_mobilenumber(const char* value,
+    size_t size) {
+  
+  mobilenumber_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.mobileNumber)
+}
+inline std::string* HandoverOtpRequest::_internal_mutable_mobilenumber() {
+  
+  return mobilenumber_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* HandoverOtpRequest::release_mobilenumber() {
+  // @@protoc_insertion_point(field_release:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.mobileNumber)
+  return mobilenumber_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void HandoverOtpRequest::set_allocated_mobilenumber(std::string* mobilenumber) {
+  if (mobilenumber != nullptr) {
+    
+  } else {
+    
+  }
+  mobilenumber_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mobilenumber,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpRequest.mobileNumber)
+}
+
+// -------------------------------------------------------------------
+
+// HandoverOtpResponse
+
+// .farm.nurture.core.contracts.common.ResponseStatus status = 1;
+inline void HandoverOtpResponse::clear_status() {
+  status_ = 0;
+}
+inline ::farm::nurture::core::contracts::common::ResponseStatus HandoverOtpResponse::_internal_status() const {
+  return static_cast< ::farm::nurture::core::contracts::common::ResponseStatus >(status_);
+}
+inline ::farm::nurture::core::contracts::common::ResponseStatus HandoverOtpResponse::status() const {
+  // @@protoc_insertion_point(field_get:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpResponse.status)
+  return _internal_status();
+}
+inline void HandoverOtpResponse::_internal_set_status(::farm::nurture::core::contracts::common::ResponseStatus value) {
+  
+  status_ = value;
+}
+inline void HandoverOtpResponse::set_status(::farm::nurture::core::contracts::common::ResponseStatus value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:farm.nurture.core.contracts.workflows.generalgo.HandoverOtpResponse.status)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

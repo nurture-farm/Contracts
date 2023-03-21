@@ -61,6 +61,13 @@ class GeneralGoWorkflows final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>> PrepareAsyncCreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>>(PrepareAsyncCreatePartitionsRaw(context, request, cq));
     }
+    virtual ::grpc::Status HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>> AsyncHandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>>(AsyncHandoverOtpRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>> PrepareAsyncHandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>>(PrepareAsyncHandoverOtpRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -70,6 +77,8 @@ class GeneralGoWorkflows final {
       virtual void ExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -81,6 +90,8 @@ class GeneralGoWorkflows final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* PrepareAsyncExecuteUserJourneyCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* AsyncCreatePartitionsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* PrepareAsyncCreatePartitionsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* AsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* PrepareAsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -106,6 +117,13 @@ class GeneralGoWorkflows final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>> PrepareAsyncCreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>>(PrepareAsyncCreatePartitionsRaw(context, request, cq));
     }
+    ::grpc::Status HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>> AsyncHandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>>(AsyncHandoverOtpRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>> PrepareAsyncHandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>>(PrepareAsyncHandoverOtpRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -115,6 +133,8 @@ class GeneralGoWorkflows final {
       void ExecuteUserJourneyCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response, std::function<void(::grpc::Status)>) override;
       void CreatePartitions(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, std::function<void(::grpc::Status)>) override;
+      void HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -132,9 +152,12 @@ class GeneralGoWorkflows final {
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse>* PrepareAsyncExecuteUserJourneyCampaignRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* AsyncCreatePartitionsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* PrepareAsyncCreatePartitionsRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* AsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* PrepareAsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ExecuteCampaign_;
     const ::grpc::internal::RpcMethod rpcmethod_ExecuteUserJourneyCampaign_;
     const ::grpc::internal::RpcMethod rpcmethod_CreatePartitions_;
+    const ::grpc::internal::RpcMethod rpcmethod_HandoverOtp_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -145,6 +168,7 @@ class GeneralGoWorkflows final {
     virtual ::grpc::Status ExecuteCampaign(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response);
     virtual ::grpc::Status ExecuteUserJourneyCampaign(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteUserJourneyCampaignResponse* response);
     virtual ::grpc::Status CreatePartitions(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response);
+    virtual ::grpc::Status HandoverOtp(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_ExecuteCampaign : public BaseClass {
@@ -206,7 +230,27 @@ class GeneralGoWorkflows final {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ExecuteCampaign<WithAsyncMethod_ExecuteUserJourneyCampaign<WithAsyncMethod_CreatePartitions<Service > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_HandoverOtp : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_HandoverOtp() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_HandoverOtp() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestHandoverOtp(::grpc::ServerContext* context, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::grpc::ServerAsyncResponseWriter< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ExecuteCampaign<WithAsyncMethod_ExecuteUserJourneyCampaign<WithAsyncMethod_CreatePartitions<WithAsyncMethod_HandoverOtp<Service > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_ExecuteCampaign : public BaseClass {
    private:
@@ -288,7 +332,34 @@ class GeneralGoWorkflows final {
     virtual ::grpc::ServerUnaryReactor* CreatePartitions(
       ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_ExecuteCampaign<WithCallbackMethod_ExecuteUserJourneyCampaign<WithCallbackMethod_CreatePartitions<Service > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_HandoverOtp : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_HandoverOtp() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) { return this->HandoverOtp(context, request, response); }));}
+    void SetMessageAllocatorFor_HandoverOtp(
+        ::grpc::MessageAllocator< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_HandoverOtp() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* HandoverOtp(
+      ::grpc::CallbackServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_ExecuteCampaign<WithCallbackMethod_ExecuteUserJourneyCampaign<WithCallbackMethod_CreatePartitions<WithCallbackMethod_HandoverOtp<Service > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_ExecuteCampaign : public BaseClass {
@@ -337,6 +408,23 @@ class GeneralGoWorkflows final {
     }
     // disable synchronous version of this method
     ::grpc::Status CreatePartitions(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_HandoverOtp : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_HandoverOtp() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_HandoverOtp() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -399,6 +487,26 @@ class GeneralGoWorkflows final {
     }
     void RequestCreatePartitions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_HandoverOtp : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_HandoverOtp() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_HandoverOtp() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestHandoverOtp(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -465,6 +573,28 @@ class GeneralGoWorkflows final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* CreatePartitions(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_HandoverOtp : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_HandoverOtp() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->HandoverOtp(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_HandoverOtp() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* HandoverOtp(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -548,9 +678,36 @@ class GeneralGoWorkflows final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCreatePartitions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest,::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ExecuteCampaign<WithStreamedUnaryMethod_ExecuteUserJourneyCampaign<WithStreamedUnaryMethod_CreatePartitions<Service > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_HandoverOtp : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_HandoverOtp() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* streamer) {
+                       return this->StreamedHandoverOtp(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_HandoverOtp() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status HandoverOtp(::grpc::ServerContext* /*context*/, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* /*request*/, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedHandoverOtp(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest,::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_ExecuteCampaign<WithStreamedUnaryMethod_ExecuteUserJourneyCampaign<WithStreamedUnaryMethod_CreatePartitions<WithStreamedUnaryMethod_HandoverOtp<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ExecuteCampaign<WithStreamedUnaryMethod_ExecuteUserJourneyCampaign<WithStreamedUnaryMethod_CreatePartitions<Service > > > StreamedService;
+  typedef WithStreamedUnaryMethod_ExecuteCampaign<WithStreamedUnaryMethod_ExecuteUserJourneyCampaign<WithStreamedUnaryMethod_CreatePartitions<WithStreamedUnaryMethod_HandoverOtp<Service > > > > StreamedService;
 };
 
 }  // namespace generalgo

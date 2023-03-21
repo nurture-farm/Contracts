@@ -18,6 +18,7 @@ service GeneralGoWorkflows {
   rpc ExecuteCampaign (ExecuteCampaignRequest) returns (ExecuteCampaignResponse) {}
   rpc ExecuteUserJourneyCampaign (ExecuteUserJourneyCampaignRequest) returns (ExecuteUserJourneyCampaignResponse) {}
   rpc CreatePartitions(CreatePartitionsRequest) returns (CreatePartitionsResponse);
+  rpc HandoverOtp(HandoverOtpRequest) returns (HandoverOtpResponse);
 }
 
 message ExecuteUserJourneyCampaignRequest {
@@ -51,5 +52,15 @@ message CreatePartitionsRequest {
 }
 
 message CreatePartitionsResponse {
+  farm.nurture.core.contracts.common.ResponseStatus status = 1;
+}
+
+message HandoverOtpRequest {
+  string otp = 1;
+  farm.nurture.core.contracts.common.ActorID actorDetails = 2;
+  string mobileNumber = 3;
+}
+
+message HandoverOtpResponse {
   farm.nurture.core.contracts.common.ResponseStatus status = 1;
 }

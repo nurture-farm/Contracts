@@ -30,6 +30,7 @@ static const char* GeneralGoWorkflows_method_names[] = {
   "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/ExecuteCampaign",
   "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/ExecuteUserJourneyCampaign",
   "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/CreatePartitions",
+  "/farm.nurture.core.contracts.workflows.generalgo.GeneralGoWorkflows/HandoverOtp",
 };
 
 std::unique_ptr< GeneralGoWorkflows::Stub> GeneralGoWorkflows::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -42,6 +43,7 @@ GeneralGoWorkflows::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   : channel_(channel), rpcmethod_ExecuteCampaign_(GeneralGoWorkflows_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ExecuteUserJourneyCampaign_(GeneralGoWorkflows_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreatePartitions_(GeneralGoWorkflows_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HandoverOtp_(GeneralGoWorkflows_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status GeneralGoWorkflows::Stub::ExecuteCampaign(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::ExecuteCampaignResponse* response) {
@@ -113,6 +115,29 @@ void GeneralGoWorkflows::Stub::async::CreatePartitions(::grpc::ClientContext* co
   return result;
 }
 
+::grpc::Status GeneralGoWorkflows::Stub::HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_HandoverOtp_, context, request, response);
+}
+
+void GeneralGoWorkflows::Stub::async::HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_HandoverOtp_, context, request, response, std::move(f));
+}
+
+void GeneralGoWorkflows::Stub::async::HandoverOtp(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_HandoverOtp_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* GeneralGoWorkflows::Stub::PrepareAsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_HandoverOtp_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse>* GeneralGoWorkflows::Stub::AsyncHandoverOtpRaw(::grpc::ClientContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncHandoverOtpRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 GeneralGoWorkflows::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       GeneralGoWorkflows_method_names[0],
@@ -144,6 +169,16 @@ GeneralGoWorkflows::Service::Service() {
              ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* resp) {
                return service->CreatePartitions(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      GeneralGoWorkflows_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< GeneralGoWorkflows::Service, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](GeneralGoWorkflows::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* req,
+             ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* resp) {
+               return service->HandoverOtp(ctx, req, resp);
+             }, this)));
 }
 
 GeneralGoWorkflows::Service::~Service() {
@@ -164,6 +199,13 @@ GeneralGoWorkflows::Service::~Service() {
 }
 
 ::grpc::Status GeneralGoWorkflows::Service::CreatePartitions(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::CreatePartitionsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status GeneralGoWorkflows::Service::HandoverOtp(::grpc::ServerContext* context, const ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpRequest* request, ::farm::nurture::core::contracts::workflows::generalgo::HandoverOtpResponse* response) {
   (void) context;
   (void) request;
   (void) response;
